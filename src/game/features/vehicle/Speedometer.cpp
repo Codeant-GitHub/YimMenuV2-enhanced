@@ -14,12 +14,10 @@ namespace YimMenu::Features
 
 		bool EnsureScaleformLoaded()
 		{
-			if (m_ScaleformHandle && GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(m_ScaleformHandle))
+			if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(m_ScaleformHandle) && GRAPHICS::HAS_SCALEFORM_MOVIE_FILENAME_LOADED("DRAG_RACE"))
 				return true;
 
-			if (!m_ScaleformHandle)
-				m_ScaleformHandle = GRAPHICS::REQUEST_SCALEFORM_MOVIE("DRAG_RACE");
-
+			m_ScaleformHandle = GRAPHICS::REQUEST_SCALEFORM_MOVIE("DRAG_RACE");
 			return false;
 		}
 
@@ -74,7 +72,9 @@ namespace YimMenu::Features
 
 		virtual void OnDisable() override
 		{
-			GRAPHICS::SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(&m_ScaleformHandle);
+			if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(m_ScaleformHandle) && GRAPHICS::HAS_SCALEFORM_MOVIE_FILENAME_LOADED("DRAG_RACE"))
+				GRAPHICS::SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(&m_ScaleformHandle);
+
 			m_ScaleformHandle = 0;
 		}
 	};

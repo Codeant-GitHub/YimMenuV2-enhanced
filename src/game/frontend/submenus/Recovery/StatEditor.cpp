@@ -10,6 +10,31 @@
 
 namespace YimMenu::Submenus
 {
+	struct StatInfo
+	{
+		std::string m_Name;
+		std::uint32_t m_NameHash;
+		bool m_Normalized = false;
+		sStatData* m_Data = nullptr;
+
+		bool IsValid()
+		{
+			return m_Data != nullptr;
+		}
+	};
+
+	struct PackedStatInfo
+	{
+		int m_Index;
+		bool m_IsBoolStat;
+		bool m_IsValid;
+
+		bool IsValid()
+		{
+			return m_IsValid;
+		}
+	};
+
 	union StatValue
 	{
 		float m_AsFloat;
@@ -18,6 +43,54 @@ namespace YimMenu::Submenus
 		std::uint64_t m_AsU64;
 		char m_AsString[12];
 	};
+
+	static StatInfo GetStatInfo(const char* name_str)
+	{
+		StatInfo name{};
+		auto len = strlen(name_str);
+
+		// not sure why people do this
+		if (len > 1 && name_str[0] == '$')
+		{
+			name_str++;
+			len--;
+			name.m_Normalized = true;
+		}
+
+		name.m_Name = name_str;
+
+		if (len > 3 && tolower(name_str[0]) == 'm' && tolower(name_str[1]) == 'p' && tolower(name_str[2]) == 'x')
+		{
+			if (auto last_char = Pointers.StatsMgr->GetStat("MPPLY_LAST_MP_CHAR"_J))
+			{
+				name.m_Name[2] = '0' + last_char->GetInt();
+				name.m_Normalized = true;
+			}
+		}
+
+		name.m_NameHash = Joaat(name.m_Name);
+		name.m_Data = Pointers.StatsMgr->GetStat(name.m_NameHash);
+
+		if (name.m_Data == nullptr && len > 3 && (tolower(name_str[0]) != 'm' || tolower(name_str[1]) != 'p' || !(tolower(name_str[2]) == '0' || tolower(name_str[2]) == '1')))
+		{
+			// stat names without a character prefix
+			auto last_char = Pointers.StatsMgr->GetStat("MPPLY_LAST_MP_CHAR"_J);
+			auto char_index = last_char ? last_char->GetInt() : 0;
+			auto char_prefix = char_index == 0 ? "MP0_" : "MP1_";
+			auto new_hash = Joaat(char_prefix + name.m_Name);
+			auto new_stat = Pointers.StatsMgr->GetStat(new_hash);
+
+			if (new_stat)
+			{
+				name.m_Name = char_prefix + name.m_Name;
+				name.m_NameHash = new_hash;
+				name.m_Data = new_stat;
+				name.m_Normalized = true;
+			}
+		}
+
+		return name;
+	}
 
 	static void ReadStat(StatValue& value, sStatData* data)
 	{
@@ -113,46 +186,165 @@ namespace YimMenu::Submenus
 		}
 	}
 
+	static PackedStatInfo GetPackedStatInfo(int index)
+	{
+		PackedStatInfo info{};
+		int row;
+		bool unk;
+
+		info.m_Index = index;
+		Pointers.GetPackedStatData(index, &row, &info.m_IsBoolStat, &unk);
+
+		if (row != 0 || index <= 191)
+			info.m_IsValid = true;
+
+		return info;
+	}
+
+	static void ReadPackedStat(StatValue& value, const PackedStatInfo& info)
+	{
+		if (info.m_IsBoolStat)
+			value.m_AsBool = STATS::GET_PACKED_STAT_BOOL_CODE(info.m_Index, -1);
+		else
+			value.m_AsInt = STATS::GET_PACKED_STAT_BOOL_CODE(info.m_Index, -1);
+	}
+
+	static void WritePackedStat(const StatValue& value, const PackedStatInfo& info)
+	{
+		if (info.m_IsBoolStat)
+			STATS::SET_PACKED_STAT_BOOL_CODE(info.m_Index, value.m_AsBool, -1);
+		else
+			STATS::SET_PACKED_STAT_INT_CODE(info.m_Index, value.m_AsInt, -1);
+	}
+
+	static void WritePackedStatRange(int start, int end, int value)
+	{
+		for (int i = start; i <= end; i++)
+		{
+			auto info = GetPackedStatInfo(i);
+			if (!info.m_IsValid)
+				break; // the rest are probably not valid, either
+
+			if (info.m_IsBoolStat)
+				STATS::SET_PACKED_STAT_BOOL_CODE(info.m_Index, static_cast<bool>(value), -1);
+			else
+				STATS::SET_PACKED_STAT_INT_CODE(info.m_Index, value, -1);
+		}
+	}
+
+	static bool RenderPackedStatEditor(StatValue& value, const PackedStatInfo& info)
+	{
+		ImGui::SetNextItemWidth(150.f);
+		if (info.m_IsBoolStat) 
+			return ImGui::Checkbox("Value##packed", &value.m_AsBool);
+		else
+			return ImGui::InputScalar("Value##packed", ImGuiDataType_U8, &value.m_AsInt);
+	}
+
 	std::shared_ptr<Category> BuildStatEditorMenu()
 	{
 		auto menu = std::make_shared<Category>("Stat Editor");
+		auto normal = std::make_shared<Group>("Regular");
+		auto packed = std::make_shared<Group>("Packed");
+		auto packed_range = std::make_shared<Group>("Packed Range");
 
-		menu->AddItem(std::make_unique<ImGuiItem>([] {
-			static sStatData* current_stat;
+		normal->AddItem(std::make_unique<ImGuiItem>([] {
+			if (!NativeInvoker::AreHandlersCached())
+				return ImGui::TextDisabled("Natives not cached yet");
+
+			static StatInfo current_info;
 			static char stat_buf[48]{};
 			static StatValue value{};
 
 			ImGui::SetNextItemWidth(300.f);
 			if (ImGui::InputText("Name", stat_buf, sizeof(stat_buf)))
 			{
-				current_stat = Pointers.StatsMgr->GetStat(Joaat(stat_buf));
-				ReadStat(value, current_stat);
+				current_info = GetStatInfo(stat_buf);
+				if (current_info.IsValid())
+					ReadStat(value, current_info.m_Data);
 			}
 
-			if (!current_stat)
-				return ImGui::Text("Stat not found");
+			if (!current_info.IsValid())
+				return ImGui::TextDisabled("Stat not found");
+			else if (current_info.m_Normalized)
+			{
+				ImGui::Text("Normalized name to: %s", current_info.m_Name.data());
+			}
 
-			bool can_edit = !current_stat->IsServerAuthoritative() || AnticheatBypass::IsFSLLoaded(); // TODO: a lot of false positives and negatives with this one
+			bool can_edit = !current_info.m_Data->IsServerAuthoritative() || AnticheatBypass::IsFSLLoaded(); // TODO: a lot of false positives and negatives with this one
 
-			RenderStatEditor(value, current_stat);
+			RenderStatEditor(value, current_info.m_Data);
 
 			if (ImGui::Button("Refresh"))
-				ReadStat(value, current_stat);
+				ReadStat(value, current_info.m_Data);
 			ImGui::SameLine();
 			ImGui::BeginDisabled(!can_edit);
 			if (ImGui::Button("Write"))
 				FiberPool::Push([] {
-					WriteStat(Joaat(stat_buf), value, current_stat);
+					WriteStat(current_info.m_NameHash, value, current_info.m_Data);
 				});
 			if (ImGui::IsMouseClicked(ImGuiMouseButton_Right) && ImGui::IsItemHovered(ImGuiHoveredFlags_AllowWhenDisabled))
 				FiberPool::Push([] {
-					WriteStat(Joaat(stat_buf), value, current_stat);
+					WriteStat(current_info.m_NameHash, value, current_info.m_Data);
 				});
 			if (!can_edit && ImGui::IsItemHovered(ImGuiHoveredFlags_AllowWhenDisabled))
 				ImGui::SetTooltip("This stat should not be edited by the client. Right-click to force the write anyway");
 			ImGui::EndDisabled();
 		}));
 
+		packed->AddItem(std::make_unique<ImGuiItem>([] {
+			if (!NativeInvoker::AreHandlersCached())
+				return ImGui::TextDisabled("Natives not cached yet");
+
+			// TODO: improve packed stat editor
+			static PackedStatInfo current_info{0, false, true};
+			static StatValue value{};
+	
+			ImGui::SetNextItemWidth(200.f);
+			if (ImGui::InputInt("Index", &current_info.m_Index))
+			{
+				current_info = GetPackedStatInfo(current_info.m_Index);
+				if (current_info.IsValid())
+					ReadPackedStat(value, current_info);
+			}
+
+			if (!current_info.IsValid())
+				return ImGui::TextDisabled("Index not valid");
+
+			RenderPackedStatEditor(value, current_info);
+
+			if (ImGui::Button("Refresh##packed"))
+				ReadPackedStat(value, current_info);
+			ImGui::SameLine();
+			if (ImGui::Button("Write##packed"))
+				FiberPool::Push([] {
+					WritePackedStat(value, current_info);
+				});
+		}));
+
+		packed_range->AddItem(std::make_unique<ImGuiItem>([] {
+			if (!NativeInvoker::AreHandlersCached())
+				return ImGui::TextDisabled("Natives not cached yet");
+
+			static int start{}, end{}, value{};
+
+			ImGui::SetNextItemWidth(150.f);
+			ImGui::InputInt("Start", &start);
+			ImGui::SameLine();
+			ImGui::SetNextItemWidth(150.f);
+			ImGui::InputInt("End", &end);
+			ImGui::SetNextItemWidth(150.f);
+			ImGui::InputScalar("Value##packed_range", ImGuiDataType_U8, &value);
+			ImGui::SameLine();
+			if (ImGui::Button("Write##packed_range"))
+				FiberPool::Push([] {
+					WritePackedStatRange(start, end, value);
+				});
+		}));
+
+		menu->AddItem(std::move(normal));
+		menu->AddItem(std::move(packed));
+		menu->AddItem(std::move(packed_range));
 		return menu;
 	}
 }

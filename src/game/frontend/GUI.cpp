@@ -3,6 +3,7 @@
 
 #include "GUI.hpp"
 #include "Menu.hpp"
+#include "ESP.hpp"
 #include "Overlay.hpp"
 #include "core/backend/ScriptMgr.hpp"
 #include "core/renderer/Renderer.hpp"
@@ -29,7 +30,11 @@ namespace YimMenu
 			    Notifications::Draw();
 		    },
 		    -2);
-
+		Renderer::AddRendererCallBack(
+		    [&] {
+			    ESP::Draw();
+		    },
+		    -3);
 		Renderer::AddRendererCallBack(
 		    [&] {
 			    ChatDisplay::Draw();

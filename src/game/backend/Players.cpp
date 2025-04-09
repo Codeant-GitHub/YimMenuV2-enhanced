@@ -2,6 +2,7 @@
 #include "common.hpp"
 
 #include "Players.hpp"
+#include "game/backend/SavedPlayers.hpp"
 #include "game/pointers/Pointers.hpp"
 #include "types/network/CNetGamePlayer.hpp"
 #include "types/network/CNetworkPlayerMgr.hpp"
@@ -34,6 +35,7 @@ namespace YimMenu
 
 		m_Players[player->m_PlayerIndex] = new_player;
 		m_PlayerDatas[player->m_PlayerIndex] = PlayerData();
+		SavedPlayers::OnPlayerJoin(new_player);
 	}
 
 	void Players::OnPlayerLeaveImpl(CNetGamePlayer* player)

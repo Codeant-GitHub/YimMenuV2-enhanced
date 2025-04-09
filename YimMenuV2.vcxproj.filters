@@ -109,6 +109,9 @@
     <Filter Include="game\frontend\submenus\Debug">
       <UniqueIdentifier>{E5103609-D1CB-25B5-7A83-9EFF661D7045}</UniqueIdentifier>
     </Filter>
+    <Filter Include="game\frontend\submenus\Network">
+      <UniqueIdentifier>{A8400B32-9466-D598-7DAC-5A646971FA64}</UniqueIdentifier>
+    </Filter>
     <Filter Include="game\frontend\submenus\Player">
       <UniqueIdentifier>{6B45744C-D75D-5B76-A00A-EB0F0CE2EF0F}</UniqueIdentifier>
     </Filter>
@@ -156,6 +159,9 @@
     </Filter>
     <Filter Include="types\fx">
       <UniqueIdentifier>{A7CD73F8-939A-CE03-BCB3-BCABA8DF0392}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="types\netshop">
+      <UniqueIdentifier>{4A435D33-B603-D969-7F3E-22E7EBBD1D46}</UniqueIdentifier>
     </Filter>
     <Filter Include="types\network">
       <UniqueIdentifier>{F3925F33-5F53-DB69-288E-24E7940D2046}</UniqueIdentifier>
@@ -229,8 +235,14 @@
     <Filter Include="types\script\locals">
       <UniqueIdentifier>{8B6DCBF4-F7CE-A802-803C-EFB4EC9CDFC1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="types\socialclub">
+      <UniqueIdentifier>{4A087F55-3601-9EA7-5F33-832C4B8B7DB3}</UniqueIdentifier>
+    </Filter>
     <Filter Include="types\stats">
       <UniqueIdentifier>{58F94279-C4AE-BB6E-4DA3-B545B957B272}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="types\vehicle">
+      <UniqueIdentifier>{C971509A-3532-CCD0-FE6C-154E6AEC10AD}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -278,6 +290,9 @@
       <Filter>core\commands</Filter>
     </ClInclude>
     <ClInclude Include="src\core\filemgr\BaseObj.hpp">
+      <Filter>core\filemgr</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\filemgr\CacheFile.hpp">
       <Filter>core\filemgr</Filter>
     </ClInclude>
     <ClInclude Include="src\core\filemgr\File.hpp">
@@ -418,6 +433,12 @@
     <ClInclude Include="src\game\backend\SavedLocations.hpp">
       <Filter>game\backend</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\backend\SavedPlayerData.hpp">
+      <Filter>game\backend</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\backend\SavedPlayers.hpp">
+      <Filter>game\backend</Filter>
+    </ClInclude>
     <ClInclude Include="src\game\backend\SavedVariables.hpp">
       <Filter>game\backend</Filter>
     </ClInclude>
@@ -427,6 +448,9 @@
     <ClInclude Include="src\game\backend\Self.hpp">
       <Filter>game\backend</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\backend\Tunables.hpp">
+      <Filter>game\backend</Filter>
+    </ClInclude>
     <ClInclude Include="src\game\commands\PlayerCommand.hpp">
       <Filter>game\commands</Filter>
     </ClInclude>
@@ -434,6 +458,9 @@
       <Filter>game\features\recovery</Filter>
     </ClInclude>
     <ClInclude Include="src\game\frontend\ChatDisplay.hpp">
+      <Filter>game\frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\frontend\ESP.hpp">
       <Filter>game\frontend</Filter>
     </ClInclude>
     <ClInclude Include="src\game\frontend\GUI.hpp">
@@ -466,6 +493,9 @@
     <ClInclude Include="src\game\frontend\submenus\Network.hpp">
       <Filter>game\frontend\submenus</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\frontend\submenus\Network\SavedPlayers.hpp">
+      <Filter>game\frontend\submenus\Network</Filter>
+    </ClInclude>
     <ClInclude Include="src\game\frontend\submenus\Player\Info.hpp">
       <Filter>game\frontend\submenus\Player</Filter>
     </ClInclude>
@@ -487,6 +517,9 @@
     <ClInclude Include="src\game\frontend\submenus\Recovery\StatEditor.hpp">
       <Filter>game\frontend\submenus\Recovery</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\frontend\submenus\Recovery\Transactions.hpp">
+      <Filter>game\frontend\submenus\Recovery</Filter>
+    </ClInclude>
     <ClInclude Include="src\game\frontend\submenus\Self.hpp">
       <Filter>game\frontend\submenus</Filter>
     </ClInclude>
@@ -505,6 +538,9 @@
     <ClInclude Include="src\game\gta\Natives.hpp">
       <Filter>game\gta</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\gta\Network.hpp">
+      <Filter>game\gta</Filter>
+    </ClInclude>
     <ClInclude Include="src\game\gta\Nodes.hpp">
       <Filter>game\gta</Filter>
     </ClInclude>
@@ -520,6 +556,9 @@
     <ClInclude Include="src\game\gta\Player.hpp">
       <Filter>game\gta</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\gta\Pools.hpp">
+      <Filter>game\gta</Filter>
+    </ClInclude>
     <ClInclude Include="src\game\gta\ScriptFunction.hpp">
       <Filter>game\gta</Filter>
     </ClInclude>
@@ -530,6 +569,9 @@
       <Filter>game\gta</Filter>
     </ClInclude>
     <ClInclude Include="src\game\gta\Scripts.hpp">
+      <Filter>game\gta</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\gta\Stats.hpp">
       <Filter>game\gta</Filter>
     </ClInclude>
     <ClInclude Include="src\game\gta\Vehicle.hpp">
@@ -567,6 +609,12 @@
     </ClInclude>
     <ClInclude Include="src\types\fx\ExplosionType.hpp">
       <Filter>types\fx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types\netshop\CNetShopTransaction.hpp">
+      <Filter>types\netshop</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types\netshop\netCatalogBaseItem.hpp">
+      <Filter>types\netshop</Filter>
     </ClInclude>
     <ClInclude Include="src\types\network\CNetGamePlayer.hpp">
       <Filter>types\network</Filter>
@@ -620,6 +668,15 @@
       <Filter>types\network</Filter>
     </ClInclude>
     <ClInclude Include="src\types\network\rlGamerInfoBase.hpp">
+      <Filter>types\network</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types\network\rlSessionByGamerHandleTaskResult.hpp">
+      <Filter>types\network</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types\network\rlSessionInfo.hpp">
+      <Filter>types\network</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types\network\rlTaskStatus.hpp">
       <Filter>types\network</Filter>
     </ClInclude>
     <ClInclude Include="src\types\network\sync\CProjectBaseSyncDataNode.hpp">
@@ -979,11 +1036,23 @@
     <ClInclude Include="src\types\script\types.hpp">
       <Filter>types\script</Filter>
     </ClInclude>
+    <ClInclude Include="src\types\socialclub\rlQueryPresenceAttributesContext.hpp">
+      <Filter>types\socialclub</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types\socialclub\rlScGamerHandle.hpp">
+      <Filter>types\socialclub</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types\socialclub\rlScTaskStatus.hpp">
+      <Filter>types\socialclub</Filter>
+    </ClInclude>
     <ClInclude Include="src\types\stats\CStatsMgr.hpp">
       <Filter>types\stats</Filter>
     </ClInclude>
     <ClInclude Include="src\types\stats\sStatData.hpp">
       <Filter>types\stats</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types\vehicle\fwVehiclePool.hpp">
+      <Filter>types\vehicle</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1031,6 +1100,9 @@
       <Filter>core\commands</Filter>
     </ClCompile>
     <ClCompile Include="src\core\filemgr\BaseObj.cpp">
+      <Filter>core\filemgr</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\filemgr\CacheFile.cpp">
       <Filter>core\filemgr</Filter>
     </ClCompile>
     <ClCompile Include="src\core\filemgr\File.cpp">
@@ -1123,6 +1195,12 @@
     <ClCompile Include="src\game\backend\SavedLocations.cpp">
       <Filter>game\backend</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\backend\SavedPlayerData.cpp">
+      <Filter>game\backend</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\backend\SavedPlayers.cpp">
+      <Filter>game\backend</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\backend\SavedVariables.cpp">
       <Filter>game\backend</Filter>
     </ClCompile>
@@ -1132,8 +1210,14 @@
     <ClCompile Include="src\game\backend\Self.cpp">
       <Filter>game\backend</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\backend\Tunables.cpp">
+      <Filter>game\backend</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\commands\PlayerCommand.cpp">
       <Filter>game\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\network\BypassCasinoRestrictions.cpp">
+      <Filter>game\features\network</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\network\DisableDeathBarriers.cpp">
       <Filter>game\features\network</Filter>
@@ -1142,6 +1226,9 @@
       <Filter>game\features\network</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\network\HarassPlayers.cpp">
+      <Filter>game\features\network</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\network\JoinSession.cpp">
       <Filter>game\features\network</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\network\SpamKillfeed.cpp">
@@ -1192,8 +1279,26 @@
     <ClCompile Include="src\game\features\players\troll\SetBounty.cpp">
       <Filter>game\features\players\troll</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\features\recovery\CayoPericoCooldown.cpp">
+      <Filter>game\features\recovery</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\recovery\CayoPericoSetup.cpp">
+      <Filter>game\features\recovery</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\recovery\DLCVehicles.cpp">
+      <Filter>game\features\recovery</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\features\recovery\GiveVehicleReward.cpp">
       <Filter>game\features\recovery</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\self\ClearDamage.cpp">
+      <Filter>game\features\self</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\self\DisableActionMode.cpp">
+      <Filter>game\features\self</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\self\FillInventory.cpp">
+      <Filter>game\features\self</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\self\Freecam.cpp">
       <Filter>game\features\self</Filter>
@@ -1202,6 +1307,9 @@
       <Filter>game\features\self</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\self\Godmode.cpp">
+      <Filter>game\features\self</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\self\Heal.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\self\InfiniteAmmo.cpp">
@@ -1216,6 +1324,9 @@
     <ClCompile Include="src\game\features\self\Invis.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\features\self\NoIdleKick.cpp">
+      <Filter>game\features\self</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\features\self\NoRagdoll.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
@@ -1228,6 +1339,12 @@
     <ClCompile Include="src\game\features\self\RapidFire.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\features\self\SkipCutscene.cpp">
+      <Filter>game\features\self</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\self\StandOnVehicles.cpp">
+      <Filter>game\features\self</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\features\self\Suicide.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
@@ -1235,6 +1352,9 @@
       <Filter>game\features\self</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\self\SuperRun.cpp">
+      <Filter>game\features\self</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\self\UnlimitedOxygen.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\self\Wanted.cpp">
@@ -1251,6 +1371,9 @@
     </ClCompile>
     <ClCompile Include="src\game\features\teleport\TpToWaypoint.cpp">
       <Filter>game\features\teleport</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\vehicle\AllowHatsInVehicles.cpp">
+      <Filter>game\features\vehicle</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\vehicle\EnterLast.cpp">
       <Filter>game\features\vehicle</Filter>
@@ -1279,10 +1402,25 @@
     <ClCompile Include="src\game\features\vehicle\Speedometer.cpp">
       <Filter>game\features\vehicle</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\features\world\Bring.cpp">
+      <Filter>game\features\world</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\world\Delete.cpp">
+      <Filter>game\features\world</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\features\world\IPLManager.cpp">
       <Filter>game\features\world</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\features\world\Kill.cpp">
+      <Filter>game\features\world</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\world\Weather.cpp">
+      <Filter>game\features\world</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\frontend\ChatDisplay.cpp">
+      <Filter>game\frontend</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\frontend\ESP.cpp">
       <Filter>game\frontend</Filter>
     </ClCompile>
     <ClCompile Include="src\game\frontend\GUI.cpp">
@@ -1354,6 +1492,9 @@
     <ClCompile Include="src\game\frontend\submenus\Network.cpp">
       <Filter>game\frontend\submenus</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\Network\SavedPlayers.cpp">
+      <Filter>game\frontend\submenus\Network</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\frontend\submenus\Player\Info.cpp">
       <Filter>game\frontend\submenus\Player</Filter>
     </ClCompile>
@@ -1375,6 +1516,9 @@
     <ClCompile Include="src\game\frontend\submenus\Recovery\StatEditor.cpp">
       <Filter>game\frontend\submenus\Recovery</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\Recovery\Transactions.cpp">
+      <Filter>game\frontend\submenus\Recovery</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\frontend\submenus\Self.cpp">
       <Filter>game\frontend\submenus</Filter>
     </ClCompile>
@@ -1388,6 +1532,9 @@
       <Filter>game\frontend\submenus</Filter>
     </ClCompile>
     <ClCompile Include="src\game\gta\Entity.cpp">
+      <Filter>game\gta</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\gta\Network.cpp">
       <Filter>game\gta</Filter>
     </ClCompile>
     <ClCompile Include="src\game\gta\Nodes.cpp">
@@ -1405,6 +1552,9 @@
     <ClCompile Include="src\game\gta\Player.cpp">
       <Filter>game\gta</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\gta\Pools.cpp">
+      <Filter>game\gta</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\gta\ScriptFunction.cpp">
       <Filter>game\gta</Filter>
     </ClCompile>
@@ -1417,6 +1567,9 @@
     <ClCompile Include="src\game\gta\Scripts.cpp">
       <Filter>game\gta</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\gta\Stats.cpp">
+      <Filter>game\gta</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\gta\Vehicle.cpp">
       <Filter>game\gta</Filter>
     </ClCompile>
@@ -1424,6 +1577,9 @@
       <Filter>game\gta\invoker</Filter>
     </ClCompile>
     <ClCompile Include="src\game\hooks\Anticheat\GetThreadContext.cpp">
+      <Filter>game\hooks\Anticheat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\hooks\Anticheat\HttpStartRequest.cpp">
       <Filter>game\hooks\Anticheat</Filter>
     </ClCompile>
     <ClCompile Include="src\game\hooks\Anticheat\PrepareMetricForSending.cpp">
