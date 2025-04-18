@@ -343,6 +343,9 @@
     <ClInclude Include="src\core\hooking\BaseHook.hpp">
       <Filter>core\hooking</Filter>
     </ClInclude>
+    <ClInclude Include="src\core\hooking\CallHook.hpp">
+      <Filter>core\hooking</Filter>
+    </ClInclude>
     <ClInclude Include="src\core\hooking\DetourHook.hpp">
       <Filter>core\hooking</Filter>
     </ClInclude>
@@ -490,8 +493,14 @@
     <ClInclude Include="src\game\frontend\submenus\Debug\Locals.hpp">
       <Filter>game\frontend\submenus\Debug</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\frontend\submenus\Debug\Misc.hpp">
+      <Filter>game\frontend\submenus\Debug</Filter>
+    </ClInclude>
     <ClInclude Include="src\game\frontend\submenus\Network.hpp">
       <Filter>game\frontend\submenus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\frontend\submenus\Network\RandomEvents.hpp">
+      <Filter>game\frontend\submenus\Network</Filter>
     </ClInclude>
     <ClInclude Include="src\game\frontend\submenus\Network\SavedPlayers.hpp">
       <Filter>game\frontend\submenus\Network</Filter>
@@ -578,6 +587,9 @@
       <Filter>game\gta</Filter>
     </ClInclude>
     <ClInclude Include="src\game\gta\data\IPL.hpp">
+      <Filter>game\gta\data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\gta\data\RandomEvents.hpp">
       <Filter>game\gta\data</Filter>
     </ClInclude>
     <ClInclude Include="src\game\gta\data\VehicleValues.hpp">
@@ -973,6 +985,9 @@
     <ClInclude Include="src\types\script\globals\GPBD_FM.hpp">
       <Filter>types\script\globals</Filter>
     </ClInclude>
+    <ClInclude Include="src\types\script\globals\GPBD_FM_2.hpp">
+      <Filter>types\script\globals</Filter>
+    </ClInclude>
     <ClInclude Include="src\types\script\globals\GPBD_FM_3.hpp">
       <Filter>types\script\globals</Filter>
     </ClInclude>
@@ -1000,11 +1015,17 @@
     <ClInclude Include="src\types\script\globals\GSBD_PropertyInstances.hpp">
       <Filter>types\script\globals</Filter>
     </ClInclude>
+    <ClInclude Include="src\types\script\globals\GSBD_RandomEvents.hpp">
+      <Filter>types\script\globals</Filter>
+    </ClInclude>
     <ClInclude Include="src\types\script\globals\GlobalPlayerBD.hpp">
       <Filter>types\script\globals</Filter>
     </ClInclude>
     <ClInclude Include="src\types\script\globals\g_AMC_playerBD.hpp">
       <Filter>types\script\globals</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types\script\locals\FMRandomEvents.hpp">
+      <Filter>types\script\locals</Filter>
     </ClInclude>
     <ClInclude Include="src\types\script\locals\VehicleRewardData.hpp">
       <Filter>types\script\locals</Filter>
@@ -1035,6 +1056,12 @@
     </ClInclude>
     <ClInclude Include="src\types\script\types.hpp">
       <Filter>types\script</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types\socialclub\rlGetAvatarsContext.hpp">
+      <Filter>types\socialclub</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types\socialclub\rlQueryAccountsResult.hpp">
+      <Filter>types\socialclub</Filter>
     </ClInclude>
     <ClInclude Include="src\types\socialclub\rlQueryPresenceAttributesContext.hpp">
       <Filter>types\socialclub</Filter>
@@ -1141,6 +1168,9 @@
     <ClCompile Include="src\core\hooking\BaseHook.cpp">
       <Filter>core\hooking</Filter>
     </ClCompile>
+    <ClCompile Include="src\core\hooking\CallHook.cpp">
+      <Filter>core\hooking</Filter>
+    </ClCompile>
     <ClCompile Include="src\core\hooking\Hooking.cpp">
       <Filter>core\hooking</Filter>
     </ClCompile>
@@ -1225,6 +1255,9 @@
     <ClCompile Include="src\game\features\network\FastJoin.cpp">
       <Filter>game\features\network</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\features\network\ForceScriptHost.cpp">
+      <Filter>game\features\network</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\features\network\HarassPlayers.cpp">
       <Filter>game\features\network</Filter>
     </ClCompile>
@@ -1288,7 +1321,13 @@
     <ClCompile Include="src\game\features\recovery\DLCVehicles.cpp">
       <Filter>game\features\recovery</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\features\recovery\ForceLaunchHeist.cpp">
+      <Filter>game\features\recovery</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\features\recovery\GiveVehicleReward.cpp">
+      <Filter>game\features\recovery</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\recovery\PlayAllMissionsSolo.cpp">
       <Filter>game\features\recovery</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\self\ClearDamage.cpp">
@@ -1298,6 +1337,9 @@
       <Filter>game\features\self</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\self\FillInventory.cpp">
+      <Filter>game\features\self</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\self\FormatMoney.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\self\Freecam.cpp">
@@ -1489,8 +1531,14 @@
     <ClCompile Include="src\game\frontend\submenus\Debug\Locals.cpp">
       <Filter>game\frontend\submenus\Debug</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\Debug\Misc.cpp">
+      <Filter>game\frontend\submenus\Debug</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\frontend\submenus\Network.cpp">
       <Filter>game\frontend\submenus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\Network\RandomEvents.cpp">
+      <Filter>game\frontend\submenus\Network</Filter>
     </ClCompile>
     <ClCompile Include="src\game\frontend\submenus\Network\SavedPlayers.cpp">
       <Filter>game\frontend\submenus\Network</Filter>
@@ -1647,6 +1695,9 @@
       <Filter>types\script</Filter>
     </ClCompile>
     <ClCompile Include="src\types\script\ScriptEvent.cpp">
+      <Filter>types\script</Filter>
+    </ClCompile>
+    <ClCompile Include="src\types\script\Timer.cpp">
       <Filter>types\script</Filter>
     </ClCompile>
     <ClCompile Include="src\types\script\globals\Globals.cpp">

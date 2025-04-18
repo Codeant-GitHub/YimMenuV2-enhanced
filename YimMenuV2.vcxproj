@@ -16,7 +16,6 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -49,7 +48,6 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <DisableSpecificWarnings>4244;4305;4267;4018;4099;4390;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -93,6 +91,7 @@
     <ClInclude Include="src\core\frontend\widgets\toggle\imgui_toggle_presets.hpp" />
     <ClInclude Include="src\core\frontend\widgets\toggle\imgui_toggle_renderer.hpp" />
     <ClInclude Include="src\core\hooking\BaseHook.hpp" />
+    <ClInclude Include="src\core\hooking\CallHook.hpp" />
     <ClInclude Include="src\core\hooking\DetourHook.hpp" />
     <ClInclude Include="src\core\hooking\Hooking.hpp" />
     <ClInclude Include="src\core\hooking\IATHook.hpp" />
@@ -142,7 +141,9 @@
     <ClInclude Include="src\game\frontend\submenus\Debug\DrawVariable.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Debug\Globals.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Debug\Locals.hpp" />
+    <ClInclude Include="src\game\frontend\submenus\Debug\Misc.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Network.hpp" />
+    <ClInclude Include="src\game\frontend\submenus\Network\RandomEvents.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Network\SavedPlayers.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Player\Info.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Player\Kick.hpp" />
@@ -172,6 +173,7 @@
     <ClInclude Include="src\game\gta\Stats.hpp" />
     <ClInclude Include="src\game\gta\Vehicle.hpp" />
     <ClInclude Include="src\game\gta\data\IPL.hpp" />
+    <ClInclude Include="src\game\gta\data\RandomEvents.hpp" />
     <ClInclude Include="src\game\gta\data\VehicleValues.hpp" />
     <ClInclude Include="src\game\gta\data\Weapons.hpp" />
     <ClInclude Include="src\game\gta\invoker\Crossmap.hpp" />
@@ -303,6 +305,7 @@
     <ClInclude Include="src\types\script\ScriptEvent.hpp" />
     <ClInclude Include="src\types\script\Timer.hpp" />
     <ClInclude Include="src\types\script\globals\GPBD_FM.hpp" />
+    <ClInclude Include="src\types\script\globals\GPBD_FM_2.hpp" />
     <ClInclude Include="src\types\script\globals\GPBD_FM_3.hpp" />
     <ClInclude Include="src\types\script\globals\GPBD_Kicking.hpp" />
     <ClInclude Include="src\types\script\globals\GPBD_MissionName.hpp" />
@@ -312,8 +315,10 @@
     <ClInclude Include="src\types\script\globals\GSBD_FM_Events.hpp" />
     <ClInclude Include="src\types\script\globals\GSBD_Kicking.hpp" />
     <ClInclude Include="src\types\script\globals\GSBD_PropertyInstances.hpp" />
+    <ClInclude Include="src\types\script\globals\GSBD_RandomEvents.hpp" />
     <ClInclude Include="src\types\script\globals\GlobalPlayerBD.hpp" />
     <ClInclude Include="src\types\script\globals\g_AMC_playerBD.hpp" />
+    <ClInclude Include="src\types\script\locals\FMRandomEvents.hpp" />
     <ClInclude Include="src\types\script\locals\VehicleRewardData.hpp" />
     <ClInclude Include="src\types\script\scrNativeHandler.hpp" />
     <ClInclude Include="src\types\script\scrProgram.hpp" />
@@ -324,6 +329,8 @@
     <ClInclude Include="src\types\script\scriptId.hpp" />
     <ClInclude Include="src\types\script\scriptIdBase.hpp" />
     <ClInclude Include="src\types\script\types.hpp" />
+    <ClInclude Include="src\types\socialclub\rlGetAvatarsContext.hpp" />
+    <ClInclude Include="src\types\socialclub\rlQueryAccountsResult.hpp" />
     <ClInclude Include="src\types\socialclub\rlQueryPresenceAttributesContext.hpp" />
     <ClInclude Include="src\types\socialclub\rlScGamerHandle.hpp" />
     <ClInclude Include="src\types\socialclub\rlScTaskStatus.hpp" />
@@ -363,6 +370,7 @@
     <ClCompile Include="src\core\frontend\widgets\toggle\imgui_toggle_presets.cpp" />
     <ClCompile Include="src\core\frontend\widgets\toggle\imgui_toggle_renderer.cpp" />
     <ClCompile Include="src\core\hooking\BaseHook.cpp" />
+    <ClCompile Include="src\core\hooking\CallHook.cpp" />
     <ClCompile Include="src\core\hooking\Hooking.cpp" />
     <ClCompile Include="src\core\logger\ExceptionHandler.cpp" />
     <ClCompile Include="src\core\logger\LogHelper.cpp" />
@@ -391,6 +399,7 @@
     <ClCompile Include="src\game\features\network\BypassCasinoRestrictions.cpp" />
     <ClCompile Include="src\game\features\network\DisableDeathBarriers.cpp" />
     <ClCompile Include="src\game\features\network\FastJoin.cpp" />
+    <ClCompile Include="src\game\features\network\ForceScriptHost.cpp" />
     <ClCompile Include="src\game\features\network\HarassPlayers.cpp" />
     <ClCompile Include="src\game\features\network\JoinSession.cpp" />
     <ClCompile Include="src\game\features\network\SpamKillfeed.cpp" />
@@ -412,10 +421,13 @@
     <ClCompile Include="src\game\features\recovery\CayoPericoCooldown.cpp" />
     <ClCompile Include="src\game\features\recovery\CayoPericoSetup.cpp" />
     <ClCompile Include="src\game\features\recovery\DLCVehicles.cpp" />
+    <ClCompile Include="src\game\features\recovery\ForceLaunchHeist.cpp" />
     <ClCompile Include="src\game\features\recovery\GiveVehicleReward.cpp" />
+    <ClCompile Include="src\game\features\recovery\PlayAllMissionsSolo.cpp" />
     <ClCompile Include="src\game\features\self\ClearDamage.cpp" />
     <ClCompile Include="src\game\features\self\DisableActionMode.cpp" />
     <ClCompile Include="src\game\features\self\FillInventory.cpp" />
+    <ClCompile Include="src\game\features\self\FormatMoney.cpp" />
     <ClCompile Include="src\game\features\self\Freecam.cpp" />
     <ClCompile Include="src\game\features\self\GiveAllWeapons.cpp" />
     <ClCompile Include="src\game\features\self\Godmode.cpp" />
@@ -485,7 +497,9 @@
     <ClCompile Include="src\game\frontend\submenus\Debug.cpp" />
     <ClCompile Include="src\game\frontend\submenus\Debug\Globals.cpp" />
     <ClCompile Include="src\game\frontend\submenus\Debug\Locals.cpp" />
+    <ClCompile Include="src\game\frontend\submenus\Debug\Misc.cpp" />
     <ClCompile Include="src\game\frontend\submenus\Network.cpp" />
+    <ClCompile Include="src\game\frontend\submenus\Network\RandomEvents.cpp" />
     <ClCompile Include="src\game\frontend\submenus\Network\SavedPlayers.cpp">
       <ObjectFileName>$(IntDir)\SavedPlayers1.obj</ObjectFileName>
     </ClCompile>
@@ -549,6 +563,7 @@
     <ClCompile Include="src\types\network\rlGamerHandle.cpp" />
     <ClCompile Include="src\types\script\CGameScriptId.cpp" />
     <ClCompile Include="src\types\script\ScriptEvent.cpp" />
+    <ClCompile Include="src\types\script\Timer.cpp" />
     <ClCompile Include="src\types\script\globals\Globals.cpp">
       <ObjectFileName>$(IntDir)\Globals1.obj</ObjectFileName>
     </ClCompile>

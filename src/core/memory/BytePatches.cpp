@@ -7,7 +7,7 @@ namespace YimMenu
 {
 	BytePatches::Patch::~Patch()
 	{
-		Restore();
+
 	}
 
 	void BytePatches::Patch::Apply()
@@ -41,6 +41,8 @@ namespace YimMenu
 
 	void BytePatches::Remove(std::shared_ptr<Patch>& patch)
 	{
+		patch->Restore();
+
 		if (const auto it = std::find(m_Patches.begin(), m_Patches.end(), patch.get()); it != m_Patches.end())
 		{
 			m_Patches.erase(it);
@@ -50,6 +52,11 @@ namespace YimMenu
 
 	void BytePatches::RestoreAll()
 	{
+		for (auto& patch : m_Patches)
+		{
+			patch->Restore();
+		}
+
 		m_Patches.clear();
 	}
 }

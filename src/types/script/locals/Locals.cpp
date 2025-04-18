@@ -2,6 +2,7 @@
 #include "common.hpp"
 
 #include "VehicleRewardData.hpp"
+#include "FMRandomEvents.hpp"
 #include "game/gta/ScriptLocal.hpp"
 
 #define DEFINE_LOCAL_ACCESSOR(str, local)               \
@@ -14,3 +15,4 @@
 	}
 
 DEFINE_LOCAL_ACCESSOR(VEHICLE_REWARD_DATA, 129);
+DEFINE_LOCAL_ACCESSOR(RANDOM_EVENTS_FREEMODE_DATA, 15919);
