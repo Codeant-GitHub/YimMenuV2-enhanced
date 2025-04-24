@@ -79,6 +79,9 @@
     <Filter Include="game\features\recovery">
       <UniqueIdentifier>{8BD93903-77D3-6255-6040-F9654CD9C8C1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="game\features\recovery\Heist">
+      <UniqueIdentifier>{D71F4A26-C3DA-39D2-6C92-B21C582C8462}</UniqueIdentifier>
+    </Filter>
     <Filter Include="game\features\self">
       <UniqueIdentifier>{06BB427A-F29E-03D0-5BFF-FD224702EE51}</UniqueIdentifier>
     </Filter>
@@ -117,6 +120,9 @@
     </Filter>
     <Filter Include="game\frontend\submenus\Recovery">
       <UniqueIdentifier>{2DD345FC-99B6-543C-A2B9-82780E1C1B8D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\frontend\submenus\Recovery\Heist">
+      <UniqueIdentifier>{F94A0797-650F-0687-2E75-36519AF8A1BC}</UniqueIdentifier>
     </Filter>
     <Filter Include="game\gta">
       <UniqueIdentifier>{6A7882BA-5645-DDC5-7F5E-CB6D6B8A1254}</UniqueIdentifier>
@@ -448,6 +454,9 @@
     <ClInclude Include="src\game\backend\ScriptPatches.hpp">
       <Filter>game\backend</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\backend\ScriptPointers.hpp">
+      <Filter>game\backend</Filter>
+    </ClInclude>
     <ClInclude Include="src\game\backend\Self.hpp">
       <Filter>game\backend</Filter>
     </ClInclude>
@@ -523,6 +532,21 @@
     <ClInclude Include="src\game\frontend\submenus\Recovery.hpp">
       <Filter>game\frontend\submenus</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\frontend\submenus\Recovery\Heist\ApartmentHeist.hpp">
+      <Filter>game\frontend\submenus\Recovery\Heist</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\frontend\submenus\Recovery\Heist\CayoPericoHeist.hpp">
+      <Filter>game\frontend\submenus\Recovery\Heist</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\frontend\submenus\Recovery\Heist\DiamondCasinoHeist.hpp">
+      <Filter>game\frontend\submenus\Recovery\Heist</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\frontend\submenus\Recovery\Heist\DoomsdayHeist.hpp">
+      <Filter>game\frontend\submenus\Recovery\Heist</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\frontend\submenus\Recovery\HeistModifier.hpp">
+      <Filter>game\frontend\submenus\Recovery</Filter>
+    </ClInclude>
     <ClInclude Include="src\game\frontend\submenus\Recovery\StatEditor.hpp">
       <Filter>game\frontend\submenus\Recovery</Filter>
     </ClInclude>
@@ -568,6 +592,9 @@
     <ClInclude Include="src\game\gta\Pools.hpp">
       <Filter>game\gta</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\gta\ScriptData.hpp">
+      <Filter>game\gta</Filter>
+    </ClInclude>
     <ClInclude Include="src\game\gta\ScriptFunction.hpp">
       <Filter>game\gta</Filter>
     </ClInclude>
@@ -575,6 +602,9 @@
       <Filter>game\gta</Filter>
     </ClInclude>
     <ClInclude Include="src\game\gta\ScriptLocal.hpp">
+      <Filter>game\gta</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\gta\ScriptPointer.hpp">
       <Filter>game\gta</Filter>
     </ClInclude>
     <ClInclude Include="src\game\gta\Scripts.hpp">
@@ -1237,6 +1267,9 @@
     <ClCompile Include="src\game\backend\ScriptPatches.cpp">
       <Filter>game\backend</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\backend\ScriptPointers.cpp">
+      <Filter>game\backend</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\backend\Self.cpp">
       <Filter>game\backend</Filter>
     </ClCompile>
@@ -1312,12 +1345,6 @@
     <ClCompile Include="src\game\features\players\troll\SetBounty.cpp">
       <Filter>game\features\players\troll</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\features\recovery\CayoPericoCooldown.cpp">
-      <Filter>game\features\recovery</Filter>
-    </ClCompile>
-    <ClCompile Include="src\game\features\recovery\CayoPericoSetup.cpp">
-      <Filter>game\features\recovery</Filter>
-    </ClCompile>
     <ClCompile Include="src\game\features\recovery\DLCVehicles.cpp">
       <Filter>game\features\recovery</Filter>
     </ClCompile>
@@ -1326,6 +1353,18 @@
     </ClCompile>
     <ClCompile Include="src\game\features\recovery\GiveVehicleReward.cpp">
       <Filter>game\features\recovery</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\recovery\Heist\ApartmentHeist.cpp">
+      <Filter>game\features\recovery\Heist</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\recovery\Heist\CayoPericoHeist.cpp">
+      <Filter>game\features\recovery\Heist</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\recovery\Heist\DiamondCasinoHeist.cpp">
+      <Filter>game\features\recovery\Heist</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\recovery\Heist\DoomsdayHeist.cpp">
+      <Filter>game\features\recovery\Heist</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\recovery\PlayAllMissionsSolo.cpp">
       <Filter>game\features\recovery</Filter>
@@ -1366,6 +1405,9 @@
     <ClCompile Include="src\game\features\self\Invis.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\features\self\MobileRadio.cpp">
+      <Filter>game\features\self</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\features\self\NoIdleKick.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
@@ -1376,6 +1418,9 @@
       <Filter>game\features\self</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\self\OffTheRadar.cpp">
+      <Filter>game\features\self</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\self\OpenWardrobe.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\self\RapidFire.cpp">
@@ -1519,6 +1564,9 @@
     <ClCompile Include="src\game\frontend\items\StringCommandItem.cpp">
       <Filter>game\frontend\items</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\frontend\items\TabItem.cpp">
+      <Filter>game\frontend\items</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\frontend\items\Vector3CommandItem.cpp">
       <Filter>game\frontend\items</Filter>
     </ClCompile>
@@ -1560,6 +1608,21 @@
     </ClCompile>
     <ClCompile Include="src\game\frontend\submenus\Recovery.cpp">
       <Filter>game\frontend\submenus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\Recovery\Heist\ApartmentHeist.cpp">
+      <Filter>game\frontend\submenus\Recovery\Heist</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\Recovery\Heist\CayoPericoHeist.cpp">
+      <Filter>game\frontend\submenus\Recovery\Heist</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\Recovery\Heist\DiamondCasinoHeist.cpp">
+      <Filter>game\frontend\submenus\Recovery\Heist</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\Recovery\Heist\DoomsdayHeist.cpp">
+      <Filter>game\frontend\submenus\Recovery\Heist</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\Recovery\HeistModifier.cpp">
+      <Filter>game\frontend\submenus\Recovery</Filter>
     </ClCompile>
     <ClCompile Include="src\game\frontend\submenus\Recovery\StatEditor.cpp">
       <Filter>game\frontend\submenus\Recovery</Filter>
@@ -1603,6 +1666,9 @@
     <ClCompile Include="src\game\gta\Pools.cpp">
       <Filter>game\gta</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\gta\ScriptData.cpp">
+      <Filter>game\gta</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\gta\ScriptFunction.cpp">
       <Filter>game\gta</Filter>
     </ClCompile>
@@ -1610,6 +1676,9 @@
       <Filter>game\gta</Filter>
     </ClCompile>
     <ClCompile Include="src\game\gta\ScriptLocal.cpp">
+      <Filter>game\gta</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\gta\ScriptPointer.cpp">
       <Filter>game\gta</Filter>
     </ClCompile>
     <ClCompile Include="src\game\gta\Scripts.cpp">

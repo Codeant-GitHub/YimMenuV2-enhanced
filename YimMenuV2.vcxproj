@@ -16,6 +16,7 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -55,6 +56,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>$(SolutionDir)lib\minhook.x64.lib;$(SolutionDir)lib\AsyncLogger.lib;$(SolutionDir)lib\imgui.lib;$(SolutionDir)lib\fmtlib.lib;dbghelp.lib;d3dcompiler.lib;dwmapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -126,6 +128,7 @@
     <ClInclude Include="src\game\backend\SavedPlayers.hpp" />
     <ClInclude Include="src\game\backend\SavedVariables.hpp" />
     <ClInclude Include="src\game\backend\ScriptPatches.hpp" />
+    <ClInclude Include="src\game\backend\ScriptPointers.hpp" />
     <ClInclude Include="src\game\backend\Self.hpp" />
     <ClInclude Include="src\game\backend\Tunables.hpp" />
     <ClInclude Include="src\game\commands\PlayerCommand.hpp" />
@@ -151,6 +154,11 @@
     <ClInclude Include="src\game\frontend\submenus\Player\Troll.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Players.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Recovery.hpp" />
+    <ClInclude Include="src\game\frontend\submenus\Recovery\Heist\ApartmentHeist.hpp" />
+    <ClInclude Include="src\game\frontend\submenus\Recovery\Heist\CayoPericoHeist.hpp" />
+    <ClInclude Include="src\game\frontend\submenus\Recovery\Heist\DiamondCasinoHeist.hpp" />
+    <ClInclude Include="src\game\frontend\submenus\Recovery\Heist\DoomsdayHeist.hpp" />
+    <ClInclude Include="src\game\frontend\submenus\Recovery\HeistModifier.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Recovery\StatEditor.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Recovery\Transactions.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Self.hpp" />
@@ -166,9 +174,11 @@
     <ClInclude Include="src\game\gta\Ped.hpp" />
     <ClInclude Include="src\game\gta\Player.hpp" />
     <ClInclude Include="src\game\gta\Pools.hpp" />
+    <ClInclude Include="src\game\gta\ScriptData.hpp" />
     <ClInclude Include="src\game\gta\ScriptFunction.hpp" />
     <ClInclude Include="src\game\gta\ScriptGlobal.hpp" />
     <ClInclude Include="src\game\gta\ScriptLocal.hpp" />
+    <ClInclude Include="src\game\gta\ScriptPointer.hpp" />
     <ClInclude Include="src\game\gta\Scripts.hpp" />
     <ClInclude Include="src\game\gta\Stats.hpp" />
     <ClInclude Include="src\game\gta\Vehicle.hpp" />
@@ -393,6 +403,7 @@
     <ClCompile Include="src\game\backend\SavedPlayers.cpp" />
     <ClCompile Include="src\game\backend\SavedVariables.cpp" />
     <ClCompile Include="src\game\backend\ScriptPatches.cpp" />
+    <ClCompile Include="src\game\backend\ScriptPointers.cpp" />
     <ClCompile Include="src\game\backend\Self.cpp" />
     <ClCompile Include="src\game\backend\Tunables.cpp" />
     <ClCompile Include="src\game\commands\PlayerCommand.cpp" />
@@ -418,11 +429,13 @@
     <ClCompile Include="src\game\features\players\troll\DeleteVehicle.cpp" />
     <ClCompile Include="src\game\features\players\troll\SendSext.cpp" />
     <ClCompile Include="src\game\features\players\troll\SetBounty.cpp" />
-    <ClCompile Include="src\game\features\recovery\CayoPericoCooldown.cpp" />
-    <ClCompile Include="src\game\features\recovery\CayoPericoSetup.cpp" />
     <ClCompile Include="src\game\features\recovery\DLCVehicles.cpp" />
     <ClCompile Include="src\game\features\recovery\ForceLaunchHeist.cpp" />
     <ClCompile Include="src\game\features\recovery\GiveVehicleReward.cpp" />
+    <ClCompile Include="src\game\features\recovery\Heist\ApartmentHeist.cpp" />
+    <ClCompile Include="src\game\features\recovery\Heist\CayoPericoHeist.cpp" />
+    <ClCompile Include="src\game\features\recovery\Heist\DiamondCasinoHeist.cpp" />
+    <ClCompile Include="src\game\features\recovery\Heist\DoomsdayHeist.cpp" />
     <ClCompile Include="src\game\features\recovery\PlayAllMissionsSolo.cpp" />
     <ClCompile Include="src\game\features\self\ClearDamage.cpp" />
     <ClCompile Include="src\game\features\self\DisableActionMode.cpp" />
@@ -436,10 +449,12 @@
     <ClCompile Include="src\game\features\self\InfiniteClip.cpp" />
     <ClCompile Include="src\game\features\self\InfiniteParachutes.cpp" />
     <ClCompile Include="src\game\features\self\Invis.cpp" />
+    <ClCompile Include="src\game\features\self\MobileRadio.cpp" />
     <ClCompile Include="src\game\features\self\NoIdleKick.cpp" />
     <ClCompile Include="src\game\features\self\NoRagdoll.cpp" />
     <ClCompile Include="src\game\features\self\Noclip.cpp" />
     <ClCompile Include="src\game\features\self\OffTheRadar.cpp" />
+    <ClCompile Include="src\game\features\self\OpenWardrobe.cpp" />
     <ClCompile Include="src\game\features\self\RapidFire.cpp" />
     <ClCompile Include="src\game\features\self\SkipCutscene.cpp" />
     <ClCompile Include="src\game\features\self\StandOnVehicles.cpp" />
@@ -493,6 +508,7 @@
     <ClCompile Include="src\game\frontend\items\ListCommandItem.cpp" />
     <ClCompile Include="src\game\frontend\items\PlayerCommandItem.cpp" />
     <ClCompile Include="src\game\frontend\items\StringCommandItem.cpp" />
+    <ClCompile Include="src\game\frontend\items\TabItem.cpp" />
     <ClCompile Include="src\game\frontend\items\Vector3CommandItem.cpp" />
     <ClCompile Include="src\game\frontend\submenus\Debug.cpp" />
     <ClCompile Include="src\game\frontend\submenus\Debug\Globals.cpp" />
@@ -511,6 +527,19 @@
       <ObjectFileName>$(IntDir)\Players1.obj</ObjectFileName>
     </ClCompile>
     <ClCompile Include="src\game\frontend\submenus\Recovery.cpp" />
+    <ClCompile Include="src\game\frontend\submenus\Recovery\Heist\ApartmentHeist.cpp">
+      <ObjectFileName>$(IntDir)\ApartmentHeist1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\Recovery\Heist\CayoPericoHeist.cpp">
+      <ObjectFileName>$(IntDir)\CayoPericoHeist1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\Recovery\Heist\DiamondCasinoHeist.cpp">
+      <ObjectFileName>$(IntDir)\DiamondCasinoHeist1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\Recovery\Heist\DoomsdayHeist.cpp">
+      <ObjectFileName>$(IntDir)\DoomsdayHeist1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\Recovery\HeistModifier.cpp" />
     <ClCompile Include="src\game\frontend\submenus\Recovery\StatEditor.cpp" />
     <ClCompile Include="src\game\frontend\submenus\Recovery\Transactions.cpp" />
     <ClCompile Include="src\game\frontend\submenus\Self.cpp">
@@ -531,9 +560,11 @@
     <ClCompile Include="src\game\gta\Ped.cpp" />
     <ClCompile Include="src\game\gta\Player.cpp" />
     <ClCompile Include="src\game\gta\Pools.cpp" />
+    <ClCompile Include="src\game\gta\ScriptData.cpp" />
     <ClCompile Include="src\game\gta\ScriptFunction.cpp" />
     <ClCompile Include="src\game\gta\ScriptGlobal.cpp" />
     <ClCompile Include="src\game\gta\ScriptLocal.cpp" />
+    <ClCompile Include="src\game\gta\ScriptPointer.cpp" />
     <ClCompile Include="src\game\gta\Scripts.cpp" />
     <ClCompile Include="src\game\gta\Stats.cpp" />
     <ClCompile Include="src\game\gta\Vehicle.cpp" />

@@ -1,8 +1,8 @@
 #pragma once
 #include "common.hpp"
 
-#include "VehicleRewardData.hpp"
 #include "FMRandomEvents.hpp"
+#include "VehicleRewardData.hpp"
 #include "game/gta/ScriptLocal.hpp"
 
 #define DEFINE_LOCAL_ACCESSOR(str, local)               \

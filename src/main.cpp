@@ -1,7 +1,6 @@
 #pragma once
 #include "common.hpp"
 
-#include "common.hpp"
 #include "core/backend/ScriptMgr.hpp"
 #include "core/backend/FiberPool.hpp"
 #include "core/commands/Commands.hpp"
@@ -20,6 +19,7 @@
 #include "game/backend/Self.hpp"
 #include "game/backend/NativeHooks.hpp"
 #include "game/backend/Tunables.hpp"
+#include "game/backend/ScriptPointers.hpp"
 #include "game/frontend/GUI.hpp"
 #include "game/pointers/Pointers.hpp"
 #include "game/features/recovery/GiveVehicleReward.hpp"
@@ -52,6 +52,8 @@ namespace YimMenu
 
 		ScriptMgr::Init();
 		LOG(INFO) << "ScriptMgr initialized";
+
+		ScriptPointers::Init();
 
 		GUI::Init();
 
