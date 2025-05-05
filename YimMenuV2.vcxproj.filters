@@ -325,6 +325,9 @@
     <ClInclude Include="src\core\frontend\manager\UIManager.hpp">
       <Filter>core\frontend\manager</Filter>
     </ClInclude>
+    <ClInclude Include="src\core\frontend\widgets\imgui_bitfield.hpp">
+      <Filter>core\frontend\widgets</Filter>
+    </ClInclude>
     <ClInclude Include="src\core\frontend\widgets\imgui_colors.h">
       <Filter>core\frontend\widgets</Filter>
     </ClInclude>
@@ -505,6 +508,9 @@
     <ClInclude Include="src\game\frontend\submenus\Debug\Misc.hpp">
       <Filter>game\frontend\submenus\Debug</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\frontend\submenus\Debug\Scripts.hpp">
+      <Filter>game\frontend\submenus\Debug</Filter>
+    </ClInclude>
     <ClInclude Include="src\game\frontend\submenus\Network.hpp">
       <Filter>game\frontend\submenus</Filter>
     </ClInclude>
@@ -620,6 +626,12 @@
       <Filter>game\gta\data</Filter>
     </ClInclude>
     <ClInclude Include="src\game\gta\data\RandomEvents.hpp">
+      <Filter>game\gta\data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\gta\data\ScriptNames.hpp">
+      <Filter>game\gta\data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\gta\data\StackSizes.hpp">
       <Filter>game\gta\data</Filter>
     </ClInclude>
     <ClInclude Include="src\game\gta\data\VehicleValues.hpp">
@@ -1297,6 +1309,9 @@
     <ClCompile Include="src\game\features\network\JoinSession.cpp">
       <Filter>game\features\network</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\features\network\PauseGame.cpp">
+      <Filter>game\features\network</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\features\network\SpamKillfeed.cpp">
       <Filter>game\features\network</Filter>
     </ClCompile>
@@ -1307,6 +1322,9 @@
       <Filter>game\features\players\info</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\players\kick\FreemodeStateKick.cpp">
+      <Filter>game\features\players\kick</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\players\kick\HostKick.cpp">
       <Filter>game\features\players\kick</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\players\kick\NullFunctionKick.cpp">
@@ -1369,6 +1387,9 @@
     <ClCompile Include="src\game\features\recovery\PlayAllMissionsSolo.cpp">
       <Filter>game\features\recovery</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\features\self\Aimbot.cpp">
+      <Filter>game\features\self</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\features\self\ClearDamage.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
@@ -1405,6 +1426,9 @@
     <ClCompile Include="src\game\features\self\Invis.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\features\self\KeepPlayerClean.cpp">
+      <Filter>game\features\self</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\features\self\MobileRadio.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
@@ -1424,6 +1448,9 @@
       <Filter>game\features\self</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\self\RapidFire.cpp">
+      <Filter>game\features\self</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\self\SkipConversation.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\self\SkipCutscene.cpp">
@@ -1573,6 +1600,9 @@
     <ClCompile Include="src\game\frontend\submenus\Debug.cpp">
       <Filter>game\frontend\submenus</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\Debug\DrawVariable.cpp">
+      <Filter>game\frontend\submenus\Debug</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\frontend\submenus\Debug\Globals.cpp">
       <Filter>game\frontend\submenus\Debug</Filter>
     </ClCompile>
@@ -1580,6 +1610,9 @@
       <Filter>game\frontend\submenus\Debug</Filter>
     </ClCompile>
     <ClCompile Include="src\game\frontend\submenus\Debug\Misc.cpp">
+      <Filter>game\frontend\submenus\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\Debug\Scripts.cpp">
       <Filter>game\frontend\submenus\Debug</Filter>
     </ClCompile>
     <ClCompile Include="src\game\frontend\submenus\Network.cpp">

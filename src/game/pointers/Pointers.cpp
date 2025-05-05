@@ -326,6 +326,27 @@ namespace YimMenu
 			FormatIntCaller2 = ptr.Sub(0x11).As<PVOID>();
 		});
 
+		constexpr auto shouldTargetEntityPatchPtrn = Pattern<"F6 80 A9 14 00 00 01">("ShouldNotTargetEntityPatch");
+		scanner.Add(shouldTargetEntityPatchPtrn, [this](PointerCalculator ptr) {
+			ShouldNotTargetEntityPatch = BytePatches::Add(ptr.Sub(0x53).As<void*>(), std::vector<std::uint8_t>{0xB0, 0x00, 0xC3});
+		});
+
+		// TODO: this has been inlined a lot in Enhanced
+		constexpr auto getAssistedAimTypePatchPtrn = Pattern<"48 85 C0 74 15 8B 80 ? ? ? ? BE 03">("GetAssistedAimTypePatch");
+		scanner.Add(getAssistedAimTypePatchPtrn, [this](PointerCalculator ptr) {
+			GetAssistedAimTypePatch = BytePatches::Add(ptr.Sub(0xE).As<void*>(), std::vector<std::uint8_t>{0xB0, 0x01, 0xC3});
+		});
+
+		constexpr auto allowPausingInSessionPatchPtrn = Pattern<"80 88 ? ? ? ? ? EB ? E8">("AllowPausingInSessionPatch");
+		scanner.Add(allowPausingInSessionPatchPtrn, [this](PointerCalculator ptr) {
+			AllowPausingInSessionPatch = BytePatches::Add(ptr.Sub(0x1E).As<std::uint8_t*>(), 0xEB);
+		});
+
+		constexpr auto openPauseMenuPtrn = Pattern<"E9 ? ? ? ? B9 30 09 09 21">("OpenPauseMenu");
+		scanner.Add(openPauseMenuPtrn, [this](PointerCalculator ptr) {
+			OpenPauseMenu = ptr.Add(1).Rip().As<PVOID>();
+		});
+
 		if (!scanner.Scan())
 		{
 			LOG(FATAL) << "Some patterns could not be found, unloading.";
@@ -375,7 +396,7 @@ namespace YimMenu
 			BytePatches::Add(ptr.As<void*>(), std::vector<std::uint8_t>{0xB0, 0x01})->Apply(); 
 		});
 
-		constexpr auto getAvatarsPtrn = Pattern<"89 4B 7C 48 8B CB E8 ? ? ? ? 84 C0">("GetAvatars");
+		constexpr auto getAvatarsPtrn = Pattern<"89 4E 7C 48 8B CE E8 ? ? ? ? 84 C0">("GetAvatars");
 		scanner.Add(getAvatarsPtrn, [this](PointerCalculator ptr) {
 			GetAvatars = ptr.Add(6).Add(1).Rip().As<Functions::GetAvatars>();
 		});

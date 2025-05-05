@@ -32,8 +32,6 @@
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\int\$(ProjectName)\</IntDir>
-    <TargetName>YimMenuV2</TargetName>
-    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -86,6 +84,7 @@
     <ClInclude Include="src\core\frontend\manager\Submenu.hpp" />
     <ClInclude Include="src\core\frontend\manager\UIItem.hpp" />
     <ClInclude Include="src\core\frontend\manager\UIManager.hpp" />
+    <ClInclude Include="src\core\frontend\widgets\imgui_bitfield.hpp" />
     <ClInclude Include="src\core\frontend\widgets\imgui_colors.h" />
     <ClInclude Include="src\core\frontend\widgets\toggle\imgui_offset_rect.hpp" />
     <ClInclude Include="src\core\frontend\widgets\toggle\imgui_toggle.hpp" />
@@ -146,6 +145,7 @@
     <ClInclude Include="src\game\frontend\submenus\Debug\Globals.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Debug\Locals.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Debug\Misc.hpp" />
+    <ClInclude Include="src\game\frontend\submenus\Debug\Scripts.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Network.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Network\RandomEvents.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Network\SavedPlayers.hpp" />
@@ -185,6 +185,8 @@
     <ClInclude Include="src\game\gta\Vehicle.hpp" />
     <ClInclude Include="src\game\gta\data\IPL.hpp" />
     <ClInclude Include="src\game\gta\data\RandomEvents.hpp" />
+    <ClInclude Include="src\game\gta\data\ScriptNames.hpp" />
+    <ClInclude Include="src\game\gta\data\StackSizes.hpp" />
     <ClInclude Include="src\game\gta\data\VehicleValues.hpp" />
     <ClInclude Include="src\game\gta\data\Weapons.hpp" />
     <ClInclude Include="src\game\gta\invoker\Crossmap.hpp" />
@@ -414,10 +416,12 @@
     <ClCompile Include="src\game\features\network\ForceScriptHost.cpp" />
     <ClCompile Include="src\game\features\network\HarassPlayers.cpp" />
     <ClCompile Include="src\game\features\network\JoinSession.cpp" />
+    <ClCompile Include="src\game\features\network\PauseGame.cpp" />
     <ClCompile Include="src\game\features\network\SpamKillfeed.cpp" />
     <ClCompile Include="src\game\features\network\SpoofMatchmakingRegion.cpp" />
     <ClCompile Include="src\game\features\players\info\Spectate.cpp" />
     <ClCompile Include="src\game\features\players\kick\FreemodeStateKick.cpp" />
+    <ClCompile Include="src\game\features\players\kick\HostKick.cpp" />
     <ClCompile Include="src\game\features\players\kick\NullFunctionKick.cpp" />
     <ClCompile Include="src\game\features\players\kick\ScriptHostKick.cpp" />
     <ClCompile Include="src\game\features\players\teleport\Bring.cpp" />
@@ -438,6 +442,7 @@
     <ClCompile Include="src\game\features\recovery\Heist\DiamondCasinoHeist.cpp" />
     <ClCompile Include="src\game\features\recovery\Heist\DoomsdayHeist.cpp" />
     <ClCompile Include="src\game\features\recovery\PlayAllMissionsSolo.cpp" />
+    <ClCompile Include="src\game\features\self\Aimbot.cpp" />
     <ClCompile Include="src\game\features\self\ClearDamage.cpp" />
     <ClCompile Include="src\game\features\self\DisableActionMode.cpp" />
     <ClCompile Include="src\game\features\self\FillInventory.cpp" />
@@ -450,6 +455,7 @@
     <ClCompile Include="src\game\features\self\InfiniteClip.cpp" />
     <ClCompile Include="src\game\features\self\InfiniteParachutes.cpp" />
     <ClCompile Include="src\game\features\self\Invis.cpp" />
+    <ClCompile Include="src\game\features\self\KeepPlayerClean.cpp" />
     <ClCompile Include="src\game\features\self\MobileRadio.cpp" />
     <ClCompile Include="src\game\features\self\NoIdleKick.cpp" />
     <ClCompile Include="src\game\features\self\NoRagdoll.cpp" />
@@ -457,6 +463,7 @@
     <ClCompile Include="src\game\features\self\OffTheRadar.cpp" />
     <ClCompile Include="src\game\features\self\OpenWardrobe.cpp" />
     <ClCompile Include="src\game\features\self\RapidFire.cpp" />
+    <ClCompile Include="src\game\features\self\SkipConversation.cpp" />
     <ClCompile Include="src\game\features\self\SkipCutscene.cpp" />
     <ClCompile Include="src\game\features\self\StandOnVehicles.cpp" />
     <ClCompile Include="src\game\features\self\Suicide.cpp" />
@@ -512,9 +519,11 @@
     <ClCompile Include="src\game\frontend\items\TabItem.cpp" />
     <ClCompile Include="src\game\frontend\items\Vector3CommandItem.cpp" />
     <ClCompile Include="src\game\frontend\submenus\Debug.cpp" />
+    <ClCompile Include="src\game\frontend\submenus\Debug\DrawVariable.cpp" />
     <ClCompile Include="src\game\frontend\submenus\Debug\Globals.cpp" />
     <ClCompile Include="src\game\frontend\submenus\Debug\Locals.cpp" />
     <ClCompile Include="src\game\frontend\submenus\Debug\Misc.cpp" />
+    <ClCompile Include="src\game\frontend\submenus\Debug\Scripts.cpp" />
     <ClCompile Include="src\game\frontend\submenus\Network.cpp" />
     <ClCompile Include="src\game\frontend\submenus\Network\RandomEvents.cpp" />
     <ClCompile Include="src\game\frontend\submenus\Network\SavedPlayers.cpp">
@@ -566,7 +575,9 @@
     <ClCompile Include="src\game\gta\ScriptGlobal.cpp" />
     <ClCompile Include="src\game\gta\ScriptLocal.cpp" />
     <ClCompile Include="src\game\gta\ScriptPointer.cpp" />
-    <ClCompile Include="src\game\gta\Scripts.cpp" />
+    <ClCompile Include="src\game\gta\Scripts.cpp">
+      <ObjectFileName>$(IntDir)\Scripts1.obj</ObjectFileName>
+    </ClCompile>
     <ClCompile Include="src\game\gta\Stats.cpp" />
     <ClCompile Include="src\game\gta\Vehicle.cpp" />
     <ClCompile Include="src\game\gta\invoker\Invoker.cpp" />
