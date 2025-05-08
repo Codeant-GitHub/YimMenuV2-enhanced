@@ -32,6 +32,8 @@
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\int\$(ProjectName)\</IntDir>
+    <TargetName>YimMenuV2</TargetName>
+    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -445,6 +447,7 @@
     <ClCompile Include="src\game\features\self\Aimbot.cpp" />
     <ClCompile Include="src\game\features\self\ClearDamage.cpp" />
     <ClCompile Include="src\game\features\self\DisableActionMode.cpp" />
+    <ClCompile Include="src\game\features\self\ExplosiveAmmo.cpp" />
     <ClCompile Include="src\game\features\self\FillInventory.cpp" />
     <ClCompile Include="src\game\features\self\FormatMoney.cpp" />
     <ClCompile Include="src\game\features\self\Freecam.cpp" />
@@ -490,11 +493,14 @@
     <ClCompile Include="src\game\features\world\Bring.cpp">
       <ObjectFileName>$(IntDir)\Bring1.obj</ObjectFileName>
     </ClCompile>
+    <ClCompile Include="src\game\features\world\CopsDispatch.cpp" />
     <ClCompile Include="src\game\features\world\Delete.cpp" />
     <ClCompile Include="src\game\features\world\IPLManager.cpp" />
     <ClCompile Include="src\game\features\world\Kill.cpp">
       <ObjectFileName>$(IntDir)\Kill1.obj</ObjectFileName>
     </ClCompile>
+    <ClCompile Include="src\game\features\world\Pedsignore.cpp" />
+    <ClCompile Include="src\game\features\world\RiotMode.cpp" />
     <ClCompile Include="src\game\features\world\Weather.cpp" />
     <ClCompile Include="src\game\frontend\ChatDisplay.cpp" />
     <ClCompile Include="src\game\frontend\ESP.cpp" />

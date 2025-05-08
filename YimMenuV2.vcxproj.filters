@@ -1396,6 +1396,9 @@
     <ClCompile Include="src\game\features\self\DisableActionMode.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\features\self\ExplosiveAmmo.cpp">
+      <Filter>game\features\self</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\features\self\FillInventory.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
@@ -1519,6 +1522,9 @@
     <ClCompile Include="src\game\features\world\Bring.cpp">
       <Filter>game\features\world</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\features\world\CopsDispatch.cpp">
+      <Filter>game\features\world</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\features\world\Delete.cpp">
       <Filter>game\features\world</Filter>
     </ClCompile>
@@ -1526,6 +1532,12 @@
       <Filter>game\features\world</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\world\Kill.cpp">
+      <Filter>game\features\world</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\world\Pedsignore.cpp">
+      <Filter>game\features\world</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\world\RiotMode.cpp">
       <Filter>game\features\world</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\world\Weather.cpp">
