@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "DrawVariable.hpp"
 #include "core/frontend/widgets/imgui_bitfield.hpp"
 #include "types/script/scrVector.hpp"

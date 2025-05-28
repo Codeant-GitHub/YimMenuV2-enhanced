@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "Troll.hpp"
 
 namespace YimMenu::Submenus

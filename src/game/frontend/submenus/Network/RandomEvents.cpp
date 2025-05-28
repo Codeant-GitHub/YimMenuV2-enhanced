@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "RandomEvents.hpp"
 #include "core/backend/FiberPool.hpp"
 #include "core/backend/ScriptMgr.hpp"

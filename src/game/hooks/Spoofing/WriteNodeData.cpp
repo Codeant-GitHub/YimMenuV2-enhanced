@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "core/commands/BoolCommand.hpp"
 #include "core/hooking/DetourHook.hpp"
 #include "game/backend/NodeHooks.hpp"

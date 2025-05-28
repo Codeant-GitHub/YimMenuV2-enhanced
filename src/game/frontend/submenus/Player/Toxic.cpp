@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "Toxic.hpp"
 
 namespace YimMenu::Submenus

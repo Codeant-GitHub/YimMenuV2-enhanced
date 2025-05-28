@@ -124,6 +124,9 @@
     <Filter Include="game\frontend\submenus\Recovery\Heist">
       <UniqueIdentifier>{F94A0797-650F-0687-2E75-36519AF8A1BC}</UniqueIdentifier>
     </Filter>
+    <Filter Include="game\frontend\submenus\Vehicle">
+      <UniqueIdentifier>{7E1FFC98-6A45-C6FF-538B-4BCB3F50EBCB}</UniqueIdentifier>
+    </Filter>
     <Filter Include="game\gta">
       <UniqueIdentifier>{6A7882BA-5645-DDC5-7F5E-CB6D6B8A1254}</UniqueIdentifier>
     </Filter>
@@ -469,8 +472,8 @@
     <ClInclude Include="src\game\commands\PlayerCommand.hpp">
       <Filter>game\commands</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\features\recovery\GiveVehicleReward.hpp">
-      <Filter>game\features\recovery</Filter>
+    <ClInclude Include="src\game\features\vehicle\SavePersonalVehicle.hpp">
+      <Filter>game\features\vehicle</Filter>
     </ClInclude>
     <ClInclude Include="src\game\frontend\ChatDisplay.hpp">
       <Filter>game\frontend</Filter>
@@ -520,6 +523,9 @@
     <ClInclude Include="src\game\frontend\submenus\Network\SavedPlayers.hpp">
       <Filter>game\frontend\submenus\Network</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\frontend\submenus\OutfitEditor.hpp">
+      <Filter>game\frontend\submenus</Filter>
+    </ClInclude>
     <ClInclude Include="src\game\frontend\submenus\Player\Info.hpp">
       <Filter>game\frontend\submenus\Player</Filter>
     </ClInclude>
@@ -567,6 +573,12 @@
     </ClInclude>
     <ClInclude Include="src\game\frontend\submenus\Teleport.hpp">
       <Filter>game\frontend\submenus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\frontend\submenus\Vehicle.hpp">
+      <Filter>game\frontend\submenus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\frontend\submenus\Vehicle\SpawnVehicle.hpp">
+      <Filter>game\frontend\submenus\Vehicle</Filter>
     </ClInclude>
     <ClInclude Include="src\game\frontend\submenus\World.hpp">
       <Filter>game\frontend\submenus</Filter>
@@ -635,6 +647,9 @@
       <Filter>game\gta\data</Filter>
     </ClInclude>
     <ClInclude Include="src\game\gta\data\VehicleValues.hpp">
+      <Filter>game\gta\data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\gta\data\Vehicles.hpp">
       <Filter>game\gta\data</Filter>
     </ClInclude>
     <ClInclude Include="src\game\gta\data\Weapons.hpp">
@@ -1063,6 +1078,9 @@
     <ClInclude Include="src\types\script\globals\GlobalPlayerBD.hpp">
       <Filter>types\script\globals</Filter>
     </ClInclude>
+    <ClInclude Include="src\types\script\globals\MPSV.hpp">
+      <Filter>types\script\globals</Filter>
+    </ClInclude>
     <ClInclude Include="src\types\script\globals\g_AMC_playerBD.hpp">
       <Filter>types\script\globals</Filter>
     </ClInclude>
@@ -1115,6 +1133,9 @@
       <Filter>types\socialclub</Filter>
     </ClInclude>
     <ClInclude Include="src\types\stats\CStatsMgr.hpp">
+      <Filter>types\stats</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types\stats\CStatsMpCharacterMappingData.hpp">
       <Filter>types\stats</Filter>
     </ClInclude>
     <ClInclude Include="src\types\stats\sStatData.hpp">
@@ -1294,6 +1315,9 @@
     <ClCompile Include="src\game\features\network\BypassCasinoRestrictions.cpp">
       <Filter>game\features\network</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\features\network\CheaterPool.cpp">
+      <Filter>game\features\network</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\features\network\DisableDeathBarriers.cpp">
       <Filter>game\features\network</Filter>
     </ClCompile>
@@ -1363,13 +1387,10 @@
     <ClCompile Include="src\game\features\players\troll\SetBounty.cpp">
       <Filter>game\features\players\troll</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\features\recovery\DLCVehicles.cpp">
+    <ClCompile Include="src\game\features\recovery\Casino.cpp">
       <Filter>game\features\recovery</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\recovery\ForceLaunchHeist.cpp">
-      <Filter>game\features\recovery</Filter>
-    </ClCompile>
-    <ClCompile Include="src\game\features\recovery\GiveVehicleReward.cpp">
       <Filter>game\features\recovery</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\recovery\Heist\ApartmentHeist.cpp">
@@ -1385,6 +1406,9 @@
       <Filter>game\features\recovery\Heist</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\recovery\PlayAllMissionsSolo.cpp">
+      <Filter>game\features\recovery</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\recovery\RpMultiplier.cpp">
       <Filter>game\features\recovery</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\self\Aimbot.cpp">
@@ -1409,6 +1433,9 @@
       <Filter>game\features\self</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\self\GiveAllWeapons.cpp">
+      <Filter>game\features\self</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\self\GiveMaxAmmo.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\self\Godmode.cpp">
@@ -1492,10 +1519,19 @@
     <ClCompile Include="src\game\features\vehicle\AllowHatsInVehicles.cpp">
       <Filter>game\features\vehicle</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\features\vehicle\CallMechanic.cpp">
+      <Filter>game\features\vehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\vehicle\DLCVehicles.cpp">
+      <Filter>game\features\vehicle</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\features\vehicle\EnterLast.cpp">
       <Filter>game\features\vehicle</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\vehicle\Fix.cpp">
+      <Filter>game\features\vehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\vehicle\FixAllVehicles.cpp">
       <Filter>game\features\vehicle</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\vehicle\Godmode.cpp">
@@ -1510,10 +1546,10 @@
     <ClCompile Include="src\game\features\vehicle\RocketBoost.cpp">
       <Filter>game\features\vehicle</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\features\vehicle\Seatbelt.cpp">
+    <ClCompile Include="src\game\features\vehicle\SavePersonalVehicle.cpp">
       <Filter>game\features\vehicle</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\features\vehicle\Spawn.cpp">
+    <ClCompile Include="src\game\features\vehicle\Seatbelt.cpp">
       <Filter>game\features\vehicle</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\vehicle\Speedometer.cpp">
@@ -1538,6 +1574,12 @@
       <Filter>game\features\world</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\world\RiotMode.cpp">
+      <Filter>game\features\world</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\world\Spawn.cpp">
+      <Filter>game\features\world</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\world\TimeControl.cpp">
       <Filter>game\features\world</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\world\Weather.cpp">
@@ -1636,6 +1678,9 @@
     <ClCompile Include="src\game\frontend\submenus\Network\SavedPlayers.cpp">
       <Filter>game\frontend\submenus\Network</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\OutfitEditor.cpp">
+      <Filter>game\frontend\submenus</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\frontend\submenus\Player\Info.cpp">
       <Filter>game\frontend\submenus\Player</Filter>
     </ClCompile>
@@ -1683,6 +1728,12 @@
     </ClCompile>
     <ClCompile Include="src\game\frontend\submenus\Teleport.cpp">
       <Filter>game\frontend\submenus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\Vehicle.cpp">
+      <Filter>game\frontend\submenus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\Vehicle\SpawnVehicle.cpp">
+      <Filter>game\frontend\submenus\Vehicle</Filter>
     </ClCompile>
     <ClCompile Include="src\game\frontend\submenus\World.cpp">
       <Filter>game\frontend\submenus</Filter>
@@ -1824,6 +1875,9 @@
       <Filter>types\script</Filter>
     </ClCompile>
     <ClCompile Include="src\types\stats\CStatsMgr.cpp">
+      <Filter>types\stats</Filter>
+    </ClCompile>
+    <ClCompile Include="src\types\stats\CStatsMpCharacterMappingData.cpp">
       <Filter>types\stats</Filter>
     </ClCompile>
   </ItemGroup>

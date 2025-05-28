@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "core/hooking/DetourHook.hpp"
 #include "core/renderer/Renderer.hpp"
 #include "game/hooks/Hooks.hpp"

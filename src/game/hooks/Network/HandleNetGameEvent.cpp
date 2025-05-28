@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "core/util/Joaat.hpp"
 #include "game/backend/Self.hpp"
 #include "game/gta/Natives.hpp"

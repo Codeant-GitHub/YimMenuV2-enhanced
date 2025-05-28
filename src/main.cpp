@@ -1,6 +1,5 @@
 #pragma once
 #include "common.hpp"
-
 #include "core/backend/ScriptMgr.hpp"
 #include "core/backend/FiberPool.hpp"
 #include "core/commands/Commands.hpp"
@@ -22,7 +21,7 @@
 #include "game/backend/ScriptPointers.hpp"
 #include "game/frontend/GUI.hpp"
 #include "game/pointers/Pointers.hpp"
-#include "game/features/recovery/GiveVehicleReward.hpp"
+#include "game/features/vehicle/SavePersonalVehicle.hpp"
 
 namespace YimMenu
 {
@@ -65,7 +64,7 @@ namespace YimMenu
 		FiberPool::Init(16);
 		ScriptMgr::AddScript(std::make_unique<Script>(&HotkeySystem::RunScript));
 		ScriptMgr::AddScript(std::make_unique<Script>(&Commands::RunScript));
-		ScriptMgr::AddScript(std::make_unique<Script>(&GiveVehicleReward::RunScript));
+		ScriptMgr::AddScript(std::make_unique<Script>(&Features::SavePersonalVehicle::RunScript));
 		ScriptMgr::AddScript(std::make_unique<Script>(&SavedPlayers::RunScript));
 
 		if (!Pointers.LateInit())

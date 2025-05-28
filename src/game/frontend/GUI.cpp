@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "GUI.hpp"
 #include "Menu.hpp"
 #include "ESP.hpp"

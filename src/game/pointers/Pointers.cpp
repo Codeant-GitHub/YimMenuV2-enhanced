@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "Pointers.hpp"
 
 #include "core/backend/PatternCache.hpp"
@@ -351,9 +348,25 @@ namespace YimMenu
 			AllowPausingInSessionPatch = BytePatches::Add(ptr.Sub(0x1E).As<std::uint8_t*>(), 0xEB);
 		});
 
-		constexpr auto openPauseMenuPtrn = Pattern<"E9 ? ? ? ? B9 30 09 09 21">("OpenPauseMenu");
-		scanner.Add(openPauseMenuPtrn, [this](PointerCalculator ptr) {
-			OpenPauseMenu = ptr.Add(1).Rip().As<PVOID>();
+		constexpr auto getPoolTypePtrn = Pattern<"BA CE 94 A6 ED E8">("GetPoolType");
+		scanner.Add(getPoolTypePtrn, [this](PointerCalculator ptr) {
+			GetPoolType = ptr.Sub(19).As<PVOID>();
+		});
+
+		constexpr auto setJoinRequestPoolTypePatchPtrn = Pattern<"89 86 ? ? ? ? E8 ? ? ? ? 89 C0">("SetJoinRequestPoolTypePatch");
+		scanner.Add(setJoinRequestPoolTypePatchPtrn, [this](PointerCalculator ptr) {
+			// MOV EAX, 0; 0 is the normal pool
+			SetJoinRequestPoolTypePatch = BytePatches::Add(ptr.Sub(5).As<std::uint8_t*>(), std::to_array<std::uint8_t>({0xB8, 0x00, 0x00, 0x00, 0x00}));
+		});
+
+		constexpr auto handleJoinRequestIgnorePoolPatchPtrn = Pattern<"41 83 FF 05 ? 30 43">("HandleJoinRequestIgnorePoolPatch");
+		scanner.Add(handleJoinRequestIgnorePoolPatchPtrn, [this](PointerCalculator ptr) {
+			HandleJoinRequestIgnorePoolPatch = BytePatches::Add(ptr.Add(4).As<std::uint8_t*>(), 0xEB);
+		});
+
+		constexpr auto statsMpCharacterMappingDataPtrn = Pattern<"48 8D 0D ? ? ? ? 89 F2 0F 28 74 24 ? 48 83 C4 38">("CStatsMpCharacterMappingData");
+		scanner.Add(statsMpCharacterMappingDataPtrn, [this](PointerCalculator ptr) {
+			StatsMpCharacterMappingData = ptr.Add(3).Rip().As<CStatsMpCharacterMappingData*>();
 		});
 
 		if (!scanner.Scan())
@@ -376,6 +389,7 @@ namespace YimMenu
 
 			if (IsSocialClubNeverGoingToLoad())
 			{
+				LOG(WARNING) << "Timed out checking for socialclub.dll";
 				return false;
 			}
 

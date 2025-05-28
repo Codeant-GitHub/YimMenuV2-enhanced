@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "core/commands/Command.hpp"
 #include "core/commands/ListCommand.hpp"
 #include "core/commands/LoopedCommand.hpp"

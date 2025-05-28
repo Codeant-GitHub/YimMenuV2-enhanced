@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "ESP.hpp"
 
 #include "common.hpp"

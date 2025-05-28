@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "Items.hpp"
 #include "core/commands/ColorCommand.hpp"
 #include "core/commands/Command.hpp"

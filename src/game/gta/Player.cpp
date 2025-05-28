@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "Player.hpp"
 
 #include "Natives.hpp"

@@ -15,11 +15,11 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -32,8 +32,6 @@
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\int\$(ProjectName)\</IntDir>
-    <TargetName>YimMenuV2</TargetName>
-    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -57,7 +55,6 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>$(SolutionDir)lib\minhook.x64.lib;$(SolutionDir)lib\AsyncLogger.lib;$(SolutionDir)lib\imgui.lib;$(SolutionDir)lib\fmtlib.lib;dbghelp.lib;d3dcompiler.lib;dwmapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -134,7 +131,7 @@
     <ClInclude Include="src\game\backend\Self.hpp" />
     <ClInclude Include="src\game\backend\Tunables.hpp" />
     <ClInclude Include="src\game\commands\PlayerCommand.hpp" />
-    <ClInclude Include="src\game\features\recovery\GiveVehicleReward.hpp" />
+    <ClInclude Include="src\game\features\vehicle\SavePersonalVehicle.hpp" />
     <ClInclude Include="src\game\frontend\ChatDisplay.hpp" />
     <ClInclude Include="src\game\frontend\ESP.hpp" />
     <ClInclude Include="src\game\frontend\GUI.hpp" />
@@ -151,6 +148,7 @@
     <ClInclude Include="src\game\frontend\submenus\Network.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Network\RandomEvents.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Network\SavedPlayers.hpp" />
+    <ClInclude Include="src\game\frontend\submenus\OutfitEditor.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Player\Info.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Player\Kick.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Player\Toxic.hpp" />
@@ -167,6 +165,8 @@
     <ClInclude Include="src\game\frontend\submenus\Self.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Settings.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Teleport.hpp" />
+    <ClInclude Include="src\game\frontend\submenus\Vehicle.hpp" />
+    <ClInclude Include="src\game\frontend\submenus\Vehicle\SpawnVehicle.hpp" />
     <ClInclude Include="src\game\frontend\submenus\World.hpp" />
     <ClInclude Include="src\game\gta\Entity.hpp" />
     <ClInclude Include="src\game\gta\Natives.hpp" />
@@ -190,6 +190,7 @@
     <ClInclude Include="src\game\gta\data\ScriptNames.hpp" />
     <ClInclude Include="src\game\gta\data\StackSizes.hpp" />
     <ClInclude Include="src\game\gta\data\VehicleValues.hpp" />
+    <ClInclude Include="src\game\gta\data\Vehicles.hpp" />
     <ClInclude Include="src\game\gta\data\Weapons.hpp" />
     <ClInclude Include="src\game\gta\invoker\Crossmap.hpp" />
     <ClInclude Include="src\game\gta\invoker\Invoker.hpp" />
@@ -332,6 +333,7 @@
     <ClInclude Include="src\types\script\globals\GSBD_PropertyInstances.hpp" />
     <ClInclude Include="src\types\script\globals\GSBD_RandomEvents.hpp" />
     <ClInclude Include="src\types\script\globals\GlobalPlayerBD.hpp" />
+    <ClInclude Include="src\types\script\globals\MPSV.hpp" />
     <ClInclude Include="src\types\script\globals\g_AMC_playerBD.hpp" />
     <ClInclude Include="src\types\script\locals\FMRandomEvents.hpp" />
     <ClInclude Include="src\types\script\locals\VehicleRewardData.hpp" />
@@ -350,6 +352,7 @@
     <ClInclude Include="src\types\socialclub\rlScGamerHandle.hpp" />
     <ClInclude Include="src\types\socialclub\rlScTaskStatus.hpp" />
     <ClInclude Include="src\types\stats\CStatsMgr.hpp" />
+    <ClInclude Include="src\types\stats\CStatsMpCharacterMappingData.hpp" />
     <ClInclude Include="src\types\stats\sStatData.hpp" />
     <ClInclude Include="src\types\vehicle\fwVehiclePool.hpp" />
   </ItemGroup>
@@ -413,6 +416,7 @@
     <ClCompile Include="src\game\backend\Tunables.cpp" />
     <ClCompile Include="src\game\commands\PlayerCommand.cpp" />
     <ClCompile Include="src\game\features\network\BypassCasinoRestrictions.cpp" />
+    <ClCompile Include="src\game\features\network\CheaterPool.cpp" />
     <ClCompile Include="src\game\features\network\DisableDeathBarriers.cpp" />
     <ClCompile Include="src\game\features\network\FastJoin.cpp" />
     <ClCompile Include="src\game\features\network\ForceScriptHost.cpp" />
@@ -436,14 +440,14 @@
     <ClCompile Include="src\game\features\players\troll\DeleteVehicle.cpp" />
     <ClCompile Include="src\game\features\players\troll\SendSext.cpp" />
     <ClCompile Include="src\game\features\players\troll\SetBounty.cpp" />
-    <ClCompile Include="src\game\features\recovery\DLCVehicles.cpp" />
+    <ClCompile Include="src\game\features\recovery\Casino.cpp" />
     <ClCompile Include="src\game\features\recovery\ForceLaunchHeist.cpp" />
-    <ClCompile Include="src\game\features\recovery\GiveVehicleReward.cpp" />
     <ClCompile Include="src\game\features\recovery\Heist\ApartmentHeist.cpp" />
     <ClCompile Include="src\game\features\recovery\Heist\CayoPericoHeist.cpp" />
     <ClCompile Include="src\game\features\recovery\Heist\DiamondCasinoHeist.cpp" />
     <ClCompile Include="src\game\features\recovery\Heist\DoomsdayHeist.cpp" />
     <ClCompile Include="src\game\features\recovery\PlayAllMissionsSolo.cpp" />
+    <ClCompile Include="src\game\features\recovery\RpMultiplier.cpp" />
     <ClCompile Include="src\game\features\self\Aimbot.cpp" />
     <ClCompile Include="src\game\features\self\ClearDamage.cpp" />
     <ClCompile Include="src\game\features\self\DisableActionMode.cpp" />
@@ -452,6 +456,7 @@
     <ClCompile Include="src\game\features\self\FormatMoney.cpp" />
     <ClCompile Include="src\game\features\self\Freecam.cpp" />
     <ClCompile Include="src\game\features\self\GiveAllWeapons.cpp" />
+    <ClCompile Include="src\game\features\self\GiveMaxAmmo.cpp" />
     <ClCompile Include="src\game\features\self\Godmode.cpp" />
     <ClCompile Include="src\game\features\self\Heal.cpp" />
     <ClCompile Include="src\game\features\self\InfiniteAmmo.cpp" />
@@ -479,16 +484,19 @@
     <ClCompile Include="src\game\features\system\LSCCustomsBypass.cpp" />
     <ClCompile Include="src\game\features\teleport\TpToWaypoint.cpp" />
     <ClCompile Include="src\game\features\vehicle\AllowHatsInVehicles.cpp" />
+    <ClCompile Include="src\game\features\vehicle\CallMechanic.cpp" />
+    <ClCompile Include="src\game\features\vehicle\DLCVehicles.cpp" />
     <ClCompile Include="src\game\features\vehicle\EnterLast.cpp" />
     <ClCompile Include="src\game\features\vehicle\Fix.cpp" />
+    <ClCompile Include="src\game\features\vehicle\FixAllVehicles.cpp" />
     <ClCompile Include="src\game\features\vehicle\Godmode.cpp">
       <ObjectFileName>$(IntDir)\Godmode1.obj</ObjectFileName>
     </ClCompile>
     <ClCompile Include="src\game\features\vehicle\HornBoost.cpp" />
     <ClCompile Include="src\game\features\vehicle\KeepFixed.cpp" />
     <ClCompile Include="src\game\features\vehicle\RocketBoost.cpp" />
+    <ClCompile Include="src\game\features\vehicle\SavePersonalVehicle.cpp" />
     <ClCompile Include="src\game\features\vehicle\Seatbelt.cpp" />
-    <ClCompile Include="src\game\features\vehicle\Spawn.cpp" />
     <ClCompile Include="src\game\features\vehicle\Speedometer.cpp" />
     <ClCompile Include="src\game\features\world\Bring.cpp">
       <ObjectFileName>$(IntDir)\Bring1.obj</ObjectFileName>
@@ -501,6 +509,8 @@
     </ClCompile>
     <ClCompile Include="src\game\features\world\Pedsignore.cpp" />
     <ClCompile Include="src\game\features\world\RiotMode.cpp" />
+    <ClCompile Include="src\game\features\world\Spawn.cpp" />
+    <ClCompile Include="src\game\features\world\TimeControl.cpp" />
     <ClCompile Include="src\game\features\world\Weather.cpp" />
     <ClCompile Include="src\game\frontend\ChatDisplay.cpp" />
     <ClCompile Include="src\game\frontend\ESP.cpp" />
@@ -535,6 +545,7 @@
     <ClCompile Include="src\game\frontend\submenus\Network\SavedPlayers.cpp">
       <ObjectFileName>$(IntDir)\SavedPlayers1.obj</ObjectFileName>
     </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\OutfitEditor.cpp" />
     <ClCompile Include="src\game\frontend\submenus\Player\Info.cpp" />
     <ClCompile Include="src\game\frontend\submenus\Player\Kick.cpp" />
     <ClCompile Include="src\game\frontend\submenus\Player\Toxic.cpp" />
@@ -565,6 +576,8 @@
       <ObjectFileName>$(IntDir)\Settings1.obj</ObjectFileName>
     </ClCompile>
     <ClCompile Include="src\game\frontend\submenus\Teleport.cpp" />
+    <ClCompile Include="src\game\frontend\submenus\Vehicle.cpp" />
+    <ClCompile Include="src\game\frontend\submenus\Vehicle\SpawnVehicle.cpp" />
     <ClCompile Include="src\game\frontend\submenus\World.cpp" />
     <ClCompile Include="src\game\gta\Entity.cpp" />
     <ClCompile Include="src\game\gta\Network.cpp">
@@ -585,7 +598,9 @@
       <ObjectFileName>$(IntDir)\Scripts1.obj</ObjectFileName>
     </ClCompile>
     <ClCompile Include="src\game\gta\Stats.cpp" />
-    <ClCompile Include="src\game\gta\Vehicle.cpp" />
+    <ClCompile Include="src\game\gta\Vehicle.cpp">
+      <ObjectFileName>$(IntDir)\Vehicle1.obj</ObjectFileName>
+    </ClCompile>
     <ClCompile Include="src\game\gta\invoker\Invoker.cpp" />
     <ClCompile Include="src\game\hooks\Anticheat\GetThreadContext.cpp" />
     <ClCompile Include="src\game\hooks\Anticheat\HttpStartRequest.cpp" />
@@ -621,6 +636,7 @@
     </ClCompile>
     <ClCompile Include="src\types\script\scrThread.cpp" />
     <ClCompile Include="src\types\stats\CStatsMgr.cpp" />
+    <ClCompile Include="src\types\stats\CStatsMpCharacterMappingData.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

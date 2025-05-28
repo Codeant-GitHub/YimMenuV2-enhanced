@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "StatEditor.hpp"
 #include "core/backend/FiberPool.hpp"
 #include "core/backend/ScriptMgr.hpp"
@@ -514,8 +511,8 @@ namespace YimMenu::Submenus
 			if (!NativeInvoker::AreHandlersCached())
 				return ImGui::TextDisabled("Natives not cached yet");
 
-			if (AnticheatBypass::IsFSLLoaded())
-				return ImGui::TextDisabled("FSL does not support transactions");
+			if (AnticheatBypass::IsFSLProvidingLocalSaves())
+				return ImGui::TextDisabled("Transactions are not supported with FSL local saves enabled");
 
 			if (!NETSHOPPING::NET_GAMESERVER_CATALOG_IS_VALID())
 				return ImGui::TextDisabled("Catalog not loaded yet");

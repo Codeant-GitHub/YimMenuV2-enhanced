@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "Packet.hpp"
 
 #include "game/pointers/Pointers.hpp"

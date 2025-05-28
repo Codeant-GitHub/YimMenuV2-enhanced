@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "Invoker.hpp"
 
 #include "Crossmap.hpp"

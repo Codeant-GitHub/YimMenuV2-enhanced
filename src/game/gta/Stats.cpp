@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "Stats.hpp"
 #include "game/gta/Natives.hpp"
 

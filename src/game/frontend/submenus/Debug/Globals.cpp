@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "Globals.hpp"
 #include "DrawVariable.hpp"
 

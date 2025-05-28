@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "CStatsMgr.hpp"
 
 sStatData* CStatsMgr::GetStat(std::uint32_t stat)

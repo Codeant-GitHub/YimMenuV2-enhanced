@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "Locals.hpp"
 #include "DrawVariable.hpp"
 #include "game/gta/Scripts.hpp"

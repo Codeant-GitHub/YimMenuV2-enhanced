@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "Teleport.hpp"
 
 #include "core/frontend/Notifications.hpp"

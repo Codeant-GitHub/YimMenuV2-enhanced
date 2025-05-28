@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "Vehicle.hpp"
 #include "Natives.hpp"
 #include "core/backend/ScriptMgr.hpp"

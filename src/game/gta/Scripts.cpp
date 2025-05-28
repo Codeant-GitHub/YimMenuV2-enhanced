@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "Scripts.hpp"
 #include "game/pointers/Pointers.hpp"
 #include "types/rage/atArray.hpp"

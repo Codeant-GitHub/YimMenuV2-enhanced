@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "Ped.hpp"
 
 #include "Natives.hpp"
@@ -162,7 +159,7 @@ namespace YimMenu
 		ENTITY_ASSERT_VALID();
 		ENTITY_ASSERT_CONTROL();
 
-		WEAPON::SET_PED_INFINITE_AMMO(GetHandle(), infinite, NULL);
+		WEAPON::SET_PED_INFINITE_AMMO(GetHandle(), infinite, 0);
 	}
 
 	void Ped::SetInfiniteClip(bool infinite)
@@ -238,5 +235,12 @@ namespace YimMenu
 	{
 		ENTITY_ASSERT_VALID();
 		PED::SET_PED_MAX_TIME_UNDERWATER(GetHandle(), time);
+	}
+
+	void Ped::SetMaxAmmoForWeapon(std::uint32_t hash)
+	{
+		int maxAmmo;
+		WEAPON::GET_MAX_AMMO(GetHandle(), hash, &maxAmmo);
+		WEAPON::SET_PED_AMMO(GetHandle(), hash, maxAmmo, 0);
 	}
 }

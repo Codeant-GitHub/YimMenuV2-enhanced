@@ -1,6 +1,3 @@
-#pragma once
-#include "common.hpp"
-
 #include "../rage/datBitBuffer.hpp"
 #include "rlGamerHandle.hpp"
 
