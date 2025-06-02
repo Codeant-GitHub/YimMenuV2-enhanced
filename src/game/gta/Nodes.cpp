@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "Nodes.hpp"
 #include "game/pointers/Pointers.hpp"
 #include "types/network/sync/netSyncTree.hpp"

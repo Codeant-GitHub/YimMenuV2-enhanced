@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "CGameScriptId.hpp"
 #include "types/rage/datBitBuffer.hpp"
 

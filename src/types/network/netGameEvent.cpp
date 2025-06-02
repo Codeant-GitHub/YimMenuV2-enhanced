@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "netGameEvent.hpp"
 #include "types/fx/ExplosionType.hpp"
 #include "types/rage/datBitBuffer.hpp"

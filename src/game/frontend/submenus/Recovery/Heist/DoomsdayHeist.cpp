@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "DoomsdayHeist.hpp"
 
 namespace YimMenu::Submenus

@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "Ped.hpp"
 
 #include "Natives.hpp"

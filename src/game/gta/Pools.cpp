@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "Pools.hpp"
 
 #include "game/pointers/Pointers.hpp"

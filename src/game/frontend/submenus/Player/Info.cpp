@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "Info.hpp"
 
 #include "core/frontend/Notifications.hpp"

@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "game/pointers/Pointers.hpp"
 #include "ScriptGlobal.hpp"
 

@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "DrawVariable.hpp"
 #include "Locals.hpp"
 #include "core/filemgr/FileMgr.hpp"

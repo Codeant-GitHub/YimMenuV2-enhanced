@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "core/hooking/DetourHook.hpp"
 #include "game/hooks/Hooks.hpp"
 #include "game/backend/ScriptPatches.hpp"

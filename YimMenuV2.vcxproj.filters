@@ -124,6 +124,9 @@
     <Filter Include="game\frontend\submenus\Recovery\Heist">
       <UniqueIdentifier>{F94A0797-650F-0687-2E75-36519AF8A1BC}</UniqueIdentifier>
     </Filter>
+    <Filter Include="game\frontend\submenus\Self">
+      <UniqueIdentifier>{A8335F3E-1441-8D24-9D27-890F093459DB}</UniqueIdentifier>
+    </Filter>
     <Filter Include="game\frontend\submenus\Vehicle">
       <UniqueIdentifier>{7E1FFC98-6A45-C6FF-538B-4BCB3F50EBCB}</UniqueIdentifier>
     </Filter>
@@ -472,6 +475,9 @@
     <ClInclude Include="src\game\commands\PlayerCommand.hpp">
       <Filter>game\commands</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\features\self\OpenGunLocker.hpp">
+      <Filter>game\features\self</Filter>
+    </ClInclude>
     <ClInclude Include="src\game\features\vehicle\SavePersonalVehicle.hpp">
       <Filter>game\features\vehicle</Filter>
     </ClInclude>
@@ -567,6 +573,9 @@
     </ClInclude>
     <ClInclude Include="src\game\frontend\submenus\Self.hpp">
       <Filter>game\frontend\submenus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\frontend\submenus\Self\Weapons.hpp">
+      <Filter>game\frontend\submenus\Self</Filter>
     </ClInclude>
     <ClInclude Include="src\game\frontend\submenus\Settings.hpp">
       <Filter>game\frontend\submenus</Filter>
@@ -1039,6 +1048,9 @@
     <ClInclude Include="src\types\script\Timer.hpp">
       <Filter>types\script</Filter>
     </ClInclude>
+    <ClInclude Include="src\types\script\globals\FreemodeGeneral.hpp">
+      <Filter>types\script\globals</Filter>
+    </ClInclude>
     <ClInclude Include="src\types\script\globals\GPBD_FM.hpp">
       <Filter>types\script\globals</Filter>
     </ClInclude>
@@ -1082,6 +1094,9 @@
       <Filter>types\script\globals</Filter>
     </ClInclude>
     <ClInclude Include="src\types\script\globals\g_AMC_playerBD.hpp">
+      <Filter>types\script\globals</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types\script\globals\g_SavedMPGlobals.hpp">
       <Filter>types\script\globals</Filter>
     </ClInclude>
     <ClInclude Include="src\types\script\locals\FMRandomEvents.hpp">
@@ -1390,6 +1405,9 @@
     <ClCompile Include="src\game\features\recovery\Casino.cpp">
       <Filter>game\features\recovery</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\features\recovery\ClaimSafeEarnings.cpp">
+      <Filter>game\features\recovery</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\features\recovery\ForceLaunchHeist.cpp">
       <Filter>game\features\recovery</Filter>
     </ClCompile>
@@ -1472,6 +1490,9 @@
       <Filter>game\features\self</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\self\OffTheRadar.cpp">
+      <Filter>game\features\self</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\self\OpenGunLocker.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\self\OpenWardrobe.cpp">
@@ -1722,6 +1743,9 @@
     </ClCompile>
     <ClCompile Include="src\game\frontend\submenus\Self.cpp">
       <Filter>game\frontend\submenus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\Self\Weapons.cpp">
+      <Filter>game\frontend\submenus\Self</Filter>
     </ClCompile>
     <ClCompile Include="src\game\frontend\submenus\Settings.cpp">
       <Filter>game\frontend\submenus</Filter>

@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "Fonts.hpp"
 
 namespace YimMenu::Fonts

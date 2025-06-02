@@ -1,7 +1,6 @@
 #pragma once
 #include "common.hpp"
 
-#include "common.hpp"
 #include "core/backend/ScriptMgr.hpp"
 #include "core/backend/FiberPool.hpp"
 #include "core/commands/Commands.hpp"
@@ -24,6 +23,7 @@
 #include "game/frontend/GUI.hpp"
 #include "game/pointers/Pointers.hpp"
 #include "game/features/vehicle/SavePersonalVehicle.hpp"
+#include "game/features/self/OpenGunLocker.hpp"
 
 namespace YimMenu
 {
@@ -40,6 +40,9 @@ namespace YimMenu
 
 		if (!ModuleMgr.LoadModules())
 			goto EARLY_UNLOAD;
+
+		if (ModuleMgr.IsManualMapped())
+			LOGF(WARNING, "Manual mapping detected, switch to normal injection if you're having issues");
 
 		if (!Pointers.Init())
 			goto EARLY_UNLOAD;
@@ -67,6 +70,7 @@ namespace YimMenu
 		ScriptMgr::AddScript(std::make_unique<Script>(&HotkeySystem::RunScript));
 		ScriptMgr::AddScript(std::make_unique<Script>(&Commands::RunScript));
 		ScriptMgr::AddScript(std::make_unique<Script>(&Features::SavePersonalVehicle::RunScript));
+		ScriptMgr::AddScript(std::make_unique<Script>(&Features::OpenGunLocker::RunScript));
 		ScriptMgr::AddScript(std::make_unique<Script>(&SavedPlayers::RunScript));
 
 		if (!Pointers.LateInit())
@@ -102,8 +106,9 @@ EARLY_UNLOAD:
 BOOL WINAPI DllMain(HINSTANCE dllInstance, DWORD reason, void*)
 {
 	using namespace YimMenu;
-
-	DisableThreadLibraryCalls(dllInstance);
+	
+	if (dllInstance)
+		DisableThreadLibraryCalls(dllInstance);
 
 	if (reason == DLL_PROCESS_ATTACH)
 	{

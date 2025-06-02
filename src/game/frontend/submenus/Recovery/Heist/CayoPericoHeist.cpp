@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "CayoPericoHeist.hpp"
 
 namespace YimMenu::Submenus

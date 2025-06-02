@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "Debug.hpp"
 
 #include "Debug/Misc.hpp"

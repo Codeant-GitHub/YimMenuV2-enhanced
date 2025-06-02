@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "scrThread.hpp"
 #include "types/rage/tlsContext.hpp"
 

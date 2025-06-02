@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "Pointers.hpp"
 
 #include "core/backend/PatternCache.hpp"

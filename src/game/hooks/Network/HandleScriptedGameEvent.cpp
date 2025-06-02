@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "game/backend/Self.hpp"
 #include "game/hooks/Hooks.hpp"
 #include "game/pointers/Pointers.hpp"

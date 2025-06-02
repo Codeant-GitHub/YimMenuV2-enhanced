@@ -13,7 +13,7 @@ namespace YimMenu::Features
 
 		virtual void OnCall() override
 		{
-			for (auto weapon : Data::Weapons)
+			for (auto weapon : g_WeaponHashes)
 			{
 				Self::GetPed().SetMaxAmmoForWeapon(weapon);
 			}

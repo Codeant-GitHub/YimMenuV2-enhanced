@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "ScriptEvent.hpp"
 #include "game/gta/Natives.hpp"
 

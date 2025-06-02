@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "OutfitEditor.hpp"
 
 #include "core/frontend/manager/UIManager.hpp"

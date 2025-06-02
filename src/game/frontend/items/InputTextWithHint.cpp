@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "Items.hpp"
 #include "misc/cpp/imgui_stdlib.h"
 

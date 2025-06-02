@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "Items.hpp"
 
 namespace YimMenu

@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "Network.hpp"
 #include "core/backend/ScriptMgr.hpp"
 #include "core/frontend/Notifications.hpp"

@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "DiamondCasinoHeist.hpp"
 
 namespace YimMenu::Submenus

@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "SpawnVehicle.hpp"
 #include "core/backend/ScriptMgr.hpp"
 #include "core/backend/FiberPool.hpp"

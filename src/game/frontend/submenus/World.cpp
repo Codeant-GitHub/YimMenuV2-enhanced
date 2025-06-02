@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "World.hpp"
 #include "game/frontend/items/Items.hpp"
 

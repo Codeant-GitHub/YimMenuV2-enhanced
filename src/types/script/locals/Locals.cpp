@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "FMRandomEvents.hpp"
 #include "VehicleRewardData.hpp"
 #include "game/gta/ScriptLocal.hpp"

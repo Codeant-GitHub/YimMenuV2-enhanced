@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "StatEditor.hpp"
 #include "core/backend/FiberPool.hpp"
 #include "game/backend/AnticheatBypass.hpp"

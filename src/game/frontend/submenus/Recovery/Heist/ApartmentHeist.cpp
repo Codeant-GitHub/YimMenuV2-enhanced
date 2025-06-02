@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "ApartmentHeist.hpp"
 
 namespace YimMenu::Submenus

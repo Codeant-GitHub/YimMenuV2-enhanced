@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "Overlay.hpp"
 #include "Menu.hpp"
 #include "core/commands/BoolCommand.hpp"

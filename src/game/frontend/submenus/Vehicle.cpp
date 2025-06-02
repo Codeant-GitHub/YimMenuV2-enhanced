@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "Vehicle.hpp"
 #include "game/frontend/items/Items.hpp"
 #include "game/frontend/submenus/Vehicle/SpawnVehicle.hpp"

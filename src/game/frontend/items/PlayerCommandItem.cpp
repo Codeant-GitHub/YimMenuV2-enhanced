@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "Items.hpp"
 #include "game/commands/PlayerCommand.hpp"
 #include "core/commands/Commands.hpp"

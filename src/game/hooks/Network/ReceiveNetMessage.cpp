@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "core/hooking/DetourHook.hpp"
 #include "game/backend/AnticheatBypass.hpp"
 #include "game/backend/Players.hpp"

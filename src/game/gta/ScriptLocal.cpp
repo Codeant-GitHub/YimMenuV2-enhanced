@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "ScriptLocal.hpp"
 
 namespace YimMenu

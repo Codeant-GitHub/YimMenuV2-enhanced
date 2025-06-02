@@ -37,14 +37,21 @@ namespace YimMenu
 	void BoolCommand::SetState(bool state)
 	{
 		if (state && !m_State)
+		{
 			FiberPool::Push([this] {
 				OnEnable();
+				m_Ready = true;
 			});
+		}
 		else if (!state && m_State)
+		{
 			FiberPool::Push([this] {
 				OnDisable();
+				m_Ready = true;
 			});
+		}
 
+		m_Ready = false;
 		m_State = state;
 		MarkDirty();
 	}
@@ -52,10 +59,12 @@ namespace YimMenu
 	void BoolCommand::Initialize()
 	{
 		OnEnable();
+		m_Ready = true;
 	}
 
 	void BoolCommand::Shutdown()
 	{
+		m_Ready = false;
 		OnDisable();
 	}
 }

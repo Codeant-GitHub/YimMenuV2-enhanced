@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "HeistModifier.hpp"
 #include "Heist/ApartmentHeist.hpp"
 #include "Heist/DiamondCasinoHeist.hpp"

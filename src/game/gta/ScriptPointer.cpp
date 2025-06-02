@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "ScriptPointer.hpp"
 #include "game/gta/Scripts.hpp"
 #include "types/script/scrProgram.hpp"

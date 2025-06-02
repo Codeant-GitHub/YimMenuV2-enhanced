@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "Settings.hpp"
 
 #include "core/commands/Commands.hpp"

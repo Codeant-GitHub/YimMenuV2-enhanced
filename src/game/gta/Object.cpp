@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "Object.hpp"
 #include "Natives.hpp"
 #include "core/backend/ScriptMgr.hpp"

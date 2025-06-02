@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "Items.hpp"
 #include "core/backend/FiberPool.hpp"
 

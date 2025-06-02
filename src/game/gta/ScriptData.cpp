@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "ScriptData.hpp"
 #include "types/script/scrProgram.hpp"
 

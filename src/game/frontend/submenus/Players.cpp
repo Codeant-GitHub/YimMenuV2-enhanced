@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "Players.hpp"
 
 #include "Player/Info.hpp"

@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "Menu.hpp"
 #include "imgui.h"
 #include "imgui_internal.h"
@@ -18,6 +21,8 @@
 #include "submenus/Debug.hpp"
 #include "submenus/World.hpp"
 #include "core/filemgr/FileMgr.hpp"
+#include "core/memory/ModuleMgr.hpp"
+
 namespace YimMenu
 {
 	void Menu::Init()
@@ -44,7 +49,8 @@ namespace YimMenu
 			    ImGui::SetNextWindowSize(ImVec2((*Pointers.ScreenResX / 2.5), (*Pointers.ScreenResY / 2.5)), ImGuiCond_Once);
 			    if (ImGui::Begin("YimMenuV2", nullptr, ImGuiWindowFlags_NoDecoration & ~(ImGuiWindowFlags_NoResize)))
 			    {
-				    //ImGui::BeginDisabled(*Pointers.IsSessionStarted);
+					// TODO: should we just remove unload?
+				    ImGui::BeginDisabled(*Pointers.IsSessionStarted || ModuleMgr.IsManualMapped());
 				    if (ImGui::Button("Unload", ImVec2(120, 0)))
 				    {
 					    if (true)
@@ -59,7 +65,7 @@ namespace YimMenu
 						    g_Running = false;
 					    }
 				    }
-				    //ImGui::EndDisabled();
+				    ImGui::EndDisabled();
 
 				    UIManager::Draw();
 			    }

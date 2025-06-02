@@ -1,3 +1,6 @@
+#pragma once
+#include "common.hpp"
+
 #include "CStatsMpCharacterMappingData.hpp"
 
 int CStatsMpCharacterMappingData::GetStatCount(Type type)
