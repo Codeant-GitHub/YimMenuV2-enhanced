@@ -53,14 +53,17 @@ namespace YimMenu
 
 	void GUI::ToggleMouse()
 	{
-		auto& io           = ImGui::GetIO();
-		io.MouseDrawCursor = GUI::IsOpen();
-		GUI::IsOpen() ? io.ConfigFlags &= ~ImGuiConfigFlags_NoMouse : io.ConfigFlags |= ImGuiConfigFlags_NoMouse;
+		auto& io = ImGui::GetIO();
+		io.MouseDrawCursor = GUI::IsOpen() || GUI::IsOnboarding();
+		GUI::IsOpen() || GUI::IsOnboarding() 
+			? io.ConfigFlags &= ~ImGuiConfigFlags_NoMouse :
+			  io.ConfigFlags |= ImGuiConfigFlags_NoMouse;
 	}
 
 	void GUI::WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
 	{
-		if (msg == WM_KEYUP && wparam == VK_INSERT)
+		if (msg == WM_KEYUP 
+			&& (wparam == VK_INSERT || (wparam == VK_OEM_5 && (GetKeyState(VK_CONTROL) & 0x8000) != 0)))
 		{
 			// Persist and restore the cursor position between menu instances
 			static POINT CursorCoords{};
@@ -72,9 +75,16 @@ namespace YimMenu
 			{
 				SetCursorPos(CursorCoords.x, CursorCoords.y);
 			}
-			Toggle();
+			if (!GUI::IsOnboarding())
+				Toggle();
 			ToggleMouse();
 		}
+	}
+
+	void GUI::SetOnboardingImpl(bool state)
+	{
+		m_Onboarding = state;
+		ToggleMouse();
 	}
 
 	void GUI::RunScriptImpl()

@@ -166,6 +166,9 @@
     <Filter Include="types">
       <UniqueIdentifier>{5A5E7610-C672-9EC1-8FF4-4121FBC79AF2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="types\battleye">
+      <UniqueIdentifier>{03E01A58-EFAD-0E5E-D841-7F84C4AEEAC2}</UniqueIdentifier>
+    </Filter>
     <Filter Include="types\entity">
       <UniqueIdentifier>{86959780-72F8-2625-1B7E-5FDB07C0F2A7}</UniqueIdentifier>
     </Filter>
@@ -493,6 +496,9 @@
     <ClInclude Include="src\game\frontend\Menu.hpp">
       <Filter>game\frontend</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\frontend\Onboarding.hpp">
+      <Filter>game\frontend</Filter>
+    </ClInclude>
     <ClInclude Include="src\game\frontend\Overlay.hpp">
       <Filter>game\frontend</Filter>
     </ClInclude>
@@ -528,9 +534,6 @@
     </ClInclude>
     <ClInclude Include="src\game\frontend\submenus\Network\SavedPlayers.hpp">
       <Filter>game\frontend\submenus\Network</Filter>
-    </ClInclude>
-    <ClInclude Include="src\game\frontend\submenus\OutfitEditor.hpp">
-      <Filter>game\frontend\submenus</Filter>
     </ClInclude>
     <ClInclude Include="src\game\frontend\submenus\Player\Info.hpp">
       <Filter>game\frontend\submenus\Player</Filter>
@@ -573,6 +576,9 @@
     </ClInclude>
     <ClInclude Include="src\game\frontend\submenus\Self.hpp">
       <Filter>game\frontend\submenus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\frontend\submenus\Self\OutfitEditor.hpp">
+      <Filter>game\frontend\submenus\Self</Filter>
     </ClInclude>
     <ClInclude Include="src\game\frontend\submenus\Self\Weapons.hpp">
       <Filter>game\frontend\submenus\Self</Filter>
@@ -675,6 +681,12 @@
     </ClInclude>
     <ClInclude Include="src\game\pointers\Pointers.hpp">
       <Filter>game\pointers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types\battleye\CBattlEyePlayerModifyContext.hpp">
+      <Filter>types\battleye</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types\battleye\CBattlEyePlayerModifyInterface.hpp">
+      <Filter>types\battleye</Filter>
     </ClInclude>
     <ClInclude Include="src\types\entity\CDynamicEntity.hpp">
       <Filter>types\entity</Filter>
@@ -1429,6 +1441,9 @@
     <ClCompile Include="src\game\features\recovery\RpMultiplier.cpp">
       <Filter>game\features\recovery</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\features\recovery\UnlockGTAPlus.cpp">
+      <Filter>game\features\recovery</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\features\self\Aimbot.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
@@ -1618,6 +1633,9 @@
     <ClCompile Include="src\game\frontend\Menu.cpp">
       <Filter>game\frontend</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\frontend\Onboarding.cpp">
+      <Filter>game\frontend</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\frontend\Overlay.cpp">
       <Filter>game\frontend</Filter>
     </ClCompile>
@@ -1699,9 +1717,6 @@
     <ClCompile Include="src\game\frontend\submenus\Network\SavedPlayers.cpp">
       <Filter>game\frontend\submenus\Network</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\frontend\submenus\OutfitEditor.cpp">
-      <Filter>game\frontend\submenus</Filter>
-    </ClCompile>
     <ClCompile Include="src\game\frontend\submenus\Player\Info.cpp">
       <Filter>game\frontend\submenus\Player</Filter>
     </ClCompile>
@@ -1743,6 +1758,9 @@
     </ClCompile>
     <ClCompile Include="src\game\frontend\submenus\Self.cpp">
       <Filter>game\frontend\submenus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\Self\OutfitEditor.cpp">
+      <Filter>game\frontend\submenus\Self</Filter>
     </ClCompile>
     <ClCompile Include="src\game\frontend\submenus\Self\Weapons.cpp">
       <Filter>game\frontend\submenus\Self</Filter>
@@ -1812,6 +1830,9 @@
     </ClCompile>
     <ClCompile Include="src\game\gta\invoker\Invoker.cpp">
       <Filter>game\gta\invoker</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\hooks\Anticheat\BattlEyeServerProcessPlayerJoin.cpp">
+      <Filter>game\hooks\Anticheat</Filter>
     </ClCompile>
     <ClCompile Include="src\game\hooks\Anticheat\GetThreadContext.cpp">
       <Filter>game\hooks\Anticheat</Filter>
