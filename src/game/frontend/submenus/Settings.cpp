@@ -41,6 +41,7 @@ namespace YimMenu::Submenus
 		auto gui               = std::make_shared<Category>("GUI");
 		auto playerEsp         = std::make_shared<Group>("Player ESP", 10);
 		auto pedEsp            = std::make_shared<Group>("Ped ESP", 10);
+		auto objectEsp         = std::make_shared<Group>("Object ESP");
 		auto overlay           = std::make_shared<Group>("Overlay");
 		auto chat           = std::make_shared<Group>("Chat");
 
@@ -54,7 +55,6 @@ namespace YimMenu::Submenus
 		playerEsp->AddItem(std::make_shared<ConditionalItem>("espdrawplayers"_J, std::make_shared<ColorCommandItem>("namecolorplayers"_J)));
 
 		playerEsp->AddItem(std::make_shared<ConditionalItem>("espdrawplayers"_J, std::make_shared<BoolCommandItem>("espdistanceplayers"_J, "Player Distance")));
-		//playerEsp->AddItem(std::make_shared<ConditionalItem>("espdrawplayers"_J, std::make_shared<ColorCommandItem>("distancecolorplayers"_J))); // TO DO
 
 		playerEsp->AddItem(std::make_shared<ConditionalItem>("espdrawplayers"_J, std::make_shared<BoolCommandItem>("espskeletonplayers"_J, "Player Skeleton")));
 		playerEsp->AddItem(std::make_shared<ConditionalItem>("espdrawplayers"_J, std::make_shared<ColorCommandItem>("skeletoncolorplayers"_J)));
@@ -70,10 +70,17 @@ namespace YimMenu::Submenus
 		pedEsp->AddItem(std::make_shared<ConditionalItem>("espdrawpeds"_J, std::make_shared<BoolCommandItem>("espscriptinfopeds"_J, "Ped Script Info")));
 
 		pedEsp->AddItem(std::make_shared<ConditionalItem>("espdrawpeds"_J, std::make_shared<BoolCommandItem>("espdistancepeds"_J, "Ped Distance")));
-		//pedEsp->AddItem(std::make_shared<ConditionalItem>("espdrawpeds"_J, std::make_shared<ColorCommandItem>("distancecolorpeds"_J))); // TO DO
 
 		pedEsp->AddItem(std::make_shared<ConditionalItem>("espdrawpeds"_J, std::make_shared<BoolCommandItem>("espskeletonpeds"_J, "Ped Skeleton")));
 		pedEsp->AddItem(std::make_shared<ConditionalItem>("espdrawpeds"_J, std::make_shared<ColorCommandItem>("skeletoncolorpeds"_J)));
+
+		objectEsp->AddItem(std::make_shared<BoolCommandItem>("espdrawobjects"_J));
+		objectEsp->AddItem(std::make_shared<ConditionalItem>("espdrawobjects"_J, std::make_shared<ColorCommandItem>("hashcolorobjects"_J)));
+		objectEsp->AddItem(std::make_shared<ConditionalItem>("espdrawobjects"_J, std::make_shared<BoolCommandItem>("espnetinfoobjects"_J, "Object Net Info")));
+		objectEsp->AddItem(std::make_shared<ConditionalItem>("espdrawobjects"_J, std::make_shared<BoolCommandItem>("espscriptinfoobjects"_J, "Object Script Info")));
+
+		objectEsp->AddItem(std::make_shared<ConditionalItem>("espdrawobjects"_J, std::make_shared<BoolCommandItem>("espdistanceobjects"_J, "Object Distance")));
+
 
 		overlay->AddItem(std::make_shared<BoolCommandItem>("overlay"_J));
 		overlay->AddItem(std::make_shared<ConditionalItem>("overlay"_J, std::make_shared<BoolCommandItem>("overlayfps"_J)));
@@ -82,6 +89,7 @@ namespace YimMenu::Submenus
 
 		gui->AddItem(playerEsp);
 		gui->AddItem(pedEsp);
+		gui->AddItem(objectEsp);
 		gui->AddItem(overlay);
 		gui->AddItem(chat);
 

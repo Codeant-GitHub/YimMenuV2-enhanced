@@ -151,6 +151,9 @@
     <Filter Include="game\hooks\Info">
       <UniqueIdentifier>{6DABD828-D936-46ED-E247-C9E14E52A2ED}</UniqueIdentifier>
     </Filter>
+    <Filter Include="game\hooks\Misc">
+      <UniqueIdentifier>{4DC9DA28-B954-48ED-C265-CBE12E70A4ED}</UniqueIdentifier>
+    </Filter>
     <Filter Include="game\hooks\Network">
       <UniqueIdentifier>{CBF3C064-B7D7-81BA-2038-7C0D0C3B6C3C}</UniqueIdentifier>
     </Filter>
@@ -436,6 +439,9 @@
     <ClInclude Include="src\core\util\StrToHex.hpp">
       <Filter>core\util</Filter>
     </ClInclude>
+    <ClInclude Include="src\core\util\strings.hpp">
+      <Filter>core\util</Filter>
+    </ClInclude>
     <ClInclude Include="src\game\backend\AnticheatBypass.hpp">
       <Filter>game\backend</Filter>
     </ClInclude>
@@ -461,6 +467,9 @@
       <Filter>game\backend</Filter>
     </ClInclude>
     <ClInclude Include="src\game\backend\SavedVariables.hpp">
+      <Filter>game\backend</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\backend\SavedVehicles.hpp">
       <Filter>game\backend</Filter>
     </ClInclude>
     <ClInclude Include="src\game\backend\ScriptPatches.hpp">
@@ -592,7 +601,13 @@
     <ClInclude Include="src\game\frontend\submenus\Vehicle.hpp">
       <Filter>game\frontend\submenus</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\frontend\submenus\Vehicle\SavedVehicles.hpp">
+      <Filter>game\frontend\submenus\Vehicle</Filter>
+    </ClInclude>
     <ClInclude Include="src\game\frontend\submenus\Vehicle\SpawnVehicle.hpp">
+      <Filter>game\frontend\submenus\Vehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\frontend\submenus\Vehicle\VehicleEditor.hpp">
       <Filter>game\frontend\submenus\Vehicle</Filter>
     </ClInclude>
     <ClInclude Include="src\game\frontend\submenus\World.hpp">
@@ -649,7 +664,13 @@
     <ClInclude Include="src\game\gta\Vehicle.hpp">
       <Filter>game\gta</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\gta\VehicleModel.hpp">
+      <Filter>game\gta</Filter>
+    </ClInclude>
     <ClInclude Include="src\game\gta\data\IPL.hpp">
+      <Filter>game\gta\data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\gta\data\ModNames.hpp">
       <Filter>game\gta\data</Filter>
     </ClInclude>
     <ClInclude Include="src\game\gta\data\RandomEvents.hpp">
@@ -1021,6 +1042,9 @@
     <ClInclude Include="src\types\rage\fwRefAwareBaseImpl.hpp">
       <Filter>types\rage</Filter>
     </ClInclude>
+    <ClInclude Include="src\types\rage\gameSkeleton.hpp">
+      <Filter>types\rage</Filter>
+    </ClInclude>
     <ClInclude Include="src\types\rage\pgBase.hpp">
       <Filter>types\rage</Filter>
     </ClInclude>
@@ -1324,6 +1348,9 @@
     <ClCompile Include="src\game\backend\SavedVariables.cpp">
       <Filter>game\backend</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\backend\SavedVehicles.cpp">
+      <Filter>game\backend</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\backend\ScriptPatches.cpp">
       <Filter>game\backend</Filter>
     </ClCompile>
@@ -1361,6 +1388,9 @@
       <Filter>game\features\network</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\network\PauseGame.cpp">
+      <Filter>game\features\network</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\network\SilencePhonecalls.cpp">
       <Filter>game\features\network</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\network\SpamKillfeed.cpp">
@@ -1548,6 +1578,9 @@
     </ClCompile>
     <ClCompile Include="src\game\features\system\LSCCustomsBypass.cpp">
       <Filter>game\features\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\teleport\TpToObjective.cpp">
+      <Filter>game\features\teleport</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\teleport\TpToWaypoint.cpp">
       <Filter>game\features\teleport</Filter>
@@ -1774,7 +1807,13 @@
     <ClCompile Include="src\game\frontend\submenus\Vehicle.cpp">
       <Filter>game\frontend\submenus</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\Vehicle\SavedVehicles.cpp">
+      <Filter>game\frontend\submenus\Vehicle</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\frontend\submenus\Vehicle\SpawnVehicle.cpp">
+      <Filter>game\frontend\submenus\Vehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\Vehicle\VehicleEditor.cpp">
       <Filter>game\frontend\submenus\Vehicle</Filter>
     </ClCompile>
     <ClCompile Include="src\game\frontend\submenus\World.cpp">
@@ -1828,6 +1867,9 @@
     <ClCompile Include="src\game\gta\Vehicle.cpp">
       <Filter>game\gta</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\gta\VehicleModel.cpp">
+      <Filter>game\gta</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\gta\invoker\Invoker.cpp">
       <Filter>game\gta\invoker</Filter>
     </ClCompile>
@@ -1857,6 +1899,9 @@
     </ClCompile>
     <ClCompile Include="src\game\hooks\Info\NetworkPlayerManagerShutdown.cpp">
       <Filter>game\hooks\Info</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\hooks\Misc\AssistedAimShouldReleaseEntity.cpp">
+      <Filter>game\hooks\Misc</Filter>
     </ClCompile>
     <ClCompile Include="src\game\hooks\Network\HandleNetGameEvent.cpp">
       <Filter>game\hooks\Network</Filter>

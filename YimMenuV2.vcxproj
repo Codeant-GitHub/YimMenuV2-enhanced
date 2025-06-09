@@ -11,7 +11,7 @@
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>YimMenuV2</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -117,6 +117,7 @@
     <ClInclude Include="src\core\util\Math.hpp" />
     <ClInclude Include="src\core\util\RateLimiter.hpp" />
     <ClInclude Include="src\core\util\StrToHex.hpp" />
+    <ClInclude Include="src\core\util\strings.hpp" />
     <ClInclude Include="src\game\backend\AnticheatBypass.hpp" />
     <ClInclude Include="src\game\backend\NativeHooks.hpp" />
     <ClInclude Include="src\game\backend\NodeHooks.hpp" />
@@ -126,6 +127,7 @@
     <ClInclude Include="src\game\backend\SavedPlayerData.hpp" />
     <ClInclude Include="src\game\backend\SavedPlayers.hpp" />
     <ClInclude Include="src\game\backend\SavedVariables.hpp" />
+    <ClInclude Include="src\game\backend\SavedVehicles.hpp" />
     <ClInclude Include="src\game\backend\ScriptPatches.hpp" />
     <ClInclude Include="src\game\backend\ScriptPointers.hpp" />
     <ClInclude Include="src\game\backend\Self.hpp" />
@@ -169,7 +171,9 @@
     <ClInclude Include="src\game\frontend\submenus\Settings.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Teleport.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Vehicle.hpp" />
+    <ClInclude Include="src\game\frontend\submenus\Vehicle\SavedVehicles.hpp" />
     <ClInclude Include="src\game\frontend\submenus\Vehicle\SpawnVehicle.hpp" />
+    <ClInclude Include="src\game\frontend\submenus\Vehicle\VehicleEditor.hpp" />
     <ClInclude Include="src\game\frontend\submenus\World.hpp" />
     <ClInclude Include="src\game\gta\Entity.hpp" />
     <ClInclude Include="src\game\gta\Natives.hpp" />
@@ -188,7 +192,9 @@
     <ClInclude Include="src\game\gta\Scripts.hpp" />
     <ClInclude Include="src\game\gta\Stats.hpp" />
     <ClInclude Include="src\game\gta\Vehicle.hpp" />
+    <ClInclude Include="src\game\gta\VehicleModel.hpp" />
     <ClInclude Include="src\game\gta\data\IPL.hpp" />
+    <ClInclude Include="src\game\gta\data\ModNames.hpp" />
     <ClInclude Include="src\game\gta\data\RandomEvents.hpp" />
     <ClInclude Include="src\game\gta\data\ScriptNames.hpp" />
     <ClInclude Include="src\game\gta\data\StackSizes.hpp" />
@@ -312,6 +318,7 @@
     <ClInclude Include="src\types\rage\fwExtensionContainer.hpp" />
     <ClInclude Include="src\types\rage\fwRefAwareBase.hpp" />
     <ClInclude Include="src\types\rage\fwRefAwareBaseImpl.hpp" />
+    <ClInclude Include="src\types\rage\gameSkeleton.hpp" />
     <ClInclude Include="src\types\rage\pgBase.hpp" />
     <ClInclude Include="src\types\rage\sysMemAllocator.hpp" />
     <ClInclude Include="src\types\rage\tlsContext.hpp" />
@@ -417,6 +424,7 @@
     <ClCompile Include="src\game\backend\SavedPlayerData.cpp" />
     <ClCompile Include="src\game\backend\SavedPlayers.cpp" />
     <ClCompile Include="src\game\backend\SavedVariables.cpp" />
+    <ClCompile Include="src\game\backend\SavedVehicles.cpp" />
     <ClCompile Include="src\game\backend\ScriptPatches.cpp" />
     <ClCompile Include="src\game\backend\ScriptPointers.cpp" />
     <ClCompile Include="src\game\backend\Self.cpp" />
@@ -430,6 +438,7 @@
     <ClCompile Include="src\game\features\network\HarassPlayers.cpp" />
     <ClCompile Include="src\game\features\network\JoinSession.cpp" />
     <ClCompile Include="src\game\features\network\PauseGame.cpp" />
+    <ClCompile Include="src\game\features\network\SilencePhonecalls.cpp" />
     <ClCompile Include="src\game\features\network\SpamKillfeed.cpp" />
     <ClCompile Include="src\game\features\network\SpoofMatchmakingRegion.cpp" />
     <ClCompile Include="src\game\features\players\info\Spectate.cpp" />
@@ -492,6 +501,7 @@
     <ClCompile Include="src\game\features\system\Chat.cpp" />
     <ClCompile Include="src\game\features\system\DespawnBypass.cpp" />
     <ClCompile Include="src\game\features\system\LSCCustomsBypass.cpp" />
+    <ClCompile Include="src\game\features\teleport\TpToObjective.cpp" />
     <ClCompile Include="src\game\features\teleport\TpToWaypoint.cpp" />
     <ClCompile Include="src\game\features\vehicle\AllowHatsInVehicles.cpp" />
     <ClCompile Include="src\game\features\vehicle\CallMechanic.cpp" />
@@ -589,7 +599,11 @@
     </ClCompile>
     <ClCompile Include="src\game\frontend\submenus\Teleport.cpp" />
     <ClCompile Include="src\game\frontend\submenus\Vehicle.cpp" />
+    <ClCompile Include="src\game\frontend\submenus\Vehicle\SavedVehicles.cpp">
+      <ObjectFileName>$(IntDir)\SavedVehicles1.obj</ObjectFileName>
+    </ClCompile>
     <ClCompile Include="src\game\frontend\submenus\Vehicle\SpawnVehicle.cpp" />
+    <ClCompile Include="src\game\frontend\submenus\Vehicle\VehicleEditor.cpp" />
     <ClCompile Include="src\game\frontend\submenus\World.cpp" />
     <ClCompile Include="src\game\gta\Entity.cpp" />
     <ClCompile Include="src\game\gta\Network.cpp">
@@ -613,6 +627,7 @@
     <ClCompile Include="src\game\gta\Vehicle.cpp">
       <ObjectFileName>$(IntDir)\Vehicle1.obj</ObjectFileName>
     </ClCompile>
+    <ClCompile Include="src\game\gta\VehicleModel.cpp" />
     <ClCompile Include="src\game\gta\invoker\Invoker.cpp" />
     <ClCompile Include="src\game\hooks\Anticheat\BattlEyeServerProcessPlayerJoin.cpp" />
     <ClCompile Include="src\game\hooks\Anticheat\GetThreadContext.cpp" />
@@ -623,6 +638,7 @@
     <ClCompile Include="src\game\hooks\GUI\Window.cpp" />
     <ClCompile Include="src\game\hooks\Info\AssignPhysicalIndex.cpp" />
     <ClCompile Include="src\game\hooks\Info\NetworkPlayerManagerShutdown.cpp" />
+    <ClCompile Include="src\game\hooks\Misc\AssistedAimShouldReleaseEntity.cpp" />
     <ClCompile Include="src\game\hooks\Network\HandleNetGameEvent.cpp" />
     <ClCompile Include="src\game\hooks\Network\HandleScriptedGameEvent.cpp" />
     <ClCompile Include="src\game\hooks\Network\ReceiveNetMessage.cpp" />
