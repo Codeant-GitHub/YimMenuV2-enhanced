@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -43,7 +45,7 @@ namespace YimMenu::Features
 					    ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(weapon_entity, dimensions.x, 0, dimensions.z * 0.3f);
 
 					auto camera_direction = Math::RotationToDirection(CAM::GET_GAMEPLAY_CAM_ROT(0));
-					auto camera_position  = CAM::GET_GAMEPLAY_CAM_COORD() + camera_direction;
+					auto camera_position = CAM::GET_GAMEPLAY_CAM_COORD() + camera_direction;
 
 					Vector3 end = camera_position + camera_direction * 2000.0;
 
@@ -70,7 +72,7 @@ namespace YimMenu::Features
 					Hash weapon_hash = Self::GetPed().GetCurrentWeapon();
 
 					MISC::SHOOT_SINGLE_BULLET_BETWEEN_COORDS(
-						weapon_position.x,
+					    weapon_position.x,
 					    weapon_position.y,
 					    weapon_position.z,
 					    end.x,

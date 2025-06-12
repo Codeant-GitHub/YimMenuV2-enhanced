@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -12,8 +14,8 @@ namespace YimMenu::Features
 	{
 		using LoopedCommand::LoopedCommand;
 
-		static constexpr float horn_boost_speed_default   = 10.f;
-		static constexpr float horn_boost_speed_max       = 200.f;
+		static constexpr float horn_boost_speed_default = 10.f;
+		static constexpr float horn_boost_speed_max = 200.f;
 		static constexpr float horn_boost_speed_increment = 0.3f;
 
 		float m_HornBoostSpeed = horn_boost_speed_default;
@@ -21,7 +23,7 @@ namespace YimMenu::Features
 		virtual void OnTick() override
 		{
 			auto veh = Self::GetVehicle();
-			
+
 			if (!veh)
 			{
 				m_HornBoostSpeed = horn_boost_speed_default;

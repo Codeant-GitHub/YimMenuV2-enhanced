@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -33,5 +35,5 @@ namespace YimMenu::Features
 	};
 	static JoinSession _JoinSession{"joinsession", "Join Session", "Joins the specified session type"};
 
-	
+
 }

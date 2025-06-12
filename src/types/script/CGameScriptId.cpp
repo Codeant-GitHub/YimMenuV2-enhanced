@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -6,7 +8,7 @@
 
 void CGameScriptId::Deserialize(rage::datBitBuffer& buffer)
 {
-	m_Hash      = buffer.Read<uint32_t>(32);
+	m_Hash = buffer.Read<uint32_t>(32);
 	m_Timestamp = buffer.Read<uint32_t>(32);
 
 	bool has_position_hash = buffer.Read<bool>(1);

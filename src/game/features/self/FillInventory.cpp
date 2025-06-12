@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -9,7 +11,7 @@ namespace YimMenu::Features
 	class FillInventory : public Command
 	{
 		using Command::Command;
-		
+
 		virtual void OnCall() override
 		{
 			Stats::SetInt("MPX_NO_BOUGHT_YUM_SNACKS", 30);
@@ -28,6 +30,6 @@ namespace YimMenu::Features
 			Stats::SetInt("MPX_BREATHING_APPAR_BOUGHT", 20);
 		}
 	};
-	
+
 	static FillInventory _FillInventory{"fillinventory", "Fill Inventory", "Fills all of your snacks and armours."};
 }

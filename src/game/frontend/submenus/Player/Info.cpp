@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -25,7 +27,7 @@ namespace YimMenu::Submenus
 	{
 		auto menu = std::make_shared<Category>("Info");
 
-		auto teleportGroup      = std::make_shared<Group>("Teleport");
+		auto teleportGroup = std::make_shared<Group>("Teleport");
 		auto playerOptionsGroup = std::make_shared<Group>("Info");
 
 		playerOptionsGroup->AddItem(std::make_shared<ImGuiItem>([] {
@@ -41,7 +43,7 @@ namespace YimMenu::Submenus
 
 				if (Players::GetSelected().GetPed())
 				{
-					auto health    = Players::GetSelected().GetPed().GetHealth();
+					auto health = Players::GetSelected().GetPed().GetHealth();
 					auto maxHealth = Players::GetSelected().GetPed().GetMaxHealth();
 					std::string healthStr = std::format("HP: {}/{} ({:.2f}%)", health, maxHealth, (float)health / maxHealth * 100.0f);
 					ImGui::Text("%s", healthStr.c_str());
@@ -67,9 +69,9 @@ namespace YimMenu::Submenus
 				{
 					ImGui::SetClipboardText(std::to_string(rid1).c_str());
 				}
-				
 
-				auto ip  = Players::GetSelected().GetExternalAddress();
+
+				auto ip = Players::GetSelected().GetExternalAddress();
 
 				auto addr2 = BuildIPStr(ip.m_IpAddress.m_Field1, ip.m_IpAddress.m_Field2, ip.m_IpAddress.m_Field3, ip.m_IpAddress.m_Field4);
 
@@ -122,7 +124,7 @@ namespace YimMenu::Submenus
 		}));
 
 		menu->AddItem(playerOptionsGroup);
-		
+
 		teleportGroup->AddItem(std::make_shared<PlayerCommandItem>("tptoplayer"_J, "Teleport To"));
 		teleportGroup->AddItem(std::make_shared<PlayerCommandItem>("bring"_J));
 		auto customPlayerTp = std::make_shared<Group>("", 1);

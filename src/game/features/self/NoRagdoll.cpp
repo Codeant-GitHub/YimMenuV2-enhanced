@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -14,7 +16,7 @@ namespace YimMenu::Features
 		{
 			if (!Self::GetPed())
 				return;
-			
+
 			Self::GetPed().SetRagdoll(false);
 			Self::GetPlayer().SetFallDistanceOverride(99999.0f);
 		}

@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -161,7 +163,7 @@ namespace YimMenu::Hooks
 		{
 			uint16_t veh_id = buffer.Read<uint16_t>(13);
 
-			Vehicle self_veh   = Self::GetVehicle();
+			Vehicle self_veh = Self::GetVehicle();
 			Vehicle sender_veh = player.GetPed().GetVehicle();
 
 			if (self_veh && self_veh.GetNetworkObjectId() == veh_id && sender_veh && sender_veh.GetNetworkObjectId() != veh_id)
@@ -188,7 +190,7 @@ namespace YimMenu::Hooks
 
 			if (!Network::HandleScriptedGameEvent(player, event))
 				return false;
-			
+
 			break;
 		}
 		case rage::netGameEvent::Type::SCRIPT_WORLD_STATE_EVENT:
@@ -201,8 +203,8 @@ namespace YimMenu::Hooks
 			if (type == CScriptWorldStateEvent::Type::PopGroupOverride)
 			{
 				int pop_schedule = buffer.Read<int>(8);
-				int pop_group    = buffer.Read<int>(32);
-				int percentage   = buffer.Read<int>(7);
+				int pop_group = buffer.Read<int>(32);
+				int percentage = buffer.Read<int>(7);
 
 				if (pop_group == 0 && (percentage == 0 || percentage == 103))
 				{
@@ -223,8 +225,8 @@ namespace YimMenu::Hooks
 		case rage::netGameEvent::Type::SCRIPT_ENTITY_STATE_CHANGE_EVENT:
 		{
 			uint16_t entity = buffer.Read<uint16_t>(13);
-			auto type       = buffer.Read<CScriptEntityStateChangeEvent::Type>(4);
-			uint32_t unk    = buffer.Read<uint32_t>(32);
+			auto type = buffer.Read<CScriptEntityStateChangeEvent::Type>(4);
+			uint32_t unk = buffer.Read<uint32_t>(32);
 
 			if (type == CScriptEntityStateChangeEvent::Type::SettingOfTaskVehicleTempAction)
 			{

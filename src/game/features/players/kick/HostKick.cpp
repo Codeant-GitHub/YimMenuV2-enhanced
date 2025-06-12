@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -14,7 +16,6 @@ namespace YimMenu::Features
 		{
 			NETWORK::NETWORK_SESSION_KICK_PLAYER(player.GetId());
 		}
-
 	};
 
 	static HostKick _HostKick{"HKick", "Host Kick", "Only available as host and the target is unblockable"};

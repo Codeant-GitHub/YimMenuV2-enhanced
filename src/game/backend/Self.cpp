@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -12,7 +14,7 @@ namespace YimMenu
 {
 	Self::Self() :
 	    m_SelfPed(nullptr),
-		m_SelfPlayer(nullptr),
+	    m_SelfPlayer(nullptr),
 	    m_Vehicle(nullptr)
 	{
 	}

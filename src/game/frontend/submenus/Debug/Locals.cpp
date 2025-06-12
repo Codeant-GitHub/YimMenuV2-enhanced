@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -37,7 +39,7 @@ namespace YimMenu::Submenus
 		auto locals = std::make_unique<Category>("Locals");
 
 		auto editor = std::make_unique<Group>("Editor");
-		auto saved  = std::make_unique<Group>("Saved");
+		auto saved = std::make_unique<Group>("Saved");
 
 		static bool ensureVarsLoaded = ([] {
 			SavedVariables::Init();
@@ -68,7 +70,7 @@ namespace YimMenu::Submenus
 			auto scriptIdf = curThread->m_ScriptHash;
 			if (scriptIdf != curLocal.script)
 			{
-				curLocal        = SavedLocal();
+				curLocal = SavedLocal();
 				curLocal.script = scriptIdf;
 			}
 

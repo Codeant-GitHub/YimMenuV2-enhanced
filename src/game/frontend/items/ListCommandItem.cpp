@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -24,7 +26,7 @@ namespace YimMenu
 		}
 
 		int current_val = m_Command->GetState();
-		auto& list      = m_Command->GetList();
+		auto& list = m_Command->GetList();
 		const char* largest_string = "";
 		std::size_t largest_string_len = 0;
 
@@ -40,7 +42,7 @@ namespace YimMenu
 				int length = strlen(item.second);
 				if (length > largest_string_len)
 				{
-					largest_string     = item.second;
+					largest_string = item.second;
 					largest_string_len = length;
 				}
 			}

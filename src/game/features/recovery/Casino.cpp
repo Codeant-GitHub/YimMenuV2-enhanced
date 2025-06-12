@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -16,7 +18,7 @@ namespace YimMenu::Features
 		using LoopedCommand::LoopedCommand;
 
 		int slots_random_results_table = 1348;
-		std::set<int> slots_blacklist  = {9, 21, 22, 87, 152};
+		std::set<int> slots_blacklist = {9, 21, 22, 87, 152};
 
 		virtual void OnTick() override
 		{
@@ -24,7 +26,7 @@ namespace YimMenu::Features
 			{
 				Player casinoSlotsScriptHostPlayer = NETWORK::NETWORK_GET_HOST_OF_SCRIPT("casino_slots", -1, 0);
 				auto casinoSlotsScriptHostPlayerId = casinoSlotsScriptHostPlayer.GetId();
-				auto selfPlayerId                  = Self::GetPlayer().GetId();
+				auto selfPlayerId = Self::GetPlayer().GetId();
 				if (casinoSlotsScriptHostPlayerId != selfPlayerId)
 				{
 					Scripts::ForceScriptHost(Scripts::FindScriptThread("casino_slots"_J));
@@ -61,7 +63,7 @@ namespace YimMenu::Features
 			{
 				Player casinoSlotsScriptHostPlayer = NETWORK::NETWORK_GET_HOST_OF_SCRIPT("casino_slots", -1, 0);
 				auto casinoSlotsScriptHostPlayerId = casinoSlotsScriptHostPlayer.GetId();
-				auto selfPlayerId                  = Self::GetPlayer().GetId();
+				auto selfPlayerId = Self::GetPlayer().GetId();
 				if (casinoSlotsScriptHostPlayerId != selfPlayerId)
 				{
 					Scripts::ForceScriptHost(Scripts::FindScriptThread("casino_slots"_J));

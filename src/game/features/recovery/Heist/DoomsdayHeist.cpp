@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -49,10 +51,9 @@ namespace YimMenu::Features
 		};
 
 		static std::vector<std::pair<int, const char*>> doomsdayHeistCategory = {
-			{0, "The Data Breaches"},
-			{1, "The Bogdan Problem"},
-			{2, "The Doomsday Senario"}
-		};
+		    {0, "The Data Breaches"},
+		    {1, "The Bogdan Problem"},
+		    {2, "The Doomsday Senario"}};
 		static ListCommand _DoomsdayHeistCategory{"doomsdayheistcategory", "Select Heist", "Heist categories", doomsdayHeistCategory, 0};
 
 		class Setup : public Command

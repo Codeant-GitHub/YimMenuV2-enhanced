@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -32,15 +34,6 @@ namespace YimMenu
 	    "hei_prop_bank_cctv_02"_J,
 	    "ch_prop_ch_cctv_cam_02a"_J,
 	    "xm_prop_x17_server_farm_cctv_01"_J,
-	};
-
-	static std::unordered_set<joaat_t> cacheHashes = {
-	    "prop_drug_package"_J,
-	    "prop_mp_drug_pack_blue"_J,
-	    "prop_mp_drug_pack_red"_J,
-	    "prop_mp_drug_package"_J,
-	    "tr_prop_tr_sand_01a"_J,
-	    "h4_prop_h4_chest_01a"_J,
 	};
 
 	Object Object::Create(uint32_t model, rage::fvector3 coords)
@@ -90,11 +83,6 @@ namespace YimMenu
 	bool Object::IsCamera()
 	{
 		return cameraHashes.contains(GetModel());
-	}
-
-	bool Object::IsCache()
-	{
-		return cacheHashes.contains(GetModel());
 	}
 
 	bool Object::IsSignalJammer()

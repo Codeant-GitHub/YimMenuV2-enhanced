@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -175,7 +177,7 @@ namespace YimMenu
 			}
 			if (mod >= mod_count / 2)
 				//return std::format("{} {}", HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("CHROME"), HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION(VEHICLE::GET_MOD_TEXT_LABEL(vehicle, mod_slot, mod))).c_str(); //Bug with FMT library? Returns Chrome Chrome...
-				return std::format("Chrome {}", HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION(VEHICLE::GET_MOD_TEXT_LABEL(vehicle, mod_slot, mod))).c_str(); 
+				return std::format("Chrome {}", HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION(VEHICLE::GET_MOD_TEXT_LABEL(vehicle, mod_slot, mod))).c_str();
 			else
 				return HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION(VEHICLE::GET_MOD_TEXT_LABEL(vehicle, mod_slot, mod));
 		}
@@ -217,7 +219,7 @@ namespace YimMenu
 				switch (model)
 				{
 				case "BANSHEE"_J:
-				case "BANSHEE2"_J :
+				case "BANSHEE2"_J:
 				case "SULTANRS"_J: return HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("CMOD_COL5_41");
 				}
 				break;

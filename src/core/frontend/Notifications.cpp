@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -20,7 +22,7 @@ namespace YimMenu
 		auto message_id = Joaat(title + message);
 
 		auto exists = std::find_if(m_Notifications.begin(), m_Notifications.end(), [&](auto& notification) {
-			return notification.second.m_Identifier	== message_id;
+			return notification.second.m_Identifier == message_id;
 		});
 
 		if (exists != m_Notifications.end())
@@ -30,11 +32,11 @@ namespace YimMenu
 		}
 
 		Notification notification{};
-		notification.m_Title      = title;
-		notification.m_Message    = message;
-		notification.m_Type       = type;
+		notification.m_Title = title;
+		notification.m_Message = message;
+		notification.m_Type = type;
 		notification.m_CreatedOn = std::chrono::system_clock::now();
-		notification.m_Duration   = duration;
+		notification.m_Duration = duration;
 		notification.m_Identifier = message_id;
 
 		if (context_function)

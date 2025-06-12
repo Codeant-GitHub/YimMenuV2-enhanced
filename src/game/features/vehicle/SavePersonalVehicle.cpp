@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -29,21 +31,21 @@ namespace YimMenu::Features
 				if (m_StartedByUs && m_Thread)
 				{
 					m_Thread->m_Context.m_State = rage::scrThread::State::KILLED;
-					m_StartedByUs               = false;
+					m_StartedByUs = false;
 				}
-				m_Thread          = nullptr;
+				m_Thread = nullptr;
 				m_ShouldRunScript = false;
 				continue;
 			}
 
 			if (!m_Thread)
 			{
-				int id   = Scripts::StartScript("AM_MP_VEHICLE_REWARD"_J, eStackSizes::FRIEND);
+				int id = Scripts::StartScript("AM_MP_VEHICLE_REWARD"_J, eStackSizes::FRIEND);
 				m_Thread = Scripts::FindScriptThreadByID(id);
 				if (m_Thread)
 				{
 					m_Thread->m_Context.m_State = rage::scrThread::State::PAUSED;
-					m_StartedByUs               = true;
+					m_StartedByUs = true;
 				}
 				else
 				{
@@ -61,15 +63,15 @@ namespace YimMenu::Features
 					if (VehicleRewardData->ControlStatus != 3)
 					{
 						VehicleRewardData->TransactionStatus = 0;
-						VehicleRewardData->Garage            = 0;
-						VehicleRewardData->GarageOffset      = 0;
-						VehicleRewardData->ControlStatus     = 0;
+						VehicleRewardData->Garage = 0;
+						VehicleRewardData->GarageOffset = 0;
+						VehicleRewardData->ControlStatus = 0;
 						if (m_StartedByUs)
 						{
 							m_Thread->m_Context.m_State = rage::scrThread::State::KILLED;
-							m_StartedByUs               = false;
+							m_StartedByUs = false;
 						}
-						m_Thread          = nullptr;
+						m_Thread = nullptr;
 						m_ShouldRunScript = false;
 					}
 				}

@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -11,7 +13,7 @@ namespace YimMenu
 {
 	PlayerCommandItem::PlayerCommandItem(joaat_t id, std::optional<std::string> label_override) :
 	    m_Command(Commands::GetCommand<PlayerCommand>(id)),
-		m_LabelOverride(label_override)
+	    m_LabelOverride(label_override)
 	{
 	}
 

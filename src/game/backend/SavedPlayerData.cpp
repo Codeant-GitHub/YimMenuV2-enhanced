@@ -1,8 +1,10 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
 #include "SavedPlayerData.hpp"
-  
+
 namespace YimMenu
 {
 	std::string_view YimMenu::FetchedPlayerData::GameStateToString(GameState state)
@@ -13,15 +15,15 @@ namespace YimMenu
 		if (state < GameState::INVALID || state >= GameState::MAX)
 			return "Hidden by Modder";
 
-		static constexpr std::array game_states = 
-		{
-		    "Invite Only",
-		    "Friends Only",
-		    "Closed Crew",
-		    "Crew",
-		    "Job",
-		    "Public",
-		};
+		static constexpr std::array game_states =
+		    {
+		        "Invite Only",
+		        "Friends Only",
+		        "Closed Crew",
+		        "Crew",
+		        "Job",
+		        "Public",
+		    };
 
 		return game_states[static_cast<int>(state)];
 	}

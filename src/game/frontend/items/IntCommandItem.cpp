@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -9,7 +11,8 @@
 
 namespace YimMenu
 {
-	IntCommandItem::IntCommandItem(joaat_t id, std::optional<std::string> label_override) :
+	IntCommandItem::IntCommandItem(joaat_t id, std::optional<std::string> label_override, bool use_slider) :
+	    m_useSlider(use_slider),
 	    m_Command(Commands::GetCommand<IntCommand>(id)),
 	    m_LabelOverride(label_override)
 	{
@@ -25,7 +28,7 @@ namespace YimMenu
 
 		int value = m_Command->GetState();
 		auto label = m_LabelOverride.has_value() ? m_LabelOverride.value().c_str() : m_Command->GetLabel().c_str();
-		if (!m_Command->GetMinimum().has_value() || !m_Command->GetMaximum().has_value())
+		if (!m_Command->GetMinimum().has_value() || !m_Command->GetMaximum().has_value() || !m_useSlider)
 		{
 			ImGui::SetNextItemWidth(150);
 			if (ImGui::InputInt(label, &value))

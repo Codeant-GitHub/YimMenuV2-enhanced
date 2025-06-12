@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -19,8 +21,8 @@ namespace YimMenu::Hooks
 			if (!Pointers.AssistedAimFindNewTarget(a1))
 			{
 				*(CDynamicEntity**)(a1 + 0x38) = entity; // failed, restore original entity to avoid issues
-				// return true;
-				// just hold on until we find a new entity
+				                                         // return true;
+				                                         // just hold on until we find a new entity
 			}
 		}
 

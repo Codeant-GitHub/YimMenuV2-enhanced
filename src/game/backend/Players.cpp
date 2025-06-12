@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -24,7 +26,7 @@ namespace YimMenu
 
 	void Players::ShutdownImpl()
 	{
-		m_SelectedPlayer = nullptr; 
+		m_SelectedPlayer = nullptr;
 		m_Players.clear();
 		m_PlayerDatas.clear();
 	}

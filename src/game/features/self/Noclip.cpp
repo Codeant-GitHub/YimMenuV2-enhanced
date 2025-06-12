@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -76,7 +78,7 @@ namespace YimMenu::Features
 					m_SpeedMultiplier += 0.07f;
 
 				ent.SetFrozen(false);
-				
+
 
 				{
 					const auto offset = ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(ent.GetHandle(), vel.x * m_SpeedMultiplier, vel.y * m_SpeedMultiplier, vel.z * m_SpeedMultiplier);

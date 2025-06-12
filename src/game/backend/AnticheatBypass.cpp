@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -11,9 +13,9 @@
 #include "types/rage/gameSkeleton.hpp"
 
 
-using FnGetVersion = int(*)();
-using FnLocalSaves = bool(*)();
-using FnBattlEyeBypass = bool(*)();
+using FnGetVersion = int (*)();
+using FnLocalSaves = bool (*)();
+using FnBattlEyeBypass = bool (*)();
 
 namespace YimMenu
 {
@@ -55,7 +57,7 @@ namespace YimMenu
 						continue;
 					patched = true;
 
-					reinterpret_cast<rage::gameSkeletonUpdateElement*>(group_child_node)->m_Function = reinterpret_cast<void(*)()>(Pointers.Nullsub);
+					reinterpret_cast<rage::gameSkeletonUpdateElement*>(group_child_node)->m_Function = reinterpret_cast<void (*)()>(Pointers.Nullsub);
 				}
 				break;
 			}
@@ -93,7 +95,7 @@ namespace YimMenu
 			mode = "Legit BattlEye";
 		else if (m_IsFSLLoaded)
 			mode = "FSL";
-	
+
 		LOGF(VERBOSE, "Anticheat bypass mode: {}", mode);
 
 		if (m_IsFSLLoaded)
@@ -107,9 +109,9 @@ namespace YimMenu
 
 				if (LawnchairGetVersion && LawnchairIsProvidingLocalSaves && LawnchairIsProvidingBattlEyeBypass)
 				{
-					m_FSLVersion         = LawnchairGetVersion();
+					m_FSLVersion = LawnchairGetVersion();
 					m_FSLProvidesLocalSaves = LawnchairIsProvidingLocalSaves();
-					m_FSLProvidesBEBypass   = LawnchairIsProvidingBattlEyeBypass();
+					m_FSLProvidesBEBypass = LawnchairIsProvidingBattlEyeBypass();
 
 					LOGF(VERBOSE, "FSL Version: {}", m_FSLVersion);
 					LOGF(VERBOSE, "FSL Local Saves: {}", m_FSLProvidesLocalSaves ? "Enabled" : "Disabled");

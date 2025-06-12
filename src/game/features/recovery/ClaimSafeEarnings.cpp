@@ -1,3 +1,5 @@
+//https://github.com/Codeant-GitHub
+
 #pragma once
 #include "common.hpp"
 
@@ -25,8 +27,7 @@ namespace YimMenu::Features
 	    {static_cast<int>(eAppVinewoodMenuSafe::AGENCY), "Agency"},
 	    {static_cast<int>(eAppVinewoodMenuSafe::SALVAGE_YARD), "Salvage Yard"},
 	    {static_cast<int>(eAppVinewoodMenuSafe::BAIL_OFFICE), "Bail Office"},
-	    {static_cast<int>(eAppVinewoodMenuSafe::GARMENT_FACTORY), "Garment Factory"}
-	};
+	    {static_cast<int>(eAppVinewoodMenuSafe::GARMENT_FACTORY), "Garment Factory"}};
 
 	static ListCommand _SelectedBusiness{"businesssafe", "Business", "Business to claim earning from.", businessNames, 0};
 
