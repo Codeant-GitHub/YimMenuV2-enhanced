@@ -3,7 +3,6 @@
 #pragma once
 #include "common.hpp"
 
-#include "common.hpp"
 #include "core/backend/ScriptMgr.hpp"
 #include "core/backend/FiberPool.hpp"
 #include "core/commands/Commands.hpp"
