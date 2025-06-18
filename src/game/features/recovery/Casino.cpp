@@ -7,6 +7,9 @@
 #include "game/backend/Self.hpp"
 #include "game/gta/Natives.hpp"
 #include "game/gta/ScriptLocal.hpp"
+#include "game/gta/Stats.hpp"
+#include "core/commands/ListCommand.hpp"
+#include "game/backend/Tunables.hpp"
 
 #include <set>
 
@@ -84,5 +87,4 @@ namespace YimMenu::Features
 	};
 
 	static CasinoManipulateRigSlotMachines _CasinoManipulateRigSlotMachines{"casinomanipulaterigslotmachines", "Manipulate Rig Slot Machines", "Lets you win the Rig Slot Machines every time"};
-
 }

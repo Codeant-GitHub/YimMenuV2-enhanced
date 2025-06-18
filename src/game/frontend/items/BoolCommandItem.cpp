@@ -47,8 +47,6 @@ namespace YimMenu
 			ImGui::BulletText("Press any registered key to remove");
 			ImGui::Separator();
 
-			HotkeySetter(m_Command->GetHash()).Draw();
-
 
 			ImGui::Spacing();
 			if (ImGui::Button("Close") || ((!ImGui::IsWindowHovered() && !ImGui::IsAnyItemHovered()) && ImGui::IsMouseClicked(ImGuiMouseButton_Left)))

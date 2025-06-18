@@ -32,7 +32,6 @@
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\int\$(ProjectName)\</IntDir>
-    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -311,6 +310,7 @@
     <ClInclude Include="src\types\pad\ControllerInputs.hpp" />
     <ClInclude Include="src\types\ped\CPedFactory.hpp" />
     <ClInclude Include="src\types\ped\PedConfigFlag.hpp" />
+    <ClInclude Include="src\types\rage\ObfVar.hpp" />
     <ClInclude Include="src\types\rage\PoolEncryption.hpp" />
     <ClInclude Include="src\types\rage\RTTI.hpp" />
     <ClInclude Include="src\types\rage\atArray.hpp" />
@@ -498,6 +498,7 @@
     <ClCompile Include="src\game\features\self\InfiniteParachutes.cpp" />
     <ClCompile Include="src\game\features\self\Invis.cpp" />
     <ClCompile Include="src\game\features\self\KeepPlayerClean.cpp" />
+    <ClCompile Include="src\game\features\self\MeleeDamage.cpp" />
     <ClCompile Include="src\game\features\self\MobileRadio.cpp" />
     <ClCompile Include="src\game\features\self\NoIdleKick.cpp" />
     <ClCompile Include="src\game\features\self\NoRagdoll.cpp" />
@@ -514,6 +515,7 @@
     <ClCompile Include="src\game\features\self\SuperRun.cpp" />
     <ClCompile Include="src\game\features\self\UnlimitedOxygen.cpp" />
     <ClCompile Include="src\game\features\self\Wanted.cpp" />
+    <ClCompile Include="src\game\features\self\WeaponDamage.cpp" />
     <ClCompile Include="src\game\features\system\Chat.cpp" />
     <ClCompile Include="src\game\features\system\DespawnBypass.cpp" />
     <ClCompile Include="src\game\features\system\LSCCustomsBypass.cpp" />
@@ -530,6 +532,7 @@
     </ClCompile>
     <ClCompile Include="src\game\features\vehicle\HornBoost.cpp" />
     <ClCompile Include="src\game\features\vehicle\KeepFixed.cpp" />
+    <ClCompile Include="src\game\features\vehicle\LowerVehicleStance.cpp" />
     <ClCompile Include="src\game\features\vehicle\RocketBoost.cpp" />
     <ClCompile Include="src\game\features\vehicle\SavePersonalVehicle.cpp" />
     <ClCompile Include="src\game\features\vehicle\Seatbelt.cpp" />
@@ -554,6 +557,7 @@
     <ClCompile Include="src\game\frontend\Menu.cpp" />
     <ClCompile Include="src\game\frontend\Onboarding.cpp" />
     <ClCompile Include="src\game\frontend\Overlay.cpp" />
+    <ClCompile Include="src\game\frontend\fonts\IconFont.cpp" />
     <ClCompile Include="src\game\frontend\fonts\MainFont.cpp" />
     <ClCompile Include="src\game\frontend\items\BoolCommandItem.cpp" />
     <ClCompile Include="src\game\frontend\items\Button.cpp" />
@@ -563,7 +567,6 @@
     <ClCompile Include="src\game\frontend\items\ConditionalItem.cpp" />
     <ClCompile Include="src\game\frontend\items\FloatCommandItem.cpp" />
     <ClCompile Include="src\game\frontend\items\Group.cpp" />
-    <ClCompile Include="src\game\frontend\items\HotkeySetter.cpp" />
     <ClCompile Include="src\game\frontend\items\ImGuiItem.cpp" />
     <ClCompile Include="src\game\frontend\items\InputTextWithHint.cpp" />
     <ClCompile Include="src\game\frontend\items\IntCommandItem.cpp" />
@@ -650,6 +653,7 @@
     <ClCompile Include="src\game\gta\VehicleModel.cpp" />
     <ClCompile Include="src\game\gta\invoker\Invoker.cpp" />
     <ClCompile Include="src\game\hooks\Anticheat\BattlEyeServerProcessPlayerJoin.cpp" />
+    <ClCompile Include="src\game\hooks\Anticheat\GetAnticheatInitializedHash.cpp" />
     <ClCompile Include="src\game\hooks\Anticheat\GetThreadContext.cpp" />
     <ClCompile Include="src\game\hooks\Anticheat\HttpStartRequest.cpp" />
     <ClCompile Include="src\game\hooks\Anticheat\PrepareMetricForSending.cpp" />

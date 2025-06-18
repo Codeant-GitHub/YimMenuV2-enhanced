@@ -1021,6 +1021,9 @@
     <ClInclude Include="src\types\ped\PedConfigFlag.hpp">
       <Filter>types\ped</Filter>
     </ClInclude>
+    <ClInclude Include="src\types\rage\ObfVar.hpp">
+      <Filter>types\rage</Filter>
+    </ClInclude>
     <ClInclude Include="src\types\rage\PoolEncryption.hpp">
       <Filter>types\rage</Filter>
     </ClInclude>
@@ -1570,6 +1573,9 @@
     <ClCompile Include="src\game\features\self\KeepPlayerClean.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\features\self\MeleeDamage.cpp">
+      <Filter>game\features\self</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\features\self\MobileRadio.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
@@ -1618,6 +1624,9 @@
     <ClCompile Include="src\game\features\self\Wanted.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\features\self\WeaponDamage.cpp">
+      <Filter>game\features\self</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\features\system\Chat.cpp">
       <Filter>game\features\system</Filter>
     </ClCompile>
@@ -1658,6 +1667,9 @@
       <Filter>game\features\vehicle</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\vehicle\KeepFixed.cpp">
+      <Filter>game\features\vehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\vehicle\LowerVehicleStance.cpp">
       <Filter>game\features\vehicle</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\vehicle\RocketBoost.cpp">
@@ -1720,6 +1732,9 @@
     <ClCompile Include="src\game\frontend\Overlay.cpp">
       <Filter>game\frontend</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\frontend\fonts\IconFont.cpp">
+      <Filter>game\frontend\fonts</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\frontend\fonts\MainFont.cpp">
       <Filter>game\frontend\fonts</Filter>
     </ClCompile>
@@ -1745,9 +1760,6 @@
       <Filter>game\frontend\items</Filter>
     </ClCompile>
     <ClCompile Include="src\game\frontend\items\Group.cpp">
-      <Filter>game\frontend\items</Filter>
-    </ClCompile>
-    <ClCompile Include="src\game\frontend\items\HotkeySetter.cpp">
       <Filter>game\frontend\items</Filter>
     </ClCompile>
     <ClCompile Include="src\game\frontend\items\ImGuiItem.cpp">
@@ -1928,6 +1940,9 @@
       <Filter>game\gta\invoker</Filter>
     </ClCompile>
     <ClCompile Include="src\game\hooks\Anticheat\BattlEyeServerProcessPlayerJoin.cpp">
+      <Filter>game\hooks\Anticheat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\hooks\Anticheat\GetAnticheatInitializedHash.cpp">
       <Filter>game\hooks\Anticheat</Filter>
     </ClCompile>
     <ClCompile Include="src\game\hooks\Anticheat\GetThreadContext.cpp">
