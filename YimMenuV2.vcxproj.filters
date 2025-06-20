@@ -169,6 +169,9 @@
     <Filter Include="types">
       <UniqueIdentifier>{5A5E7610-C672-9EC1-8FF4-4121FBC79AF2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="types\anticheat">
+      <UniqueIdentifier>{5AF307CC-C67E-7590-CF8F-F8843B9AD190}</UniqueIdentifier>
+    </Filter>
     <Filter Include="types\battleye">
       <UniqueIdentifier>{03E01A58-EFAD-0E5E-D841-7F84C4AEEAC2}</UniqueIdentifier>
     </Filter>
@@ -180,6 +183,9 @@
     </Filter>
     <Filter Include="types\fx">
       <UniqueIdentifier>{A7CD73F8-939A-CE03-BCB3-BCABA8DF0392}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="types\game_files">
+      <UniqueIdentifier>{75CEC7C7-61C7-E619-8AF9-CB9E7651C625}</UniqueIdentifier>
     </Filter>
     <Filter Include="types\netshop">
       <UniqueIdentifier>{4A435D33-B603-D969-7F3E-22E7EBBD1D46}</UniqueIdentifier>
@@ -520,6 +526,9 @@
     <ClInclude Include="src\game\frontend\fonts\Fonts.hpp">
       <Filter>game\frontend\fonts</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\frontend\items\DrawHotkey.hpp">
+      <Filter>game\frontend\items</Filter>
+    </ClInclude>
     <ClInclude Include="src\game\frontend\items\Items.hpp">
       <Filter>game\frontend\items</Filter>
     </ClInclude>
@@ -712,6 +721,9 @@
     <ClInclude Include="src\game\pointers\Pointers.hpp">
       <Filter>game\pointers</Filter>
     </ClInclude>
+    <ClInclude Include="src\types\anticheat\CAnticheatContext.hpp">
+      <Filter>types\anticheat</Filter>
+    </ClInclude>
     <ClInclude Include="src\types\battleye\CBattlEyePlayerModifyContext.hpp">
       <Filter>types\battleye</Filter>
     </ClInclude>
@@ -732,6 +744,9 @@
     </ClInclude>
     <ClInclude Include="src\types\fx\ExplosionType.hpp">
       <Filter>types\fx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types\game_files\CGameDataHash.hpp">
+      <Filter>types\game_files</Filter>
     </ClInclude>
     <ClInclude Include="src\types\netshop\CNetShopTransaction.hpp">
       <Filter>types\netshop</Filter>
@@ -1756,6 +1771,9 @@
     <ClCompile Include="src\game\frontend\items\ConditionalItem.cpp">
       <Filter>game\frontend\items</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\frontend\items\DrawHotkey.cpp">
+      <Filter>game\frontend\items</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\frontend\items\FloatCommandItem.cpp">
       <Filter>game\frontend\items</Filter>
     </ClCompile>
@@ -1943,6 +1961,9 @@
       <Filter>game\hooks\Anticheat</Filter>
     </ClCompile>
     <ClCompile Include="src\game\hooks\Anticheat\GetAnticheatInitializedHash.cpp">
+      <Filter>game\hooks\Anticheat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\hooks\Anticheat\GetAnticheatInitializedHash2.cpp">
       <Filter>game\hooks\Anticheat</Filter>
     </ClCompile>
     <ClCompile Include="src\game\hooks\Anticheat\GetThreadContext.cpp">
