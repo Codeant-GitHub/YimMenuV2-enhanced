@@ -142,6 +142,9 @@
     <Filter Include="game\frontend\submenus\Vehicle">
       <UniqueIdentifier>{7E1FFC98-6A45-C6FF-538B-4BCB3F50EBCB}</UniqueIdentifier>
     </Filter>
+    <Filter Include="game\frontend\submenus\World">
+      <UniqueIdentifier>{26A1930A-125C-83B6-BB13-FC00A7ADCD46}</UniqueIdentifier>
+    </Filter>
     <Filter Include="game\gta">
       <UniqueIdentifier>{6A7882BA-5645-DDC5-7F5E-CB6D6B8A1254}</UniqueIdentifier>
     </Filter>
@@ -162,6 +165,9 @@
     </Filter>
     <Filter Include="game\hooks\Info">
       <UniqueIdentifier>{6DABD828-D936-46ED-E247-C9E14E52A2ED}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\hooks\Matchmaking">
+      <UniqueIdentifier>{4556B6CE-3150-DF20-1ABD-75310656458D}</UniqueIdentifier>
     </Filter>
     <Filter Include="game\hooks\Misc">
       <UniqueIdentifier>{4DC9DA28-B954-48ED-C265-CBE12E70A4ED}</UniqueIdentifier>
@@ -469,6 +475,9 @@
     <ClInclude Include="src\game\backend\AnticheatBypass.hpp">
       <Filter>game\backend</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\backend\CustomMatchmaking.hpp">
+      <Filter>game\backend</Filter>
+    </ClInclude>
     <ClInclude Include="src\game\backend\NativeHooks.hpp">
       <Filter>game\backend</Filter>
     </ClInclude>
@@ -646,6 +655,9 @@
     <ClInclude Include="src\game\frontend\submenus\World.hpp">
       <Filter>game\frontend\submenus</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\frontend\submenus\World\SpawnPed.hpp">
+      <Filter>game\frontend\submenus\World</Filter>
+    </ClInclude>
     <ClInclude Include="src\game\gta\Entity.hpp">
       <Filter>game\gta</Filter>
     </ClInclude>
@@ -704,6 +716,9 @@
       <Filter>game\gta\data</Filter>
     </ClInclude>
     <ClInclude Include="src\game\gta\data\ModNames.hpp">
+      <Filter>game\gta\data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\gta\data\PedModels.hpp">
       <Filter>game\gta\data</Filter>
     </ClInclude>
     <ClInclude Include="src\game\gta\data\RandomEvents.hpp">
@@ -775,6 +790,12 @@
     <ClInclude Include="src\types\network\CNetworkPlayerMgr.hpp">
       <Filter>types\network</Filter>
     </ClInclude>
+    <ClInclude Include="src\types\network\MatchmakingAttributes.hpp">
+      <Filter>types\network</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types\network\MatchmakingId.hpp">
+      <Filter>types\network</Filter>
+    </ClInclude>
     <ClInclude Include="src\types\network\netAddress.hpp">
       <Filter>types\network</Filter>
     </ClInclude>
@@ -824,6 +845,12 @@
       <Filter>types\network</Filter>
     </ClInclude>
     <ClInclude Include="src\types\network\rlSessionByGamerHandleTaskResult.hpp">
+      <Filter>types\network</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types\network\rlSessionConfig.hpp">
+      <Filter>types\network</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types\network\rlSessionDetail.hpp">
       <Filter>types\network</Filter>
     </ClInclude>
     <ClInclude Include="src\types\network\rlSessionInfo.hpp">
@@ -1046,6 +1073,9 @@
       <Filter>types\pad</Filter>
     </ClInclude>
     <ClInclude Include="src\types\ped\CPedFactory.hpp">
+      <Filter>types\ped</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types\ped\PedCombatAttribute.hpp">
       <Filter>types\ped</Filter>
     </ClInclude>
     <ClInclude Include="src\types\ped\PedConfigFlag.hpp">
@@ -1405,6 +1435,9 @@
     <ClCompile Include="src\game\backend\AnticheatBypass.cpp">
       <Filter>game\backend</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\backend\CustomMatchmaking.cpp">
+      <Filter>game\backend</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\backend\NativeHooks.cpp">
       <Filter>game\backend</Filter>
     </ClCompile>
@@ -1493,6 +1526,12 @@
       <Filter>game\features\players\kick</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\players\teleport\Bring.cpp">
+      <Filter>game\features\players\teleport</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\players\teleport\SendToInterior.cpp">
+      <Filter>game\features\players\teleport</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\players\teleport\SendToProperty.cpp">
       <Filter>game\features\players\teleport</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\players\teleport\TeleportToCoord.cpp">
@@ -1936,6 +1975,9 @@
     <ClCompile Include="src\game\frontend\submenus\World.cpp">
       <Filter>game\frontend\submenus</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\frontend\submenus\World\SpawnPed.cpp">
+      <Filter>game\frontend\submenus\World</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\gta\Entity.cpp">
       <Filter>game\gta</Filter>
     </ClCompile>
@@ -2022,6 +2064,18 @@
     </ClCompile>
     <ClCompile Include="src\game\hooks\Info\NetworkPlayerManagerShutdown.cpp">
       <Filter>game\hooks\Info</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\hooks\Matchmaking\MatchmakingAdvertise.cpp">
+      <Filter>game\hooks\Matchmaking</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\hooks\Matchmaking\MatchmakingSessionDetailSendResponse.cpp">
+      <Filter>game\hooks\Matchmaking</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\hooks\Matchmaking\MatchmakingUnadvertise.cpp">
+      <Filter>game\hooks\Matchmaking</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\hooks\Matchmaking\MatchmakingUpdate.cpp">
+      <Filter>game\hooks\Matchmaking</Filter>
     </ClCompile>
     <ClCompile Include="src\game\hooks\Misc\AssistedAimShouldReleaseEntity.cpp">
       <Filter>game\hooks\Misc</Filter>
