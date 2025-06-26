@@ -49,6 +49,12 @@
     <Filter Include="core\renderer">
       <UniqueIdentifier>{D4577B52-4018-F788-0953-400675D23B65}</UniqueIdentifier>
     </Filter>
+    <Filter Include="core\scripting">
+      <UniqueIdentifier>{F00E3A7E-DCDC-2D84-C570-9EAAB1DD09E9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\scripting\libraries">
+      <UniqueIdentifier>{7C0ED179-6833-20FA-917E-058A7D021F18}</UniqueIdentifier>
+    </Filter>
     <Filter Include="core\settings">
       <UniqueIdentifier>{4EC9DF4D-BA89-5B84-83C4-A401EF43A060}</UniqueIdentifier>
     </Filter>
@@ -451,6 +457,15 @@
     <ClInclude Include="src\core\renderer\Renderer.hpp">
       <Filter>core\renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\core\scripting\LuaLibrary.hpp">
+      <Filter>core\scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\scripting\LuaManager.hpp">
+      <Filter>core\scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\scripting\LuaScript.hpp">
+      <Filter>core\scripting</Filter>
+    </ClInclude>
     <ClInclude Include="src\core\settings\IStateSerializer.hpp">
       <Filter>core\settings</Filter>
     </ClInclude>
@@ -713,6 +728,9 @@
       <Filter>game\gta</Filter>
     </ClInclude>
     <ClInclude Include="src\game\gta\data\IPL.hpp">
+      <Filter>game\gta\data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\gta\data\LauncherScripts.hpp">
       <Filter>game\gta\data</Filter>
     </ClInclude>
     <ClInclude Include="src\game\gta\data\ModNames.hpp">
@@ -1210,6 +1228,9 @@
     <ClInclude Include="src\types\script\globals\GlobalPlayerBD.hpp">
       <Filter>types\script\globals</Filter>
     </ClInclude>
+    <ClInclude Include="src\types\script\globals\LauncherServerData.hpp">
+      <Filter>types\script\globals</Filter>
+    </ClInclude>
     <ClInclude Include="src\types\script\globals\MPSV.hpp">
       <Filter>types\script\globals</Filter>
     </ClInclude>
@@ -1229,6 +1250,9 @@
       <Filter>types\script\locals</Filter>
     </ClInclude>
     <ClInclude Include="src\types\script\locals\HSWTimeTrialData.hpp">
+      <Filter>types\script\locals</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types\script\locals\LauncherClientData.hpp">
       <Filter>types\script\locals</Filter>
     </ClInclude>
     <ClInclude Include="src\types\script\locals\RCBanditoTimeTrialData.hpp">
@@ -1425,6 +1449,21 @@
     </ClCompile>
     <ClCompile Include="src\core\renderer\Renderer.cpp">
       <Filter>core\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\scripting\LuaLibrary.cpp">
+      <Filter>core\scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\scripting\LuaManager.cpp">
+      <Filter>core\scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\scripting\LuaScript.cpp">
+      <Filter>core\scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\scripting\libraries\Default.cpp">
+      <Filter>core\scripting\libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\scripting\libraries\Logging.cpp">
+      <Filter>core\scripting\libraries</Filter>
     </ClCompile>
     <ClCompile Include="src\core\settings\IStateSerializer.cpp">
       <Filter>core\settings</Filter>

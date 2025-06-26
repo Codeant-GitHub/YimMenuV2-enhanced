@@ -116,6 +116,9 @@
     <ClInclude Include="src\core\memory\PatternScanner.hpp" />
     <ClInclude Include="src\core\memory\PointerCalculator.hpp" />
     <ClInclude Include="src\core\renderer\Renderer.hpp" />
+    <ClInclude Include="src\core\scripting\LuaLibrary.hpp" />
+    <ClInclude Include="src\core\scripting\LuaManager.hpp" />
+    <ClInclude Include="src\core\scripting\LuaScript.hpp" />
     <ClInclude Include="src\core\settings\IStateSerializer.hpp" />
     <ClInclude Include="src\core\settings\Settings.hpp" />
     <ClInclude Include="src\core\util\Joaat.hpp" />
@@ -204,6 +207,7 @@
     <ClInclude Include="src\game\gta\Vehicle.hpp" />
     <ClInclude Include="src\game\gta\VehicleModel.hpp" />
     <ClInclude Include="src\game\gta\data\IPL.hpp" />
+    <ClInclude Include="src\game\gta\data\LauncherScripts.hpp" />
     <ClInclude Include="src\game\gta\data\ModNames.hpp" />
     <ClInclude Include="src\game\gta\data\PedModels.hpp" />
     <ClInclude Include="src\game\gta\data\RandomEvents.hpp" />
@@ -369,6 +373,7 @@
     <ClInclude Include="src\types\script\globals\GSBD_PropertyInstances.hpp" />
     <ClInclude Include="src\types\script\globals\GSBD_RandomEvents.hpp" />
     <ClInclude Include="src\types\script\globals\GlobalPlayerBD.hpp" />
+    <ClInclude Include="src\types\script\globals\LauncherServerData.hpp" />
     <ClInclude Include="src\types\script\globals\MPSV.hpp" />
     <ClInclude Include="src\types\script\globals\WeeklyChallenge.hpp" />
     <ClInclude Include="src\types\script\globals\g_AMC_playerBD.hpp" />
@@ -376,6 +381,7 @@
     <ClInclude Include="src\types\script\locals\BikeTimeTrialData.hpp" />
     <ClInclude Include="src\types\script\locals\FMRandomEvents.hpp" />
     <ClInclude Include="src\types\script\locals\HSWTimeTrialData.hpp" />
+    <ClInclude Include="src\types\script\locals\LauncherClientData.hpp" />
     <ClInclude Include="src\types\script\locals\RCBanditoTimeTrialData.hpp" />
     <ClInclude Include="src\types\script\locals\StandardTimeTrialData.hpp" />
     <ClInclude Include="src\types\script\locals\VehicleRewardData.hpp" />
@@ -445,6 +451,11 @@
     <ClCompile Include="src\core\memory\Pattern.cpp" />
     <ClCompile Include="src\core\memory\PatternScanner.cpp" />
     <ClCompile Include="src\core\renderer\Renderer.cpp" />
+    <ClCompile Include="src\core\scripting\LuaLibrary.cpp" />
+    <ClCompile Include="src\core\scripting\LuaManager.cpp" />
+    <ClCompile Include="src\core\scripting\LuaScript.cpp" />
+    <ClCompile Include="src\core\scripting\libraries\Default.cpp" />
+    <ClCompile Include="src\core\scripting\libraries\Logging.cpp" />
     <ClCompile Include="src\core\settings\IStateSerializer.cpp" />
     <ClCompile Include="src\core\settings\Settings.cpp" />
     <ClCompile Include="src\game\backend\AnticheatBypass.cpp" />
