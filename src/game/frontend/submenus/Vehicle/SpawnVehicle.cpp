@@ -4,6 +4,7 @@
 #include "common.hpp"
 
 #include "SpawnVehicle.hpp"
+#include "core/commands/BoolCommand.hpp"
 #include "core/backend/ScriptMgr.hpp"
 #include "core/backend/FiberPool.hpp"
 #include "game/backend/Self.hpp"
@@ -13,6 +14,9 @@
 
 namespace YimMenu::Submenus
 {
+	static BoolCommand spawnInsideVehicle{"spawninsideveh", "Spawn Inside", "Spawn inside the vehicle."};
+	static BoolCommand spawnVehicleMaxed{"spawnvehmaxed", "Spawn Maxed", "Spawn the vehicle maxed."};
+
 	static Vector3 GetVehicleSpawnLoc(joaat_t hash, bool spawnInside)
 	{
 		float y_offset = 0;
@@ -39,8 +43,6 @@ namespace YimMenu::Submenus
 		static std::vector<std::string> vehicleNames{};
 		static std::vector<int> vehicleClasses{};
 		static int selectedClass{-1};
-		static bool spawnInside{};
-		static bool spawnMaxed{};
 
 		menu->AddItem(std::make_unique<ImGuiItem>([] {
 			static bool init = [] {
@@ -123,12 +125,12 @@ namespace YimMenu::Submenus
 						if (ImGui::Selectable(name.c_str()))
 						{
 							FiberPool::Push([hash] {
-								auto handle = Vehicle::Create(hash, GetVehicleSpawnLoc(hash, spawnInside), Self::GetPed().GetHeading());
+								auto handle = Vehicle::Create(hash, GetVehicleSpawnLoc(hash, spawnInsideVehicle.GetState()), Self::GetPed().GetHeading());
 
-								if (spawnInside)
+								if (spawnInsideVehicle.GetState())
 									Self::GetPed().SetInVehicle(handle);
 
-								if (spawnMaxed)
+								if (spawnVehicleMaxed.GetState())
 									handle.Upgrade();
 							});
 						}
@@ -138,12 +140,10 @@ namespace YimMenu::Submenus
 
 				ImGui::EndListBox();
 			}
-
-			ImGui::Checkbox("Spawn Inside", &spawnInside);
-			ImGui::SameLine();
-			ImGui::Checkbox("Spawn Maxed", &spawnMaxed);
 		}));
 
+		menu->AddItem(std::make_shared<BoolCommandItem>("spawninsideveh"_J));
+		menu->AddItem(std::make_shared<BoolCommandItem>("spawnvehmaxed"_J));
 		return menu;
 	}
 }
