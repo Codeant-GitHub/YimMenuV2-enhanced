@@ -117,10 +117,12 @@
     <ClInclude Include="src\core\memory\PointerCalculator.hpp" />
     <ClInclude Include="src\core\renderer\Renderer.hpp" />
     <ClInclude Include="src\core\scripting\LatentFunction.hpp" />
+    <ClInclude Include="src\core\scripting\LuaConfig.hpp" />
     <ClInclude Include="src\core\scripting\LuaLibrary.hpp" />
     <ClInclude Include="src\core\scripting\LuaManager.hpp" />
     <ClInclude Include="src\core\scripting\LuaResource.hpp" />
     <ClInclude Include="src\core\scripting\LuaScript.hpp" />
+    <ClInclude Include="src\core\scripting\LuaUserInterface.hpp" />
     <ClInclude Include="src\core\scripting\LuaUtils.hpp" />
     <ClInclude Include="src\core\settings\IStateSerializer.hpp" />
     <ClInclude Include="src\core\settings\Settings.hpp" />
@@ -129,10 +131,12 @@
     <ClInclude Include="src\core\util\RateLimiter.hpp" />
     <ClInclude Include="src\core\util\StrToHex.hpp" />
     <ClInclude Include="src\core\util\Strings.hpp" />
+    <ClInclude Include="src\core\util\Wine.hpp" />
     <ClInclude Include="src\game\backend\AnticheatBypass.hpp" />
     <ClInclude Include="src\game\backend\CustomMatchmaking.hpp" />
     <ClInclude Include="src\game\backend\NativeHooks.hpp" />
     <ClInclude Include="src\game\backend\NodeHooks.hpp" />
+    <ClInclude Include="src\game\backend\PersonalVehicles.hpp" />
     <ClInclude Include="src\game\backend\PlayerData.hpp" />
     <ClInclude Include="src\game\backend\Players.hpp" />
     <ClInclude Include="src\game\backend\SavedLocations.hpp" />
@@ -458,13 +462,16 @@
     <ClCompile Include="src\core\memory\PatternScanner.cpp" />
     <ClCompile Include="src\core\renderer\Renderer.cpp" />
     <ClCompile Include="src\core\scripting\LatentFunction.cpp" />
+    <ClCompile Include="src\core\scripting\LuaConfig.cpp" />
     <ClCompile Include="src\core\scripting\LuaLibrary.cpp" />
     <ClCompile Include="src\core\scripting\LuaManager.cpp" />
     <ClCompile Include="src\core\scripting\LuaResource.cpp" />
     <ClCompile Include="src\core\scripting\LuaScript.cpp" />
+    <ClCompile Include="src\core\scripting\LuaUserInterface.cpp" />
     <ClCompile Include="src\core\scripting\libraries\Default.cpp" />
     <ClCompile Include="src\core\scripting\libraries\Internal.cpp" />
     <ClCompile Include="src\core\scripting\libraries\Logging.cpp" />
+    <ClCompile Include="src\core\scripting\libraries\Notify.cpp" />
     <ClCompile Include="src\core\scripting\libraries\Script.cpp" />
     <ClCompile Include="src\core\scripting\libraries\Util.cpp" />
     <ClCompile Include="src\core\scripting\libraries\Vector3.cpp" />
@@ -474,6 +481,7 @@
     <ClCompile Include="src\game\backend\CustomMatchmaking.cpp" />
     <ClCompile Include="src\game\backend\NativeHooks.cpp" />
     <ClCompile Include="src\game\backend\NodeHooks.cpp" />
+    <ClCompile Include="src\game\backend\PersonalVehicles.cpp" />
     <ClCompile Include="src\game\backend\Players.cpp" />
     <ClCompile Include="src\game\backend\SavedLocations.cpp" />
     <ClCompile Include="src\game\backend\SavedPlayerData.cpp" />
@@ -574,6 +582,7 @@
     <ClCompile Include="src\game\features\vehicle\AllowHatsInVehicles.cpp" />
     <ClCompile Include="src\game\features\vehicle\CallMechanic.cpp" />
     <ClCompile Include="src\game\features\vehicle\DLCVehicles.cpp" />
+    <ClCompile Include="src\game\features\vehicle\DespawnPersonalVehicle.cpp" />
     <ClCompile Include="src\game\features\vehicle\EnterLast.cpp" />
     <ClCompile Include="src\game\features\vehicle\Fix.cpp" />
     <ClCompile Include="src\game\features\vehicle\FixAllVehicles.cpp" />
@@ -583,6 +592,7 @@
     <ClCompile Include="src\game\features\vehicle\HornBoost.cpp" />
     <ClCompile Include="src\game\features\vehicle\KeepFixed.cpp" />
     <ClCompile Include="src\game\features\vehicle\LowerVehicleStance.cpp" />
+    <ClCompile Include="src\game\features\vehicle\RequestPersonalVehicle.cpp" />
     <ClCompile Include="src\game\features\vehicle\RocketBoost.cpp" />
     <ClCompile Include="src\game\features\vehicle\SavePersonalVehicle.cpp" />
     <ClCompile Include="src\game\features\vehicle\Seatbelt.cpp" />
@@ -742,6 +752,9 @@
     </ClCompile>
     <ClCompile Include="src\game\scripting\libraries\NativeDefs.cpp" />
     <ClCompile Include="src\game\scripting\libraries\Natives.cpp" />
+    <ClCompile Include="src\game\scripting\libraries\Network.cpp">
+      <ObjectFileName>$(IntDir)\Network2.obj</ObjectFileName>
+    </ClCompile>
     <ClCompile Include="src\game\scripting\libraries\Ped.cpp">
       <ObjectFileName>$(IntDir)\Ped1.obj</ObjectFileName>
     </ClCompile>
