@@ -4,7 +4,7 @@
 #include "common.hpp"
 
 #include "SavedVehicles.hpp"
-
+#include "core/commands/BoolCommand.hpp"
 #include "core/backend/FiberPool.hpp"
 #include "core/backend/ScriptMgr.hpp"
 #include "core/frontend/Notifications.hpp"
@@ -16,6 +16,8 @@
 
 namespace YimMenu::Submenus
 {
+	static BoolCommand spawnInsideSavedVehicle{"spawninsidesavedveh", "Spawn Inside", "Spawn inside the vehicle."};
+
 	std::shared_ptr<Category> BuildSavedVehiclesMenu()
 	{
 		static std::string folder{}, file{};
@@ -24,6 +26,8 @@ namespace YimMenu::Submenus
 		static char newFolder[50]{};
 
 		auto persistCar = std::make_shared<Category>("Saved Vehicles");
+
+		persistCar->AddItem(std::make_shared<BoolCommandItem>("spawninsidesavedveh"_J));
 
 		persistCar->AddItem(std::make_unique<ImGuiItem>([] {
 			static auto drawSaveVehicleButton = [](bool saveToNewFolder) {
@@ -145,7 +149,7 @@ namespace YimMenu::Submenus
 				ImGui::Spacing();
 				if (ImGui::Button("Yes"))
 				{
-					SavedVehicles::Load(folder, file);
+					SavedVehicles::Load(folder, file, spawnInsideSavedVehicle.GetState());		
 					open_modal = false;
 					ImGui::CloseCurrentPopup();
 				}
