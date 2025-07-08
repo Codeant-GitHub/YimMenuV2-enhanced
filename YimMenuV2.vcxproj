@@ -128,6 +128,7 @@
     <ClInclude Include="src\core\settings\Settings.hpp" />
     <ClInclude Include="src\core\util\Joaat.hpp" />
     <ClInclude Include="src\core\util\Math.hpp" />
+    <ClInclude Include="src\core\util\RainbowColor.hpp" />
     <ClInclude Include="src\core\util\RateLimiter.hpp" />
     <ClInclude Include="src\core\util\StrToHex.hpp" />
     <ClInclude Include="src\core\util\Strings.hpp" />
@@ -150,6 +151,7 @@
     <ClInclude Include="src\game\backend\Tunables.hpp" />
     <ClInclude Include="src\game\commands\PlayerCommand.hpp" />
     <ClInclude Include="src\game\features\recovery\DailyActivities.hpp" />
+    <ClInclude Include="src\game\features\self\CustomWeapon.hpp" />
     <ClInclude Include="src\game\features\self\OpenGunLocker.hpp" />
     <ClInclude Include="src\game\features\vehicle\SavePersonalVehicle.hpp" />
     <ClInclude Include="src\game\frontend\ChatDisplay.hpp" />
@@ -205,6 +207,7 @@
     <ClInclude Include="src\game\gta\Ped.hpp" />
     <ClInclude Include="src\game\gta\Player.hpp" />
     <ClInclude Include="src\game\gta\Pools.hpp" />
+    <ClInclude Include="src\game\gta\RayCast.hpp" />
     <ClInclude Include="src\game\gta\ScriptData.hpp" />
     <ClInclude Include="src\game\gta\ScriptFunction.hpp" />
     <ClInclude Include="src\game\gta\ScriptGlobal.hpp" />
@@ -236,6 +239,7 @@
     <ClInclude Include="src\types\blip\BlipSprite.hpp" />
     <ClInclude Include="src\types\entity\CDynamicEntity.hpp" />
     <ClInclude Include="src\types\entity\CEntity.hpp" />
+    <ClInclude Include="src\types\entity\DecalTypes.hpp" />
     <ClInclude Include="src\types\entity\fwEntity.hpp" />
     <ClInclude Include="src\types\fx\ExplosionType.hpp" />
     <ClInclude Include="src\types\game_files\CGameDataHash.hpp" />
@@ -540,6 +544,7 @@
     <ClCompile Include="src\game\features\recovery\UnlockGTAPlus.cpp" />
     <ClCompile Include="src\game\features\self\Aimbot.cpp" />
     <ClCompile Include="src\game\features\self\ClearDamage.cpp" />
+    <ClCompile Include="src\game\features\self\CustomWeapon.cpp" />
     <ClCompile Include="src\game\features\self\DisableActionMode.cpp" />
     <ClCompile Include="src\game\features\self\ExplosiveAmmo.cpp" />
     <ClCompile Include="src\game\features\self\FillInventory.cpp" />
@@ -635,6 +640,7 @@
     <ClCompile Include="src\game\frontend\items\ListCommandItem.cpp" />
     <ClCompile Include="src\game\frontend\items\PlayerCommandItem.cpp" />
     <ClCompile Include="src\game\frontend\items\StringCommandItem.cpp" />
+    <ClCompile Include="src\game\frontend\items\TabBarItem.cpp" />
     <ClCompile Include="src\game\frontend\items\TabItem.cpp" />
     <ClCompile Include="src\game\frontend\items\Vector3CommandItem.cpp" />
     <ClCompile Include="src\game\frontend\submenus\Debug.cpp" />
@@ -702,6 +708,7 @@
     <ClCompile Include="src\game\gta\Ped.cpp" />
     <ClCompile Include="src\game\gta\Player.cpp" />
     <ClCompile Include="src\game\gta\Pools.cpp" />
+    <ClCompile Include="src\game\gta\RayCast.cpp" />
     <ClCompile Include="src\game\gta\ScriptData.cpp" />
     <ClCompile Include="src\game\gta\ScriptFunction.cpp" />
     <ClCompile Include="src\game\gta\ScriptGlobal.cpp" />

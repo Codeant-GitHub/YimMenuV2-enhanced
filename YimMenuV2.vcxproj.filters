@@ -502,6 +502,9 @@
     <ClInclude Include="src\core\util\Math.hpp">
       <Filter>core\util</Filter>
     </ClInclude>
+    <ClInclude Include="src\core\util\RainbowColor.hpp">
+      <Filter>core\util</Filter>
+    </ClInclude>
     <ClInclude Include="src\core\util\RateLimiter.hpp">
       <Filter>core\util</Filter>
     </ClInclude>
@@ -567,6 +570,9 @@
     </ClInclude>
     <ClInclude Include="src\game\features\recovery\DailyActivities.hpp">
       <Filter>game\features\recovery</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\features\self\CustomWeapon.hpp">
+      <Filter>game\features\self</Filter>
     </ClInclude>
     <ClInclude Include="src\game\features\self\OpenGunLocker.hpp">
       <Filter>game\features\self</Filter>
@@ -733,6 +739,9 @@
     <ClInclude Include="src\game\gta\Pools.hpp">
       <Filter>game\gta</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\gta\RayCast.hpp">
+      <Filter>game\gta</Filter>
+    </ClInclude>
     <ClInclude Include="src\game\gta\ScriptData.hpp">
       <Filter>game\gta</Filter>
     </ClInclude>
@@ -824,6 +833,9 @@
       <Filter>types\entity</Filter>
     </ClInclude>
     <ClInclude Include="src\types\entity\CEntity.hpp">
+      <Filter>types\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types\entity\DecalTypes.hpp">
       <Filter>types\entity</Filter>
     </ClInclude>
     <ClInclude Include="src\types\entity\fwEntity.hpp">
@@ -1726,6 +1738,9 @@
     <ClCompile Include="src\game\features\self\ClearDamage.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\features\self\CustomWeapon.cpp">
+      <Filter>game\features\self</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\features\self\DisableActionMode.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
@@ -1993,6 +2008,9 @@
     <ClCompile Include="src\game\frontend\items\StringCommandItem.cpp">
       <Filter>game\frontend\items</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\frontend\items\TabBarItem.cpp">
+      <Filter>game\frontend\items</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\frontend\items\TabItem.cpp">
       <Filter>game\frontend\items</Filter>
     </ClCompile>
@@ -2126,6 +2144,9 @@
       <Filter>game\gta</Filter>
     </ClCompile>
     <ClCompile Include="src\game\gta\Pools.cpp">
+      <Filter>game\gta</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\gta\RayCast.cpp">
       <Filter>game\gta</Filter>
     </ClCompile>
     <ClCompile Include="src\game\gta\ScriptData.cpp">
