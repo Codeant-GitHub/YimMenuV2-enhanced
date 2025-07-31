@@ -1681,6 +1681,9 @@
     <ClCompile Include="src\game\features\players\troll\DeleteVehicle.cpp">
       <Filter>game\features\players\troll</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\features\players\troll\GivePlayerAllWeapon.cpp">
+      <Filter>game\features\players\troll</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\features\players\troll\SendGooch.cpp">
       <Filter>game\features\players\troll</Filter>
     </ClCompile>
@@ -1742,6 +1745,12 @@
       <Filter>game\features\self</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\self\DisableActionMode.cpp">
+      <Filter>game\features\self</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\self\DisableCriticalHits.cpp">
+      <Filter>game\features\self</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\self\ExplosionRadius.cpp">
       <Filter>game\features\self</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\self\ExplosiveAmmo.cpp">
@@ -1919,6 +1928,9 @@
       <Filter>game\features\world</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\world\IPLManager.cpp">
+      <Filter>game\features\world</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\world\InfiniteBoundary.cpp">
       <Filter>game\features\world</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\world\Kill.cpp">

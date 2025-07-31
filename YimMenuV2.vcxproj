@@ -525,6 +525,7 @@
     <ClCompile Include="src\game\features\players\toxic\Kill.cpp" />
     <ClCompile Include="src\game\features\players\toxic\KillLoopExploit.cpp" />
     <ClCompile Include="src\game\features\players\troll\DeleteVehicle.cpp" />
+    <ClCompile Include="src\game\features\players\troll\GivePlayerAllWeapon.cpp" />
     <ClCompile Include="src\game\features\players\troll\SendGooch.cpp" />
     <ClCompile Include="src\game\features\players\troll\SendPhantomCar.cpp" />
     <ClCompile Include="src\game\features\players\troll\SendSext.cpp" />
@@ -546,6 +547,8 @@
     <ClCompile Include="src\game\features\self\ClearDamage.cpp" />
     <ClCompile Include="src\game\features\self\CustomWeapon.cpp" />
     <ClCompile Include="src\game\features\self\DisableActionMode.cpp" />
+    <ClCompile Include="src\game\features\self\DisableCriticalHits.cpp" />
+    <ClCompile Include="src\game\features\self\ExplosionRadius.cpp" />
     <ClCompile Include="src\game\features\self\ExplosiveAmmo.cpp" />
     <ClCompile Include="src\game\features\self\FillInventory.cpp" />
     <ClCompile Include="src\game\features\self\FormatMoney.cpp" />
@@ -609,6 +612,7 @@
     <ClCompile Include="src\game\features\world\Delete.cpp" />
     <ClCompile Include="src\game\features\world\EnableCreatorDevMode.cpp" />
     <ClCompile Include="src\game\features\world\IPLManager.cpp" />
+    <ClCompile Include="src\game\features\world\InfiniteBoundary.cpp" />
     <ClCompile Include="src\game\features\world\Kill.cpp">
       <ObjectFileName>$(IntDir)\Kill1.obj</ObjectFileName>
     </ClCompile>
