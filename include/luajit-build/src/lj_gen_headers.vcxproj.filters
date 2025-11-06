@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Downloads\ChronixV2-main\CMakeFiles\b2898fb0e73a8f9ef2e69020ff88b90e\lj_libdef.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Downloads\ChronixV2-main\CMakeFiles\b2898fb0e73a8f9ef2e69020ff88b90e\luajit.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Downloads\ChronixV2-main\CMakeFiles\96fed7ba0d93f8b3c74b58b413bfcc0e\lj_gen_headers.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Downloads\ChronixV2-main\_deps\luajit-src\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Downloads\ChronixV2-main\_deps\luajit-build\src\CMakeFiles\lj_gen_headers" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{B45605FB-B78E-37CC-A497-2450B4FF8F53}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

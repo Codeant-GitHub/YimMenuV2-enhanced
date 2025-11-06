@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Downloads\ChronixV2-main\CMakeFiles\96fed7ba0d93f8b3c74b58b413bfcc0e\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{B45605FB-B78E-37CC-A497-2450B4FF8F53}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

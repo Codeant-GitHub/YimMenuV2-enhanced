@@ -1672,10 +1672,16 @@
     <ClCompile Include="src\game\features\players\toxic\Explode.cpp">
       <Filter>game\features\players\toxic</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\features\players\toxic\Forcefield.cpp">
+      <Filter>game\features\players\toxic</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\features\players\toxic\Kill.cpp">
       <Filter>game\features\players\toxic</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\players\toxic\KillLoopExploit.cpp">
+      <Filter>game\features\players\toxic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\players\toxic\Magnet.cpp">
       <Filter>game\features\players\toxic</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\players\troll\DeleteVehicle.cpp">
@@ -1700,6 +1706,9 @@
       <Filter>game\features\recovery</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\recovery\Casino.cpp">
+      <Filter>game\features\recovery</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\recovery\CharacterSkills.cpp">
       <Filter>game\features\recovery</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\recovery\ClaimSafeEarnings.cpp">
@@ -1727,6 +1736,9 @@
       <Filter>game\features\recovery</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\recovery\PlayAllMissionsSolo.cpp">
+      <Filter>game\features\recovery</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\features\recovery\RPModifier.cpp">
       <Filter>game\features\recovery</Filter>
     </ClCompile>
     <ClCompile Include="src\game\features\recovery\RpMultiplier.cpp">

@@ -32,8 +32,6 @@
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\int\$(ProjectName)\</IntDir>
-    <TargetName>YimMenuV2</TargetName>
-    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -41,7 +39,7 @@
       <PrecompiledHeaderFile>common.hpp</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;WIN32_LEAN_AND_MEAN;NOMINMAX;IMGUI_DEFINE_MATH_OPERATORS;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)src;$(SolutionDir)include\json-src\single_include;$(SolutionDir)include\imgui-src;$(SolutionDir)include\minhook-src\src\hde;$(SolutionDir)include\minhook-src\include;$(SolutionDir)include\asynclogger-src\src;$(SolutionDir)include\asynclogger-src\include;$(SolutionDir)include\fmtlib-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)src;$(SolutionDir)include\json-src\single_include;$(SolutionDir)include\imgui-src;$(SolutionDir)include\minhook-src\src\hde;$(SolutionDir)include\minhook-src\include;$(SolutionDir)include\asynclogger-src\src;$(SolutionDir)include\asynclogger-src\include;$(SolutionDir)include\fmtlib-src\include;$(SolutionDir)include\luajit-src\src;$(SolutionDir)include\luajit-build\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>common.hpp</ForcedIncludeFiles>
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>MaxSpeed</Optimization>
@@ -49,16 +47,14 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>$(SolutionDir)lib\minhook.x64.lib;$(SolutionDir)lib\AsyncLogger.lib;$(SolutionDir)lib\imgui.lib;$(SolutionDir)lib\fmtlib.lib;dbghelp.lib;d3dcompiler.lib;dwmapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <ImportLibrary>$(SolutionDir)bin\$(Configuration)\YimMenuV2.lib</ImportLibrary>
+      <AdditionalDependencies>$(SolutionDir)lib\minhook.x64.lib;$(SolutionDir)lib\AsyncLogger.lib;$(SolutionDir)lib\imgui.lib;$(SolutionDir)lib\fmtlib.lib;$(SolutionDir)lib\luajit.lib;dbghelp.lib;d3dcompiler.lib;dwmapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -522,8 +518,10 @@
     <ClCompile Include="src\game\features\players\toxic\Blackscreen.cpp" />
     <ClCompile Include="src\game\features\players\toxic\CeoKick.cpp" />
     <ClCompile Include="src\game\features\players\toxic\Explode.cpp" />
+    <ClCompile Include="src\game\features\players\toxic\Forcefield.cpp" />
     <ClCompile Include="src\game\features\players\toxic\Kill.cpp" />
     <ClCompile Include="src\game\features\players\toxic\KillLoopExploit.cpp" />
+    <ClCompile Include="src\game\features\players\toxic\Magnet.cpp" />
     <ClCompile Include="src\game\features\players\troll\DeleteVehicle.cpp" />
     <ClCompile Include="src\game\features\players\troll\GivePlayerAllWeapon.cpp" />
     <ClCompile Include="src\game\features\players\troll\SendGooch.cpp" />
@@ -532,6 +530,7 @@
     <ClCompile Include="src\game\features\players\troll\SetBounty.cpp" />
     <ClCompile Include="src\game\features\recovery\AllowGenderChange.cpp" />
     <ClCompile Include="src\game\features\recovery\Casino.cpp" />
+    <ClCompile Include="src\game\features\recovery\CharacterSkills.cpp" />
     <ClCompile Include="src\game\features\recovery\ClaimSafeEarnings.cpp" />
     <ClCompile Include="src\game\features\recovery\DailyActivities.cpp" />
     <ClCompile Include="src\game\features\recovery\FreeChangeAppearance.cpp" />
@@ -541,6 +540,7 @@
     <ClCompile Include="src\game\features\recovery\Heist\DoomsdayHeist.cpp" />
     <ClCompile Include="src\game\features\recovery\NoChangeAppearanceCooldown.cpp" />
     <ClCompile Include="src\game\features\recovery\PlayAllMissionsSolo.cpp" />
+    <ClCompile Include="src\game\features\recovery\RPModifier.cpp" />
     <ClCompile Include="src\game\features\recovery\RpMultiplier.cpp" />
     <ClCompile Include="src\game\features\recovery\UnlockGTAPlus.cpp" />
     <ClCompile Include="src\game\features\self\Aimbot.cpp" />
